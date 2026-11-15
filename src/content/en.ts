@@ -33,7 +33,7 @@ export const en: Dictionary = {
     lead: "[One sentence about what you do and for whom. E.g.: user research, product decisions and code, with AI as a tool and my own judgment.]",
     seeWork: "See work",
     talk: "Get in touch",
-    portrait: "Portrait",
+    portraitAlt: "Adrián smiling, wearing a cap and a scarf, in front of a windmill.",
     reserved: "Reserved space",
     proofs: {
       title: "Proof",
