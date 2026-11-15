@@ -42,3 +42,4 @@ A component change happens in ali-ui, gets a new version on npm, and only then i
 
 - This repository is public. Planning material that mentions pending authorizations or personal data stays outside it, in `../portfolio-handoff/`.
 - The repository lives on an external disk. Keep the pnpm store inside the project folder.
+- Original photos and media go in `media/` (ignored by Git, never committed). Only optimized versions for the site go in `public/images/`.
