@@ -1,6 +1,6 @@
 /**
- * Textos do site em português (a língua-fonte). Nenhum texto vive dentro dos componentes:
- * no passo de idiomas, este arquivo ganha as versões em inglês e espanhol.
+ * Textos do site em português, a língua-fonte. en.ts e es.ts seguem esta mesma forma.
+ * Nenhum texto vive dentro dos componentes.
  * Trechos entre [colchetes] são provisórios e continuam visíveis até o conteúdo final.
  */
 export const pt = {
@@ -17,6 +17,9 @@ export const pt = {
     built: "Construído",
     resume: "Experiência",
     contact: "Contato",
+  },
+  language: {
+    label: "Idioma",
   },
   theme: {
     toDark: "Ativar tema escuro",
@@ -52,7 +55,9 @@ export const pt = {
       { label: "[LinkedIn]", href: null },
       { label: "[Behance]", href: null },
       { label: "[Currículo (PDF)]", href: null },
-    ],
+    ] as { label: string; href: string | null }[],
     madeWith: "Feito com ali-ui",
   },
-} as const;
+};
+
+export type Dictionary = typeof pt;
