@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# pnpm store (kept inside the project)
+.pnpm-store/
+
+# macOS junk
+._*
