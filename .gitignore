@@ -45,3 +45,7 @@ next-env.d.ts
 
 # macOS junk
 ._*
+
+# original photos and media, kept local only (the repository is public).
+# Optimized versions for the site go in public/images/.
+/media/
