@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getDictionary } from "@/content";
 import { htmlLang, isLocale, locales } from "@/i18n/config";
-import { alternates } from "@/i18n/metadata";
+import { alternates, siteUrl } from "@/i18n/metadata";
 import "../globals.css";
 
 /** Gera o site inteiro para cada idioma na hora do build. Outros idiomas dão 404. */
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!isLocale(lang)) return {};
   const t = getDictionary(lang);
   return {
-    metadataBase: new URL("https://adriansilvafuentes.vercel.app"),
+    metadataBase: siteUrl,
     title: t.site.title,
     description: t.site.description,
     alternates: alternates(lang),
