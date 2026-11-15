@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BuiltProjects } from "@/components/built/built-projects";
 import { PageIntro } from "@/components/page-intro";
 import { ProductCases } from "@/components/work/product-cases";
 import { WebBrand } from "@/components/work/web-brand";
@@ -53,7 +54,18 @@ export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">)
     );
   }
 
-  // Construído e Experiência chegam nos passos 5 e 6.
+  if (key === "built") {
+    return (
+      <>
+        <PageIntro eyebrow={t.built.eyebrow} title={t.built.title}>
+          <p className="max-w-xl text-body-lg text-subtle">{t.built.lead}</p>
+        </PageIntro>
+        <BuiltProjects t={t.built} />
+      </>
+    );
+  }
+
+  // Experiência chega no passo 6.
   return (
     <PageIntro eyebrow={t[key].eyebrow} title={t[key].title}>
       <p className="text-body-lg text-subtle">{t.placeholder}</p>
