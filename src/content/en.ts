@@ -315,8 +315,79 @@ export const en: Dictionary = {
   resume: {
     eyebrow: "Resume",
     title: "From collecting behavior in data to designing the journeys that shape it.",
+    intro:
+      "[How I got here, in 3 short paragraphs: communication and marketing (why people do what they do on screen) → research and interaction design, with field visits → product, with design and code. Close with: today I take the problem all the way to the shipped product.]",
+    location: "Blumenau, SC",
+    nickname: { before: "Everyone calls me ", name: "Ali" },
+    photo: "Field research photo",
+    cv: "[Resume (PDF)]",
+    experience: {
+      title: "Experience",
+      items: [
+        {
+          period: "Apr 2025 — present",
+          place: "São Paulo · remote",
+          title: "UX Product Designer · Nuvia",
+        },
+        {
+          period: "Dec 2024 — Apr 2025",
+          place: "Blumenau",
+          title: "UX Designer · Wiipo",
+          text: "Research, design and documentation of the design system for desktop and mobile (React Native), and integration with Senior's products into a SuperApp.",
+        },
+        {
+          period: "Nov 2022 — Jan 2025",
+          place: "Blumenau",
+          title: "UX Designer · Senior Sistemas",
+          bullets: [
+            "A library of 1,500+ vector icons instead of paid external resources.",
+            "Higher NPS on GKO Fretes XT by adapting the design system's standards to Delphi.",
+            "Research with focus groups and interviews through to personas and journeys; usability tests in Maze.",
+            "Technical documentation of components (React, Angular, Flutter), with accessibility and tokens.",
+          ],
+        },
+        {
+          period: "2020 — 2023",
+          place: "Santiago, Chile",
+          title: "UI Designer and Web Developer · NODO.team",
+          text: "Websites, blogs and e-commerce from Figma to HTML, CSS and WordPress, with benchmarking and information architecture presented to clients.",
+        },
+        {
+          period: "2018 — 2022",
+          place: "Chile and USA",
+          title: "Before: brand, web and marketing",
+          text: "At The Rio System I created the brand, the visual identity and the WordPress landing pages. At STAFF Chile, campaigns, email and reports. At Agencia MRC, strategy for clients from hotels to science, alongside a UI/UX and development team. That's where I learned to listen to clients and measure results.",
+          link: "See websites and brands",
+        },
+      ],
+    },
+    education: {
+      title: "Education",
+      degree: "Marketing",
+      school: "Pontificia Universidad Católica de Chile",
+      years: "2014 — 2018",
+      honorsTitle: "Honors",
+      honors: [
+        "Matrícula de Honor",
+        "Beca de Excelencia Académica UC",
+        "Beca de Excelencia Académica (Government of Chile)",
+      ],
+    },
+    languages: {
+      title: "Languages",
+      items: [
+        { name: "Português", lang: "pt-BR", level: "native" },
+        { name: "Español", lang: "es", level: "native" },
+        { name: "English", lang: "en", level: "full professional" },
+      ],
+    },
+    certifications: {
+      title: "Certifications",
+      courses: { one: "course", many: "courses" },
+      showAll: "See all",
+      showLess: "See less",
+    },
   },
-  placeholder: "[This page is under construction.]",
   footer: {
     title: "Let's talk.",
     email: "[public e-mail]",

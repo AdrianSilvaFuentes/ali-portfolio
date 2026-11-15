@@ -5,6 +5,16 @@
  */
 /** Ícones de ferramentas que o visitante reconhece. As outras ficam só com o nome. */
 export type StackIcon = "react" | "typescript" | "tailwind" | "storybook" | "vercel";
+/** Um papel na linha do tempo. Texto corrido ou tópicos; o link leva à lista Web e marca. */
+type ExperienceItem = {
+  period: string;
+  place: string;
+  title: string;
+  text?: string;
+  bullets?: string[];
+  link?: string;
+};
+
 type StackGroup = {
   title: string;
   items: { name: string; description: string; icon?: StackIcon }[];
@@ -333,8 +343,80 @@ export const pt = {
   resume: {
     eyebrow: "Experiência",
     title: "De coletar comportamento em dados a desenhar as jornadas que o moldam.",
+    intro:
+      "[Como cheguei aqui, em 3 parágrafos curtos: comunicação e marketing (por que as pessoas fazem o que fazem na tela) → pesquisa e design de interação, com visitas de campo → produto, com design e código. Fechar com: hoje levo o problema até o produto entregue.]",
+    location: "Blumenau, SC",
+    nickname: { before: "Todo mundo me chama de ", name: "Ali" },
+    photo: "Foto de pesquisa de campo",
+    cv: "[Currículo (PDF)]",
+    experience: {
+      title: "Experiência",
+      items: [
+        {
+          period: "abr 2025 — hoje",
+          place: "São Paulo · remoto",
+          title: "UX Product Designer · Nuvia",
+        },
+        {
+          period: "dez 2024 — abr 2025",
+          place: "Blumenau",
+          title: "UX Designer · Wiipo",
+          text: "Pesquisa, design e documentação do design system para desktop e mobile (React Native), e integração com os produtos da Senior para um SuperApp.",
+        },
+        {
+          period: "nov 2022 — jan 2025",
+          place: "Blumenau",
+          title: "UX Designer · Senior Sistemas",
+          bullets: [
+            "Biblioteca de 1.500+ ícones vetoriais no lugar de recursos externos pagos.",
+            "Aumento do NPS do GKO Fretes XT ao adaptar os padrões do design system ao Delphi.",
+            "Pesquisa com grupos focais e entrevistas até personas e jornadas; testes de usabilidade no Maze.",
+            "Documentação técnica de componentes (React, Angular, Flutter), com acessibilidade e tokens.",
+          ],
+        },
+        {
+          period: "2020 — 2023",
+          place: "Santiago, Chile",
+          title: "UI Designer e Web Developer · NODO.team",
+          text: "Sites, blogs e e-commerce do Figma ao HTML, CSS e WordPress, com benchmarking e arquitetura de informação apresentados aos clientes.",
+        },
+        {
+          period: "2018 — 2022",
+          place: "Chile e EUA",
+          title: "Antes: marca, web e marketing",
+          text: "Na The Rio System criei a marca, a identidade visual e as landing pages em WordPress. Na STAFF Chile, campanhas, e-mail e relatórios. Na Agencia MRC, estratégia para clientes de hotéis a ciência, junto de um time de UI/UX e desenvolvedores. Foi onde aprendi a ouvir cliente e medir resultado.",
+          link: "Ver sites e marcas",
+        },
+      ] as ExperienceItem[],
+    },
+    education: {
+      title: "Formação",
+      degree: "Marketing",
+      school: "Pontificia Universidad Católica de Chile",
+      years: "2014 — 2018",
+      honorsTitle: "Distinções",
+      honors: [
+        "Matrícula de Honor",
+        "Beca de Excelencia Académica UC",
+        "Beca de Excelencia Académica (Governo do Chile)",
+      ],
+    },
+    languages: {
+      title: "Idiomas",
+      /** Cada idioma escrito nele mesmo, com o código para o atributo lang. */
+      items: [
+        { name: "Português", lang: "pt-BR", level: "nativo" },
+        { name: "Español", lang: "es", level: "nativo" },
+        { name: "English", lang: "en", level: "profissional completo" },
+      ],
+    },
+    certifications: {
+      title: "Certificações",
+      courses: { one: "curso", many: "cursos" },
+      showAll: "Ver todas",
+      showLess: "Ver menos",
+    },
   },
-  placeholder: "[Conteúdo desta página em construção.]",
   footer: {
     title: "Vamos conversar.",
     email: "[e-mail público]",

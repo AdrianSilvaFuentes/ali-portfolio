@@ -321,9 +321,80 @@ export const es: Dictionary = {
   },
   resume: {
     eyebrow: "Experiencia",
-    title: "De recopilar comportamiento en datos a diseñar los recorridos que lo moldean.",
+    title: "De recolectar comportamiento en datos a diseñar los recorridos que lo moldean.",
+    intro:
+      "[Cómo llegué aquí, en 3 párrafos cortos: comunicación y marketing (por qué las personas hacen lo que hacen en la pantalla) → investigación y diseño de interacción, con visitas de campo → producto, con diseño y código. Cerrar con: hoy llevo el problema hasta el producto entregado.]",
+    location: "Blumenau, SC",
+    nickname: { before: "Todos me dicen ", name: "Ali" },
+    photo: "Foto de investigación de campo",
+    cv: "[Currículum (PDF)]",
+    experience: {
+      title: "Experiencia",
+      items: [
+        {
+          period: "abr 2025 — actualidad",
+          place: "São Paulo · remoto",
+          title: "UX Product Designer · Nuvia",
+        },
+        {
+          period: "dic 2024 — abr 2025",
+          place: "Blumenau",
+          title: "UX Designer · Wiipo",
+          text: "Investigación, diseño y documentación del design system para desktop y mobile (React Native), e integración con los productos de Senior en una SuperApp.",
+        },
+        {
+          period: "nov 2022 — ene 2025",
+          place: "Blumenau",
+          title: "UX Designer · Senior Sistemas",
+          bullets: [
+            "Biblioteca de 1.500+ íconos vectoriales en lugar de recursos externos pagos.",
+            "Aumento del NPS de GKO Fretes XT al adaptar los estándares del design system a Delphi.",
+            "Investigación con grupos focales y entrevistas hasta personas y recorridos; pruebas de usabilidad en Maze.",
+            "Documentación técnica de componentes (React, Angular, Flutter), con accesibilidad y tokens.",
+          ],
+        },
+        {
+          period: "2020 — 2023",
+          place: "Santiago, Chile",
+          title: "UI Designer y Web Developer · NODO.team",
+          text: "Sitios, blogs y e-commerce de Figma a HTML, CSS y WordPress, con benchmarking y arquitectura de información presentados a los clientes.",
+        },
+        {
+          period: "2018 — 2022",
+          place: "Chile y EE. UU.",
+          title: "Antes: marca, web y marketing",
+          text: "En The Rio System creé la marca, la identidad visual y las landing pages en WordPress. En STAFF Chile, campañas, e-mail e informes. En Agencia MRC, estrategia para clientes de hoteles a ciencia, junto a un equipo de UI/UX y desarrolladores. Ahí aprendí a escuchar al cliente y medir resultados.",
+          link: "Ver sitios y marcas",
+        },
+      ],
+    },
+    education: {
+      title: "Formación",
+      degree: "Marketing",
+      school: "Pontificia Universidad Católica de Chile",
+      years: "2014 — 2018",
+      honorsTitle: "Distinciones",
+      honors: [
+        "Matrícula de Honor",
+        "Beca de Excelencia Académica UC",
+        "Beca de Excelencia Académica (Gobierno de Chile)",
+      ],
+    },
+    languages: {
+      title: "Idiomas",
+      items: [
+        { name: "Português", lang: "pt-BR", level: "nativo" },
+        { name: "Español", lang: "es", level: "nativo" },
+        { name: "English", lang: "en", level: "profesional completo" },
+      ],
+    },
+    certifications: {
+      title: "Certificaciones",
+      courses: { one: "curso", many: "cursos" },
+      showAll: "Ver todas",
+      showLess: "Ver menos",
+    },
   },
-  placeholder: "[Contenido de esta página en construcción.]",
   footer: {
     title: "Conversemos.",
     email: "[correo público]",
