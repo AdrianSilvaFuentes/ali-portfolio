@@ -24,7 +24,8 @@ A component change happens in ali-ui, gets a new version on npm, and only then i
 - **Accessibility:** AA contrast in light and dark themes, touch targets of at least 44px, visible focus, semantic HTML, menu and language selector usable by keyboard.
 - **Responsive from the start** (mobile first), light and dark themes derived from the tokens.
 - Interactive Radix components need `"use client"`. Prefer server components.
-- **All text lives in content files** (`src/content/`), never inside components. Portuguese is the source language; EN and ES translations are marked for my review.
+- **All text lives in content files** (`src/content/pt.ts`, `en.ts`, `es.ts`), never inside components. Portuguese is the source language; EN and ES translations are marked `REVISAR` for my review.
+- **Languages and addresses** live in `src/i18n/config.ts`: routes are prefixed (`/pt`, `/en`, `/es`) and page slugs are translated (`/pt/trabalho`, `/en/work`, `/es/trabajo`). A new page needs its slug in all three languages there. `src/proxy.ts` sends addresses without a language to the browser's language (PT, ES, otherwise EN).
 - Never invent final content. Text in `[brackets]` is a visible placeholder.
 - No gradients, heavy shadows, large rounded corners or emoji icons unless I ask. Avoid the generic AI-generated look.
 

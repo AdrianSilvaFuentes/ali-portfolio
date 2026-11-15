@@ -10,7 +10,7 @@ import type { ReactNode } from "react";
  */
 export function NavLink({ href, children }: { href: string; children: ReactNode }) {
   const pathname = usePathname();
-  const current = href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const current = pathname === href || pathname.startsWith(`${href}/`);
   return (
     <Link
       href={href}
