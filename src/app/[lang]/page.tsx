@@ -13,14 +13,15 @@ import { isLocale } from "@/i18n/config";
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const t = getDictionary(lang).home;
+  const dictionary = getDictionary(lang);
+  const t = dictionary.home;
 
   return (
     <>
       <Hero lang={lang} t={t} />
       <Proofs t={t.proofs} />
       <Process t={t.process} />
-      <FeaturedCases lang={lang} t={t.cases} />
+      <FeaturedCases lang={lang} t={t.cases} cases={dictionary.work.cases} />
       <Built t={t.built} />
       <Stack t={t.stack} />
       <BeforeProduct lang={lang} t={t.before} />
