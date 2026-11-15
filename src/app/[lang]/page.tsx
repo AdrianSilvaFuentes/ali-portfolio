@@ -1,34 +1,29 @@
-import { Button } from "@adriansilvafuentes/ui";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/container";
+import { BeforeProduct } from "@/components/home/before-product";
+import { Built } from "@/components/home/built";
+import { FeaturedCases } from "@/components/home/featured-cases";
+import { Hero } from "@/components/home/hero";
+import { Process } from "@/components/home/process";
+import { Proofs } from "@/components/home/proofs";
+import { Stack } from "@/components/home/stack";
 import { getDictionary } from "@/content";
-import { isLocale, pagePath } from "@/i18n/config";
+import { isLocale } from "@/i18n/config";
 
-/** Início, por enquanto só com a abertura. As outras seções da Home entram no passo 3. */
+/** Início: as sete seções na ordem do wireframe. A oitava, o contato, é o rodapé do site. */
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const t = getDictionary(lang);
+  const t = getDictionary(lang).home;
 
   return (
-    <section>
-      <Container className="flex flex-col gap-6 py-12 md:py-20">
-        <p className="text-title-sm">{t.home.greeting}</p>
-        <p className="font-mono text-label-sm tracking-wider text-subtle uppercase">
-          {t.home.role}
-        </p>
-        <h1 className="max-w-4xl text-display">{t.home.title}</h1>
-        <p className="max-w-xl text-body-lg text-subtle">{t.home.lead}</p>
-        <div className="flex flex-wrap gap-3">
-          <Button asChild>
-            <Link href={pagePath(lang, "work")}>{t.home.seeWork}</Link>
-          </Button>
-          <Button asChild variant="secondary">
-            <a href="#contato">{t.home.talk}</a>
-          </Button>
-        </div>
-      </Container>
-    </section>
+    <>
+      <Hero lang={lang} t={t} />
+      <Proofs t={t.proofs} />
+      <Process t={t.process} />
+      <FeaturedCases lang={lang} t={t.cases} />
+      <Built t={t.built} />
+      <Stack t={t.stack} />
+      <BeforeProduct lang={lang} t={t.before} />
+    </>
   );
 }
