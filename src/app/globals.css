@@ -1,26 +1,10 @@
-@import "tailwindcss";
+/* Tailwind CSS 4, os tokens e os estilos dos componentes do ali-ui. */
+@import "@adriansilvafuentes/ui/styles.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Faz o Tailwind procurar classes também nos arquivos do próprio site. */
+@source "../";
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--ali-color-surface);
+  color: var(--ali-color-text-default);
 }
