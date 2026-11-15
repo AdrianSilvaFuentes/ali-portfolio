@@ -33,7 +33,7 @@ export const es: Dictionary = {
     lead: "[Una frase sobre lo que haces y para quién. Ej.: investigación con usuarios, decisión de producto y código, con IA como herramienta y criterio propio.]",
     seeWork: "Ver trabajo",
     talk: "Hablemos",
-    portrait: "Retrato",
+    portraitAlt: "Adrián sonriendo, con gorra y pañuelo, frente a un molino.",
     reserved: "Espacio reservado",
     proofs: {
       title: "Pruebas",

@@ -39,7 +39,7 @@ export const pt = {
     lead: "[Uma frase sobre o que você faz e para quem. Ex.: pesquisa com usuários, decisão de produto e código, com IA como ferramenta e julgamento próprio.]",
     seeWork: "Ver trabalho",
     talk: "Falar comigo",
-    portrait: "Retrato",
+    portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
     /** Rótulo das áreas que ainda esperam imagem, lido pelo leitor de tela antes do nome. */
     reserved: "Espaço reservado",
     proofs: {
