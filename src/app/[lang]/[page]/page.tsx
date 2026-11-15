@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BuiltProjects } from "@/components/built/built-projects";
 import { PageIntro } from "@/components/page-intro";
+import { Certifications } from "@/components/resume/certifications";
+import { EducationLanguages } from "@/components/resume/education-languages";
+import { ExperienceTimeline } from "@/components/resume/experience-timeline";
+import { ResumeIntro } from "@/components/resume/resume-intro";
 import { ProductCases } from "@/components/work/product-cases";
 import { WebBrand } from "@/components/work/web-brand";
 import { WorkFilter } from "@/components/work/work-filter";
@@ -65,10 +69,12 @@ export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">)
     );
   }
 
-  // Experiência chega no passo 6.
   return (
-    <PageIntro eyebrow={t[key].eyebrow} title={t[key].title}>
-      <p className="text-body-lg text-subtle">{t.placeholder}</p>
-    </PageIntro>
+    <>
+      <ResumeIntro t={t.resume} reserved={t.home.reserved} />
+      <ExperienceTimeline lang={lang} t={t.resume.experience} />
+      <EducationLanguages t={t.resume} />
+      <Certifications lang={lang} t={t.resume.certifications} />
+    </>
   );
 }

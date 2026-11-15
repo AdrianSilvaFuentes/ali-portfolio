@@ -1,0 +1,182 @@
+{
+  "groups": [
+    {
+      "id": "research-ux",
+      "title": {
+        "pt": "Pesquisa e UX",
+        "en": "Research and UX",
+        "es": "Investigación y UX"
+      },
+      "open": true
+    },
+    {
+      "id": "ai-cloud",
+      "title": {
+        "pt": "IA e nuvem",
+        "en": "AI and cloud",
+        "es": "IA y nube"
+      },
+      "open": true
+    },
+    {
+      "id": "web-visual",
+      "title": {
+        "pt": "Web e design visual",
+        "en": "Web and visual design",
+        "es": "Web y diseño visual"
+      },
+      "open": false
+    },
+    {
+      "id": "marketing",
+      "title": {
+        "pt": "Marketing e vendas",
+        "en": "Marketing and sales",
+        "es": "Marketing y ventas"
+      },
+      "open": false
+    }
+  ],
+  "certifications": [
+    {
+      "group": "research-ux",
+      "title": "Data-Driven Design: Quantitative Research for UX",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2025-12",
+      "credentialId": "170885-2025-1070687",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/ac19a04c-4182-428c-857e-061b040fbe65"
+    },
+    {
+      "group": "research-ux",
+      "title": "Perception and Memory in HCI and UX",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2025-12",
+      "credentialId": "170885-2025-1075233",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/4401ee1e-82a5-45f1-a37a-ee24746236f7"
+    },
+    {
+      "group": "research-ux",
+      "title": "Journey Mapping",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2025-05",
+      "credentialId": "170885-2025-1074080",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/391eb6e8-e1fe-4851-abdb-3cdd6a60a9f9"
+    },
+    {
+      "group": "research-ux",
+      "title": "UI Design Patterns for Successful Software",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2024-06",
+      "credentialId": "170885-2024-1034288",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/f745af0b-16cd-461a-865b-390264758f73?certificateType=course"
+    },
+    {
+      "group": "research-ux",
+      "title": "Mobile UI Design",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2024-04",
+      "credentialId": "170885-2024-1039108",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/fa21f704-c9bf-434c-9fef-052e54462198"
+    },
+    {
+      "group": "research-ux",
+      "title": "Accessibility: How to Design for All",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2024-04",
+      "credentialId": "170885-2024-1035617",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/123e3f94-f630-4265-b8aa-89667d880a47"
+    },
+    {
+      "group": "research-ux",
+      "title": "Design for a Better World with Don Norman",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2024-03",
+      "credentialId": "170885-2024-1034147",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/f9298b92-933f-4ca4-a2a5-349ff93117ec"
+    },
+    {
+      "group": "research-ux",
+      "title": "Design for the 21st Century with Don Norman",
+      "issuer": "IxDF - Interaction Design Foundation",
+      "issued": "2024-03",
+      "credentialId": "170885-2024-1035616",
+      "url": "https://www.interaction-design.org/members/adrian-alexander-silva-fuentes/certificate/course/36e19c90-a5ec-4513-843b-2a316099a7c0"
+    },
+    {
+      "group": "ai-cloud",
+      "title": "Transform your business with Microsoft AI",
+      "issuer": "Microsoft",
+      "issued": "2025-06",
+      "credentialId": null,
+      "url": "https://learn.microsoft.com/api/achievements/share/en-us/AdrinAlexanderSilvaFuentes-2907/D9NE8YKJ?sharingId=CE3B8F2272945BDE"
+    },
+    {
+      "group": "ai-cloud",
+      "title": "Cloud Computing",
+      "issuer": "Google España",
+      "issued": "2022-10",
+      "credentialId": "T3Y SLF QUG",
+      "url": "https://learndigital.withgoogle.com/activate/validate-certificate-code",
+      "note": "URL valida o código; o código precisa ser digitado."
+    },
+    {
+      "group": "web-visual",
+      "title": "Introduction to HTML5",
+      "issuer": "Coursera",
+      "issued": "2022-09",
+      "credentialId": "2WSNM4UJDRRZ",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/2WSNM4UJDRRZ"
+    },
+    {
+      "group": "web-visual",
+      "title": "Introduction to CSS3",
+      "issuer": "Coursera",
+      "issued": "2022-09",
+      "credentialId": "F9YQNKQJ5QAK",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/F9YQNKQJ5QAK"
+    },
+    {
+      "group": "web-visual",
+      "title": "Visual Elements of User Interface Design",
+      "issuer": "Coursera",
+      "issued": "2022-09",
+      "credentialId": "G4UEUV33M5R6",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/G4UEUV33M5R6"
+    },
+    {
+      "group": "web-visual",
+      "title": "Introduction to Typography",
+      "issuer": "Coursera",
+      "issued": "2022-09",
+      "credentialId": "AKJUPMGD93LW",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/AKJUPMGD93LW"
+    },
+    {
+      "group": "web-visual",
+      "title": "Fundamentals of Graphic Design",
+      "issuer": "Coursera",
+      "issued": null,
+      "credentialId": "K2E7GN3WGGGD",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/K2E7GN3WGGGD",
+      "note": "Sem data de emissão no LinkedIn."
+    },
+    {
+      "group": "marketing",
+      "title": "Fundamentos del Marketing Digital",
+      "issuer": "Google",
+      "issued": "2018-12",
+      "credentialId": null,
+      "url": null
+    },
+    {
+      "group": "marketing",
+      "title": "Ventas sin fricción",
+      "issuer": "HubSpot",
+      "issued": "2022-08",
+      "credentialId": null,
+      "url": "https://app.hubspot.com/academy/achievements/k7y5phwz/es/1/adrian-silva-fuentes/ventas-sin-friccion",
+      "expired": "2023-09",
+      "showOnSite": false
+    }
+  ]
+}
