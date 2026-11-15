@@ -89,26 +89,6 @@ export const pt = {
       title: "Trabalho selecionado",
       seeAll: "Ver todos os casos",
       image: "Imagem do caso",
-      items: [
-        {
-          meta: "[ano] · [papel]",
-          tags: ["Pesquisa de campo", "Logística", "UX research"],
-          title: "Pesquisa de campo em armazéns",
-          summary: "[Problema → resultado, em uma linha.]",
-        },
-        {
-          meta: "[ano] · [papel]",
-          tags: ["Design system", "Ícones", "Figma"],
-          title: "Biblioteca de 1.500 ícones",
-          summary: "[Problema → resultado, em uma linha.]",
-        },
-        {
-          meta: "2026 · projeto próprio",
-          tags: ["Design system", "React", "Acessibilidade"],
-          title: "ali-ui: do Figma ao código",
-          summary: "[Problema → resultado, em uma linha.]",
-        },
-      ],
     },
     built: {
       eyebrow: "Construído",
@@ -188,6 +168,129 @@ export const pt = {
   work: {
     eyebrow: "Trabalho",
     title: "Produtos que melhorei e sites e marcas que desenhei.",
+    filters: { label: "Filtrar trabalhos", all: "Tudo", product: "Produto", web: "Web e marca" },
+    product: { title: "Produto", readCase: "Ler o caso", image: "Imagem do caso" },
+    web: {
+      title: "Web e marca",
+      thumbnail: "Miniatura",
+      items: [
+        {
+          name: "[Nome do site]",
+          description: "Landing page · Figma, HTML, CSS, WordPress",
+          meta: "NODO.team · [ano]",
+          link: "[Ver site]",
+        },
+        {
+          name: "[Nome da loja]",
+          description: "E-commerce · arquitetura de informação e SEO",
+          meta: "NODO.team · [ano]",
+          link: "[Ver site]",
+        },
+        {
+          name: "The Rio System",
+          description: "Marca, identidade visual e presença web",
+          meta: "2021–2022",
+          link: "[Ver marca]",
+        },
+      ],
+    },
+    /** Os casos de produto. A ordem e os endereços estão em src/i18n/config.ts (cases). */
+    cases: {
+      warehouses: {
+        company: "[Empresa]",
+        years: "[ano]",
+        role: "[papel]",
+        tags: ["Pesquisa de campo", "Logística", "UX research"],
+        title: "Pesquisa de campo em armazéns",
+        summary: "[Problema → resultado, em uma linha.]",
+        result: "[Resultado]",
+      },
+      gko: {
+        company: "Senior Sistemas",
+        years: "2022–2025",
+        role: "UX Designer",
+        tags: ["Logística", "Design system", "NPS"],
+        title: "[+X] de NPS no GKO Fretes XT",
+        summary: "[Problema → resultado, em uma linha.]",
+        result: "[+X pontos de NPS]",
+      },
+      icons: {
+        company: "Senior Sistemas",
+        years: "[ano]",
+        role: "UX Designer",
+        tags: ["Design system", "Ícones", "Figma"],
+        title: "Biblioteca de 1.500+ ícones",
+        summary: "[Problema → resultado, em uma linha.]",
+        result: "1.500+ ícones",
+      },
+      wiipo: {
+        company: "Wiipo",
+        years: "2024–2025",
+        role: "UX Designer",
+        tags: ["Mobile", "Design system", "React Native"],
+        title: "Design system em React Native",
+        summary: "[Problema → resultado, em uma linha.]",
+        result: "[Resultado]",
+      },
+    },
+    /**
+     * O modelo da página de caso, igual para todos enquanto o conteúdo real não chega.
+     * Quando chegar, cada caso ganha os próprios textos.
+     */
+    caseTemplate: {
+      back: "Todos os casos",
+      meta: {
+        result: "Resultado",
+        role: "Meu papel",
+        roleValue: "[Pesquisa, design e código]",
+        duration: "Duração",
+        durationValue: "[X meses]",
+        tools: "Ferramentas",
+        toolsValue: "[Figma, React, ...]",
+      },
+      mainImage: "Imagem principal",
+      problem: {
+        title: "O problema",
+        text: "[Quem sofria, onde e quanto custava. Em 3 a 4 frases, com um número se existir.]",
+        quote: "[Frase de um usuário real que resume a dor.]",
+      },
+      learned: {
+        title: "O que aprendi com os usuários",
+        findings: [
+          { label: "Descoberta 1", text: "[O que você viu em campo.]" },
+          { label: "Descoberta 2", text: "[O que contrariou a hipótese.]" },
+          { label: "Descoberta 3", text: "[O que mudou a prioridade.]" },
+        ],
+        image: "Foto de campo, síntese ou mapa de jornada",
+      },
+      decision: {
+        title: "A decisão",
+        text: "[O que você escolheu fazer e o que decidiu não fazer. Por quê.]",
+        chose: { label: "Escolhi", text: "[Caminho escolhido]" },
+        discarded: { label: "Descartei", text: "[Alternativa e motivo]" },
+        metricLabel: "Métrica de sucesso definida antes de construir:",
+        metric: "[qual]",
+      },
+      built: {
+        title: "O que construí",
+        items: [
+          { image: "Tela / protótipo", caption: "[Legenda: o que esta tela resolve]" },
+          { image: "Código / componente", caption: "[Legenda: a parte que você implementou]" },
+        ],
+      },
+      result: {
+        title: "O resultado",
+        metrics: [
+          { value: "[+X]", label: "[métrica, antes → depois]" },
+          { value: "[−X%]", label: "[segunda métrica]" },
+        ],
+        quote: "[Frase do usuário ou do time depois do lançamento]",
+        quoteAuthor: "[quem disse]",
+        differentLabel: "O que eu faria diferente",
+        different: "[Uma reflexão honesta. Mostra julgamento, não só execução.]",
+      },
+      next: "Próximo caso",
+    },
   },
   built: {
     eyebrow: "Construído",
