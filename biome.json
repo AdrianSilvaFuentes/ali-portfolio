@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,24 +7,42 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": ["**", "!node_modules", "!.next", "!pnpm-lock.yaml"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
+    "lineWidth": 100
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noUnknownAtRules": "off"
+      "preset": "recommended",
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "@adriansilvafuentes/tokens/primitives": "O site usa apenas tokens semânticos (@adriansilvafuentes/tokens), nunca primitivos."
+            }
+          }
+        }
       }
     },
     "domains": {
       "next": "recommended",
       "react": "recommended"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "assist": {
@@ -33,5 +51,6 @@
         "organizeImports": "on"
       }
     }
-  }
+  },
+  "plugins": ["./biome/tabler-icons.grit", "./biome/no-fixed-arbitrary-values.grit"]
 }
