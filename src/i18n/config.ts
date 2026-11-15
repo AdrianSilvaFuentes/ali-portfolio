@@ -28,11 +28,44 @@ export const pages = {
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type PageKey = keyof typeof pages;
+
+/**
+ * O endereço de cada caso em cada idioma, dentro da página Trabalho:
+ * /pt/trabalho/pesquisa-armazens, /en/work/warehouse-research. A ordem aqui é a ordem dos
+ * casos no site (e do "próximo caso").
+ */
+export const cases = {
+  warehouses: {
+    pt: "pesquisa-armazens",
+    en: "warehouse-research",
+    es: "investigacion-almacenes",
+  },
+  gko: { pt: "gko-fretes-xt", en: "gko-fretes-xt", es: "gko-fretes-xt" },
+  icons: { pt: "biblioteca-de-icones", en: "icon-library", es: "biblioteca-de-iconos" },
+  wiipo: {
+    pt: "design-system-wiipo",
+    en: "wiipo-design-system",
+    es: "design-system-wiipo",
+  },
+} as const satisfies Record<string, Record<Locale, string>>;
+
+export type CaseKey = keyof typeof cases;
+export const caseKeys = Object.keys(cases) as CaseKey[];
 export const pageKeys = Object.keys(pages) as PageKey[];
 
 /** Caminho de uma página num idioma. Sem página, é o início daquele idioma. */
 export function pagePath(lang: Locale, page?: PageKey): string {
   return page ? `/${lang}/${pages[page][lang]}` : `/${lang}`;
+}
+
+/** Caminho de um caso num idioma: /pt/trabalho/pesquisa-armazens. */
+export function casePath(lang: Locale, key: CaseKey): string {
+  return `${pagePath(lang, "work")}/${cases[key][lang]}`;
+}
+
+/** Qual caso um trecho do endereço representa naquele idioma (ou nenhum). */
+export function caseKeyFromSlug(lang: Locale, slug: string): CaseKey | undefined {
+  return caseKeys.find((key) => cases[key][lang] === slug);
 }
 
 /** Qual página um trecho do endereço representa naquele idioma (ou nenhuma). */
@@ -41,8 +74,8 @@ export function pageKeyFromSlug(lang: Locale, slug: string): PageKey | undefined
 }
 
 /**
- * O mesmo endereço em outro idioma, para o seletor: /pt/trabalho vira /en/work.
- * Trechos depois da página (como o nome de um caso) passam iguais.
+ * O mesmo endereço em outro idioma, para o seletor: /pt/trabalho vira /en/work, e
+ * /pt/trabalho/pesquisa-armazens vira /en/work/warehouse-research.
  */
 export function translatePath(pathname: string, to: Locale): string {
   const [, from, slug, ...rest] = pathname.split("/");
@@ -50,7 +83,12 @@ export function translatePath(pathname: string, to: Locale): string {
   if (!slug) return pagePath(to);
   const key = pageKeyFromSlug(from, slug);
   if (!key) return pagePath(to);
-  return [pagePath(to, key), ...rest].join("/");
+  const [caseSlug] = rest;
+  if (key === "work" && caseSlug) {
+    const caseKey = caseKeyFromSlug(from, caseSlug);
+    return caseKey ? casePath(to, caseKey) : pagePath(to, key);
+  }
+  return pagePath(to, key);
 }
 
 /**

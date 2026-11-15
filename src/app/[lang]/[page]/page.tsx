@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageIntro } from "@/components/page-intro";
+import { ProductCases } from "@/components/work/product-cases";
+import { WebBrand } from "@/components/work/web-brand";
+import { WorkFilter } from "@/components/work/work-filter";
 import { getDictionary } from "@/content";
 import { isLocale, locales, pageKeyFromSlug, pageKeys, pages } from "@/i18n/config";
 import { alternates } from "@/i18n/metadata";
@@ -35,8 +38,22 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[page]">):
 export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">) {
   const found = await resolve(params);
   if (!found) notFound();
-  const { key, t } = found;
+  const { lang, key, t } = found;
 
+  if (key === "work") {
+    return (
+      <>
+        <PageIntro eyebrow={t.work.eyebrow} title={t.work.title} />
+        <WorkFilter
+          t={t.work.filters}
+          product={<ProductCases lang={lang} t={t.work} />}
+          web={<WebBrand t={t.work.web} />}
+        />
+      </>
+    );
+  }
+
+  // Construído e Experiência chegam nos passos 5 e 6.
   return (
     <PageIntro eyebrow={t[key].eyebrow} title={t[key].title}>
       <p className="text-body-lg text-subtle">{t.placeholder}</p>
