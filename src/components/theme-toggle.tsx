@@ -3,7 +3,7 @@
 import { Button } from "@adriansilvafuentes/ui";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
-import { pt } from "@/content/pt";
+import type { Dictionary } from "@/content";
 
 type Theme = "light" | "dark";
 
@@ -15,7 +15,7 @@ function currentTheme(): Theme {
 }
 
 /** Alterna entre claro e escuro e guarda a escolha neste navegador. */
-export function ThemeToggle() {
+export function ThemeToggle({ labels }: { labels: Dictionary["theme"] }) {
   // Antes de montar no navegador não dá para saber o tema; o rótulo genérico evita divergência.
   const [theme, setTheme] = useState<Theme | null>(null);
 
@@ -32,7 +32,7 @@ export function ThemeToggle() {
     setTheme(next);
   }
 
-  const label = theme === "dark" ? pt.theme.toLight : pt.theme.toDark;
+  const label = theme === "dark" ? labels.toLight : labels.toDark;
 
   return (
     <Button
