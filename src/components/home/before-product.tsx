@@ -7,10 +7,10 @@ import { Eyebrow, HomeSection, textLinkClass } from "./section";
 
 /**
  * 7. Antes do produto: web design e branding. Peso menor que os casos de propósito:
- * título menor, sem número grande e sem amarelo. Os links levam à página Trabalho por enquanto.
+ * título menor, sem número grande e sem amarelo. Os links levam à lista "Web e marca" da página Trabalho.
  */
 export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]["before"] }) {
-  const workPath = pagePath(lang, "work");
+  const webPath = `${pagePath(lang, "work")}#web-e-marca`;
 
   return (
     <HomeSection id="antes-titulo" className="flex flex-col gap-10">
@@ -32,7 +32,7 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
                 <h3 className="text-label-lg">{item.title}</h3>
                 <p className="text-body-sm text-subtle">{item.description}</p>
               </div>
-              <Link href={workPath} className={`${textLinkClass} shrink-0`}>
+              <Link href={webPath} className={`${textLinkClass} shrink-0`}>
                 {item.link}
                 <IconArrowRight aria-hidden className="size-4" />
               </Link>
