@@ -1,15 +1,17 @@
 import { Button } from "@adriansilvafuentes/ui";
+import Image from "next/image";
 import type { Dictionary } from "@/content";
+import fieldPhoto from "../../../public/images/pesquisa-de-campo.webp";
 import { Container } from "../container";
 import { Eyebrow } from "../home/section";
-import { Placeholder } from "../placeholder";
 
 /**
  * Abertura da Experiência: título, a narrativa "Como cheguei aqui", cidade, apelido e idiomas,
- * o botão do currículo e a foto de pesquisa de campo (reservada até haver autorização).
+ * o botão do currículo e uma foto de pesquisa de campo (marcas borradas), com moldura e fundo
+ * transparente (original em media/retrato/resume-img.png).
  * O currículo ainda não existe: o botão fica desabilitado, com o texto entre colchetes.
  */
-export function ResumeIntro({ t, reserved }: { t: Dictionary["resume"]; reserved: string }) {
+export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
   return (
     <section aria-labelledby="experiencia-titulo">
       <Container className="grid gap-10 py-12 md:grid-cols-2 md:gap-14 md:py-16">
@@ -41,7 +43,13 @@ export function ResumeIntro({ t, reserved }: { t: Dictionary["resume"]; reserved
             <Button disabled>{t.cv}</Button>
           </div>
         </div>
-        <Placeholder label={t.photo} reservedLabel={reserved} className="aspect-4/3" />
+        <Image
+          src={fieldPhoto}
+          alt={t.photoAlt}
+          preload
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="mx-auto h-auto w-full max-w-xl md:self-center"
+        />
       </Container>
     </section>
   );
