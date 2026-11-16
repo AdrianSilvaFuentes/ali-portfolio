@@ -218,6 +218,12 @@ export const en: Dictionary = {
         title: "A time clock feature inside the company app",
         summary: "[Problem → outcome, in one line.]",
         result: "Widget launched on the Home (layout A, 67%)",
+        cardImage: {
+          src: "/casos/wiipo/wiipo-card",
+          width: 1024,
+          height: 640,
+          alt: "The Wiipo app home screen with the Clock in button highlighted",
+        },
         study: {
           skills: ["Quantitative research", "Qualitative research", "Design and prototyping"],
           method: ["Benchmark", "Survey", "Semi-structured interviews", "Usability testing"],
