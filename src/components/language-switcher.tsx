@@ -1,8 +1,9 @@
 "use client";
 
-import { SegmentedControl, SegmentedControlItem } from "@adriansilvafuentes/ui";
+import { Flag, SegmentedControl, SegmentedControlItem } from "@adriansilvafuentes/ui";
+import { BR, ES, US } from "country-flag-icons/react/3x2";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { type ReactElement, type SVGProps, useEffect, useState } from "react";
 import {
   htmlLang,
   isLocale,
@@ -11,6 +12,17 @@ import {
   locales,
   translatePath,
 } from "@/i18n/config";
+
+/**
+ * A bandeira de cada idioma, decidida pelo Adrián: português, Brasil; espanhol, Espanha;
+ * inglês, EUA. Ela vem ao lado do código, sem substituí-lo, e é decorativa: o nome do idioma
+ * já está no aria-label da opção.
+ */
+const flags: Record<Locale, ReactElement<SVGProps<SVGSVGElement>>> = {
+  pt: <BR />,
+  es: <ES />,
+  en: <US />,
+};
 
 /** O tempo do deslize do SegmentedControl no ali-ui (duration-base). */
 const SLIDE_MS = 200;
@@ -59,6 +71,7 @@ export function LanguageSwitcher({ current, label }: { current: Locale; label: s
             value={locale}
             lang={htmlLang[locale]}
             aria-label={`${code}, ${localeNames[locale]}`}
+            icon={<Flag>{flags[locale]}</Flag>}
           >
             {code}
           </SegmentedControlItem>

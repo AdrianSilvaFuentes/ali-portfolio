@@ -198,6 +198,12 @@ export const es: Dictionary = {
         summary: "[Problema → resultado, en una línea.]",
         result:
           "Atributos de soporte más valorados, entregados a la gerencia para elegir el modelo",
+        cardImage: {
+          src: "/casos/suporte/suporte-card",
+          width: 1024,
+          height: 640,
+          alt: "Recortes de la investigación de soporte: planes comparados, resultado del formulario, matriz de síntesis y preguntas abiertas",
+        },
         study: {
           skills: ["Investigación cualitativa", "Síntesis y análisis"],
           method: [
@@ -969,12 +975,11 @@ export const es: Dictionary = {
   },
   footer: {
     title: "Conversemos.",
-    email: "[correo público]",
     linksLabel: "Perfiles",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
-      { label: "[LinkedIn]", href: null },
-      { label: "[Behance]", href: null },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
+      { label: "Behance", href: "https://www.behance.net/adriansilva" },
       { label: "[Currículum (PDF)]", href: null },
     ],
     madeWith: "Hecho con ali-ui",
