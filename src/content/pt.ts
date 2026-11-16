@@ -5,6 +5,16 @@
  */
 /** Ícones de ferramentas que o visitante reconhece. As outras ficam só com o nome. */
 export type StackIcon = "react" | "typescript" | "tailwind" | "storybook" | "vercel";
+/** Um papel na linha do tempo. Texto corrido ou tópicos; o link leva à lista Web e marca. */
+type ExperienceItem = {
+  period: string;
+  place: string;
+  title: string;
+  text?: string;
+  bullets?: string[];
+  link?: string;
+};
+
 type StackGroup = {
   title: string;
   items: { name: string; description: string; icon?: StackIcon }[];
@@ -333,8 +343,128 @@ export const pt = {
   resume: {
     eyebrow: "Experiência",
     title: "De coletar comportamento em dados a desenhar as jornadas que o moldam.",
+    intro:
+      "[Como cheguei aqui, em 3 parágrafos curtos: comunicação e marketing (por que as pessoas fazem o que fazem na tela) → pesquisa e design de interação, com visitas de campo → produto, com design e código. Fechar com: hoje levo o problema até o produto entregue.]",
+    location: "Blumenau, SC",
+    nickname: { before: "Todo mundo me chama de ", name: "Ali" },
+    photo: "Foto de pesquisa de campo",
+    cv: "[Currículo (PDF)]",
+    experience: {
+      title: "Experiência",
+      items: [
+        {
+          period: "abr 2025 — hoje",
+          place: "São Paulo · remoto",
+          title: "UX Product Designer · Nuvia",
+          bullets: [
+            "Liderei a estratégia de UX e o design de produto de ponta a ponta da Nuvia, uma plataforma que dá a times de vendas B2B dados e automação com IA.",
+            "Desenhei e documentei as jornadas dos módulos principais, como Search, Campaigns, Inbound, Records e Billing.",
+            "Escrevi os textos do produto, os fluxos de onboarding e a documentação interna no Mintlify, com foco em clareza e consistência.",
+            "Usei ferramentas de IA como V0, Lovable e Figma Compose para acelerar o design, gerar ideias de interface e otimizar conteúdo.",
+            "Fiz a ponte entre Desenvolvimento, Marketing e Operações, alinhando os times em torno do roadmap e das entregas.",
+            "Conduzi pesquisas e entrevistas com usuários para validar fluxos e guiar as decisões de design.",
+            "Ajudei a construir a narrativa de go-to-market com a liderança, na proposta de valor e no posicionamento do produto.",
+          ],
+        },
+        {
+          period: "dez 2024 — abr 2025",
+          place: "Blumenau, SC · híbrido",
+          title: "UX Designer · Wiipo",
+          bullets: [
+            "Pesquisa, design e documentação do design system da Wiipo para desktop e mobile (React Native).",
+            "Pesquisa qualitativa e quantitativa com usuários.",
+            "Integrações entre os produtos da Senior Sistemas e a Wiipo para construir um SuperApp.",
+          ],
+        },
+        {
+          period: "nov 2022 — jan 2025",
+          place: "Blumenau, SC",
+          title: "UX Designer · Senior Sistemas",
+          bullets: [
+            "Pesquisa com grupos focais, entrevistas semiestruturadas, formulários quantitativos e triangulação de dados para definir personas, mapas de jornada, customer journey e product-market fit.",
+            "Análise de resultados na web com Google Analytics, HubSpot e Maze para melhorar a interface.",
+            "Documentação técnica de novos componentes do Senior Design System, com usabilidade, acessibilidade, tokens e cenários (React e Angular na web; iOS, Flutter e Android no mobile).",
+            "Protótipos navegáveis no Figma para testes de usabilidade no Maze, com análise de mapas de calor, cliques na jornada, tempo médio e suporte a dispositivos.",
+            "Criação da Senior Systems Icon Lib: mais de 1.500 ícones vetoriais no Figma para o Senior Design System, com economia em relação a recursos externos.",
+            "Melhorias de design que aumentaram o NPS do GKO Fretes XT, com a adoção das cores e dos padrões visuais do SDS (Senior Design System) adaptados ao Delphi.",
+            "Sessões de trabalho com desenvolvedores back-end, front-end e full stack para melhorar processos no desktop, em dispositivos móveis e em coletores de dados usados em armazéns.",
+          ],
+        },
+        {
+          period: "jun 2021 — ago 2022",
+          place: "Chile",
+          title: "Especialista em Marketing Digital · STAFF Chile",
+          bullets: [
+            "Relatórios com Google Analytics, Google Data Studio e Facebook Business Manager, entre outros, para acompanhar o orçamento das campanhas, o comportamento no site e melhorias em produtos digitais.",
+            "Campanhas de e-mail marketing do conteúdo ao HTML, com limpeza da base de contatos no Excel para envios em massa pelo Mailchimp.",
+            "Campanhas no Google Ads e no Facebook Business Manager.",
+          ],
+        },
+        {
+          period: "jan 2021 — nov 2022",
+          place: "Colorado, EUA · remoto",
+          title: "Consultor de Marketing Digital · The Rio System",
+          bullets: [
+            "Criação da marca e da identidade visual da empresa, junto com a estratégia de conteúdo para SEO e a presença na web.",
+            "Pesquisa de mercado e benchmarking para construir os elementos da marca.",
+            "Design da interface das landing pages e desenvolvimento front-end em WordPress com Elementor Pro.",
+          ],
+          link: "Ver marca",
+        },
+        {
+          period: "jan 2020 — jan 2023",
+          place: "Santiago, Chile · remoto",
+          title: "UI Designer e Web Developer · NODO.team",
+          bullets: [
+            "Crescimento exponencial na entrega de sites de diferentes níveis de complexidade, como landings, blogs e e-commerce, com Figma, HTML5, CSS3, Elementor e WordPress.",
+            "Apresentações de pesquisa e benchmarking a clientes e stakeholders para criar a arquitetura de informação dos sites.",
+            "Revisão dos mapas de conteúdo e melhorias para reestruturar os sites, com foco em SEO e boas práticas de HTML.",
+          ],
+          link: "Ver sites",
+        },
+        {
+          period: "nov 2018 — jun 2021",
+          place: "Chile",
+          title: "Executivo de Contas · Agencia MRC",
+          bullets: [
+            "Papel ativo na criação de estratégias para clientes de vários setores, como hotéis, aviação privada, fundações, concessionárias, imobiliárias, e-commerce e ciência.",
+            "Trabalho com um time de 5 especialistas em UI/UX e desenvolvedores front-end e back-end para criar propostas estratégicas para os clientes.",
+            "Prototipação e design de interface com Figma e Adobe XD.",
+            "Supervisão e manutenção de sites em WordPress avançado.",
+            "Apresentações de pesquisa e benchmark para novos clientes e stakeholders.",
+            "Relacionamento com os clientes que levou a renovações de contrato e a novos negócios.",
+          ],
+        },
+      ] as ExperienceItem[],
+    },
+    education: {
+      title: "Formação",
+      degree: "Marketing",
+      school: "Pontificia Universidad Católica de Chile",
+      years: "2014 — 2018",
+      honorsTitle: "Distinções",
+      honors: [
+        "Matrícula de Honor",
+        "Beca de Excelencia Académica UC",
+        "Beca de Excelencia Académica (Governo do Chile)",
+      ],
+    },
+    languages: {
+      title: "Idiomas",
+      /** Cada idioma escrito nele mesmo, com o código para o atributo lang. */
+      items: [
+        { name: "Português", lang: "pt-BR", level: "nativo" },
+        { name: "Español", lang: "es", level: "nativo" },
+        { name: "English", lang: "en", level: "profissional completo" },
+      ],
+    },
+    certifications: {
+      title: "Certificações",
+      courses: { one: "curso", many: "cursos" },
+      showAll: "Ver todas",
+      showLess: "Ver menos",
+    },
   },
-  placeholder: "[Conteúdo desta página em construção.]",
   footer: {
     title: "Vamos conversar.",
     email: "[e-mail público]",
