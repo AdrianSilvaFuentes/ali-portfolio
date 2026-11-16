@@ -1,9 +1,9 @@
 "use client";
 
-import { Flag, SegmentedControl, SegmentedControlItem } from "@adriansilvafuentes/ui";
+import { Flag, Select, SelectItem } from "@adriansilvafuentes/ui";
 import { BR, ES, US } from "country-flag-icons/react/3x2";
 import { usePathname, useRouter } from "next/navigation";
-import { type ReactElement, type SVGProps, useEffect, useState } from "react";
+import { type ReactElement, type SVGProps, useEffect } from "react";
 import {
   htmlLang,
   isLocale,
@@ -15,8 +15,8 @@ import {
 
 /**
  * A bandeira de cada idioma, decidida pelo Adrián: português, Brasil; espanhol, Espanha;
- * inglês, EUA. Ela vem ao lado do código, sem substituí-lo, e é decorativa: o nome do idioma
- * já está no aria-label da opção.
+ * inglês, EUA. Vai no `leading` da opção, como na história "Países" do Select do ali-ui, e
+ * aparece também no gatilho depois de escolhida.
  */
 const flags: Record<Locale, ReactElement<SVGProps<SVGSVGElement>>> = {
   pt: <BR />,
@@ -24,59 +24,41 @@ const flags: Record<Locale, ReactElement<SVGProps<SVGSVGElement>>> = {
   en: <US />,
 };
 
-/** O tempo do deslize do SegmentedControl no ali-ui (duration-base). */
-const SLIDE_MS = 200;
-
 /**
- * Seletor PT · EN · ES, com o SegmentedControl do ali-ui (tamanho sm). Escolher um idioma leva
- * à mesma página nele (/pt/casos vira /en/cases). Cada opção é lida no próprio idioma
- * ("EN, English"). Pelo teclado, Tab entra no idioma atual e as setas trocam de idioma.
- *
- * A página do outro idioma monta um cabeçalho novo. Para o fundo da opção deslizar como no
- * ali-ui, a escolha é marcada na hora e a troca de página espera o deslize (200ms). Para quem
- * pede menos movimento, a troca é imediata. As páginas dos outros idiomas ficam pré-carregadas.
+ * Seletor de idioma com o Select do ali-ui (tamanho sm). Escolher um idioma leva à mesma página
+ * nele (/pt/casos vira /en/cases). Cada idioma aparece escrito nele mesmo. Pelo teclado, as
+ * setas só andam pela lista: a troca acontece no Enter. As páginas nos outros idiomas ficam
+ * pré-carregadas, para a troca ser rápida.
  */
 export function LanguageSwitcher({ current, label }: { current: Locale; label: string }) {
   const pathname = usePathname();
   const router = useRouter();
-  const [selected, setSelected] = useState<Locale>(current);
 
   useEffect(() => {
-    setSelected(current);
     for (const locale of locales) {
       if (locale !== current) router.prefetch(translatePath(pathname, locale));
     }
   }, [current, pathname, router]);
 
   return (
-    <SegmentedControl
+    <Select
       size="sm"
       aria-label={label}
-      value={selected}
+      value={current}
       onValueChange={(value) => {
-        if (!isLocale(value) || value === current) return;
-        setSelected(value);
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        window.setTimeout(
-          () => router.push(translatePath(pathname, value)),
-          reduceMotion ? 0 : SLIDE_MS,
-        );
+        if (isLocale(value) && value !== current) router.push(translatePath(pathname, value));
       }}
     >
-      {locales.map((locale) => {
-        const code = locale.toUpperCase();
-        return (
-          <SegmentedControlItem
-            key={locale}
-            value={locale}
-            lang={htmlLang[locale]}
-            aria-label={`${code}, ${localeNames[locale]}`}
-            icon={<Flag>{flags[locale]}</Flag>}
-          >
-            {code}
-          </SegmentedControlItem>
-        );
-      })}
-    </SegmentedControl>
+      {locales.map((locale) => (
+        <SelectItem
+          key={locale}
+          value={locale}
+          lang={htmlLang[locale]}
+          leading={<Flag>{flags[locale]}</Flag>}
+        >
+          {localeNames[locale]}
+        </SelectItem>
+      ))}
+    </Select>
   );
 }

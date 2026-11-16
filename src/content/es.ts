@@ -23,8 +23,9 @@ export const es: Dictionary = {
     label: "Idioma",
   },
   theme: {
-    toDark: "Activar tema oscuro",
-    toLight: "Activar tema claro",
+    label: "Tema",
+    light: "Claro",
+    dark: "Oscuro",
   },
   home: {
     greeting: { before: "Hola, soy Adrián. Todos me dicen ", name: "Ali", after: "." },
