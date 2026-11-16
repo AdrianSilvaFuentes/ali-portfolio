@@ -40,9 +40,7 @@ export function Stack({ t }: { t: Dictionary["home"]["stack"] }) {
         {t.groups.map((group) => {
           return (
             <div key={group.title} className="flex flex-col gap-4">
-              <h3 className="font-mono text-body-xs tracking-wider text-subtle uppercase">
-                {group.title}
-              </h3>
+              <h3 className="text-label-md text-subtle">{group.title}</h3>
               <ul className="flex flex-col gap-2">
                 {group.items.map((item) => {
                   const Icon = icons[item.icon];
