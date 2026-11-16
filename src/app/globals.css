@@ -47,19 +47,19 @@ body {
     rotate: 0deg;
   }
   15% {
-    rotate: 3deg;
+    rotate: 1.5deg;
   }
   32% {
-    rotate: -2.2deg;
+    rotate: -1.1deg;
   }
   50% {
-    rotate: 1.4deg;
+    rotate: 0.7deg;
   }
   68% {
-    rotate: -0.8deg;
+    rotate: -0.4deg;
   }
   84% {
-    rotate: 0.3deg;
+    rotate: 0.15deg;
   }
   100% {
     rotate: 0deg;
