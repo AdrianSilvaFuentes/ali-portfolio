@@ -87,6 +87,7 @@ export const es: Dictionary = {
       eyebrow: "Casos destacados",
       title: "Casos seleccionados",
       seeAll: "Ver todos los casos",
+      viewCase: "Ver caso",
       image: "Imagen del caso",
     },
     built: {
@@ -168,7 +169,7 @@ export const es: Dictionary = {
     eyebrow: "Casos",
     title: "Productos que mejoré y sitios y marcas que diseñé.",
     filters: { label: "Filtrar casos", all: "Todo", product: "Producto", web: "Web y marca" },
-    product: { title: "Producto", readCase: "Leer el caso", image: "Imagen del caso" },
+    product: { title: "Producto", readCase: "Ver caso", image: "Imagen del caso" },
     web: {
       title: "Web y marca",
       thumbnail: "Miniatura",
