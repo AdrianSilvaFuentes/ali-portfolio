@@ -8,9 +8,6 @@ import { Container } from "../container";
 /**
  * Filtro da página Trabalho: Tudo, Produto ou Web e marca. São as Tabs do ali-ui: pelo
  * teclado, as setas trocam de aba. As seções chegam prontas do servidor (`product` e `web`).
- *
- * As abas do ali-ui têm 32px de altura; aqui ganham 44px (h-11) para o toque. Ajuste a levar
- * para o ali-ui.
  */
 export function WorkFilter({
   t,
@@ -41,7 +38,7 @@ export function WorkFilter({
       <Container className="pb-10">
         <TabsList aria-label={t.label}>
           {tabs.map((tab) => (
-            <TabsTrigger key={tab.value} value={tab.value} className="h-11 px-4">
+            <TabsTrigger key={tab.value} value={tab.value}>
               {tab.label}
             </TabsTrigger>
           ))}
