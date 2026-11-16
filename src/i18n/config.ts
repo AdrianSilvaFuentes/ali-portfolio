@@ -40,6 +40,11 @@ export const cases = {
     en: "wiipo-time-clock",
     es: "wiipo-registro-de-jornada",
   },
+  support: {
+    pt: "suporte-planos-premium",
+    en: "premium-support-plans",
+    es: "soporte-planes-premium",
+  },
   warehouses: {
     pt: "pesquisa-armazens",
     en: "warehouse-research",
