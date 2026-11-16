@@ -8,7 +8,7 @@ export function EducationLanguages({ t }: { t: Dictionary["resume"] }) {
     <div className="border-t border-subtle py-16 md:py-24">
       <Container className="grid gap-12 md:grid-cols-2 md:gap-14">
         <section aria-labelledby="formacao" className="flex flex-col gap-4">
-          <h2 id="formacao" className="border-b-2 border-default pb-4 text-title-lg">
+          <h2 id="formacao" className="border-b-2 border-default pb-4 text-title-md">
             {edu.title}
           </h2>
           <div className="flex flex-col gap-1">
@@ -32,7 +32,7 @@ export function EducationLanguages({ t }: { t: Dictionary["resume"] }) {
           </div>
         </section>
         <section aria-labelledby="idiomas" className="flex flex-col gap-4">
-          <h2 id="idiomas" className="border-b-2 border-default pb-4 text-title-lg">
+          <h2 id="idiomas" className="border-b-2 border-default pb-4 text-title-md">
             {t.languages.title}
           </h2>
           <ul className="flex flex-col">

@@ -10,7 +10,7 @@ import { Placeholder } from "../placeholder";
 export function WebBrand({ t }: { t: Dictionary["work"]["web"] }) {
   return (
     <HomeSection id="web-e-marca" className="flex flex-col gap-8">
-      <h2 id="web-e-marca" className="scroll-mt-6 text-title-lg">
+      <h2 id="web-e-marca" className="scroll-mt-6 text-title-md">
         {t.title}
       </h2>
       <ul className="border-b border-subtle">

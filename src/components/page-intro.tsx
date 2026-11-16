@@ -15,7 +15,7 @@ export function PageIntro({
     <section>
       <Container className="flex flex-col gap-5 py-12 md:py-16">
         <p className="font-mono text-label-sm tracking-wider text-subtle uppercase">{eyebrow}</p>
-        <h1 className="max-w-4xl text-display">{title}</h1>
+        <h1 className="max-w-4xl text-title-lg">{title}</h1>
         {children}
       </Container>
     </section>
