@@ -34,8 +34,7 @@ export const en: Dictionary = {
     title: {
       first: "Hi! I’m Adrian,",
       before: "but everyone calls me ",
-      name: "Ali",
-      after: " :)",
+      name: "Ali :)",
     },
     lead: "I’m a Senior Product Designer with a strong passion for crafting purposeful products through UX and interaction design.",
     seeWork: "See cases",

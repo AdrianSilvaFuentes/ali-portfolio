@@ -142,8 +142,7 @@ export const pt = {
     title: {
       first: "Oi! Sou o Adrián,",
       before: "mas todo mundo me chama de ",
-      name: "Ali",
-      after: " :)",
+      name: "Ali :)",
     },
     lead: "Sou Product Designer Sênior, apaixonado por criar produtos com propósito por meio de UX e design de interação.",
     seeWork: "Ver casos",
