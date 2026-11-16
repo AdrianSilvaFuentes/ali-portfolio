@@ -17,17 +17,14 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
         <div className="flex flex-col gap-6">
           <p className="text-label-md text-subtle">{t.role}</p>
           <h1 id="inicio-titulo" className="text-title-lg">
-            {t.title}
-          </h1>
-          {/* Apresentação logo abaixo do título: a saudação e uma frase sobre o que faço. */}
-          <p className="max-w-xl text-body-lg text-subtle">
-            {t.greeting.before}
+            {t.title.first}
+            <br />
+            {t.title.before}
             {/* O amarelo é só fundo; o texto continua na cor padrão. */}
-            <span className="rounded-sm bg-primary-subtle px-1 text-default">
-              {t.greeting.name}
-            </span>
-            {t.greeting.after} {t.lead}
-          </p>
+            <span className="rounded-sm bg-primary-subtle px-1">{t.title.name}</span>
+            {t.title.after}
+          </h1>
+          <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
           <div className="flex flex-wrap gap-3">
             <Button size="sm" asChild>
               <Link href={pagePath(lang, "work")}>{t.seeWork}</Link>
