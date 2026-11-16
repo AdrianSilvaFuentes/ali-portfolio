@@ -3,7 +3,7 @@
 // devem vir dos tokens semânticos (`bg-surface`, `p-4`, `text-body-lg`).
 //
 // Continuam permitidos: variantes (`data-[state=open]:`, `[&>svg]:`), valores sem cor
-// ou medida fixa (`grid-cols-[repeat(2,1fr)]`) e variáveis CSS (`bg-[var(--ali-...)]`).
+// ou medida fixa (`grid-cols-[repeat(2,1fr)]`) e variáveis CSS (`bg-[var(--ali-color-surface)]`).
 language js
 
 or {
