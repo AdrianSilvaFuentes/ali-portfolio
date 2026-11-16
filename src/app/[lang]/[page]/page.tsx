@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BuiltProjects } from "@/components/built/built-projects";
 import { PageIntro } from "@/components/page-intro";
 import { Certifications } from "@/components/resume/certifications";
 import { EducationLanguages } from "@/components/resume/education-languages";
@@ -54,17 +53,6 @@ export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">)
           product={<ProductCases lang={lang} t={t.work} />}
           web={<WebBrand t={t.work.web} />}
         />
-      </>
-    );
-  }
-
-  if (key === "built") {
-    return (
-      <>
-        <PageIntro eyebrow={t.built.eyebrow} title={t.built.title}>
-          <p className="max-w-xl text-body-lg text-subtle">{t.built.lead}</p>
-        </PageIntro>
-        <BuiltProjects lang={lang} t={t.built} />
       </>
     );
   }

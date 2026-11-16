@@ -17,7 +17,6 @@ import { ThemeToggle } from "./theme-toggle";
 export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   const links = [
     { href: pagePath(lang, "work"), label: t.nav.work },
-    { href: pagePath(lang, "built"), label: t.nav.built },
     { href: pagePath(lang, "resume"), label: t.nav.resume },
     { href: "#contato", label: t.nav.contact },
   ];

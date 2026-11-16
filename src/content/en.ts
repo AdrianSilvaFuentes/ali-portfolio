@@ -15,7 +15,6 @@ export const en: Dictionary = {
     label: "Main",
     home: "Home",
     work: "Cases",
-    built: "Built",
     resume: "Resume",
     contact: "Contact",
   },
@@ -1007,44 +1006,6 @@ export const en: Dictionary = {
         different: "[An honest reflection. It shows judgment, not just execution.]",
       },
       next: "Next case",
-    },
-  },
-  built: {
-    eyebrow: "Built",
-    title: "What I made with my own hands, from Figma to code.",
-    lead: "Personal projects, no company in between. Here you see how I decide and implement.",
-    aliUi: {
-      eyebrow: "Main project · 2026",
-      caseLink: "Read the full case",
-      title: "ali-ui",
-      lead: "[In one sentence: a lean design system, with few components, each one well finished, from token to test.]",
-      facts: [
-        { label: "Problem", text: "[Why build another system.]" },
-        {
-          label: "Decisions",
-          text: "Two-tier tokens, Radix for accessibility, WCAG AA contrast tests.",
-        },
-        {
-          label: "What I built",
-          text: "Monorepo, published Storybook, pipeline with automated checks.",
-        },
-      ],
-      storybook: { label: "Open Storybook", href: "https://ali-ui-delta.vercel.app" },
-      github: { label: "View on GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
-      imageAlt: "An ali-ui sample form in Storybook, side by side in light and dark themes.",
-      thumbnails: ["Tokens", "Figma ↔ code", "AA test"],
-    },
-    site: {
-      eyebrow: "Project · 2026",
-      title: "This site",
-      lead: "Built with ali-ui components. Proof that the system works in a real product.",
-      code: { label: "View the code", href: "https://github.com/AdrianSilvaFuentes/ali-portfolio" },
-      imageAlt: "This site's first screen: greeting, title, buttons and the stamp-shaped portrait.",
-    },
-    /** Experimentos pequenos. A seção só aparece quando houver pelo menos um. */
-    experiments: {
-      title: "Experiments",
-      items: [],
     },
   },
   resume: {

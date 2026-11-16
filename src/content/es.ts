@@ -15,7 +15,6 @@ export const es: Dictionary = {
     label: "Principal",
     home: "Inicio",
     work: "Casos",
-    built: "Construido",
     resume: "Experiencia",
     contact: "Contacto",
   },
@@ -1028,46 +1027,6 @@ export const es: Dictionary = {
         different: "[Una reflexión honesta. Muestra criterio, no solo ejecución.]",
       },
       next: "Siguiente caso",
-    },
-  },
-  built: {
-    eyebrow: "Construido",
-    title: "Lo que hice con mis propias manos, de Figma al código.",
-    lead: "Proyectos propios, sin empresa de por medio. Aquí ves cómo decido e implemento.",
-    aliUi: {
-      eyebrow: "Proyecto principal · 2026",
-      caseLink: "Leer el caso completo",
-      title: "ali-ui",
-      lead: "[En una frase: un design system compacto, con pocos componentes, cada uno bien terminado, del token a la prueba.]",
-      facts: [
-        { label: "Problema", text: "[Por qué crear otro sistema.]" },
-        {
-          label: "Decisiones",
-          text: "Tokens en dos niveles, Radix para accesibilidad, prueba de contraste WCAG AA.",
-        },
-        {
-          label: "Lo que construí",
-          text: "Monorepo, Storybook publicado, pipeline con verificación automática.",
-        },
-      ],
-      storybook: { label: "Abrir Storybook", href: "https://ali-ui-delta.vercel.app" },
-      github: { label: "Ver en GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
-      imageAlt:
-        "Formulario de ejemplo de ali-ui en Storybook, lado a lado en los temas claro y oscuro.",
-      thumbnails: ["Tokens", "Figma ↔ código", "Prueba AA"],
-    },
-    site: {
-      eyebrow: "Proyecto · 2026",
-      title: "Este sitio",
-      lead: "Hecho con los componentes de ali-ui. La prueba de que el sistema funciona en un producto real.",
-      code: { label: "Ver el código", href: "https://github.com/AdrianSilvaFuentes/ali-portfolio" },
-      imageAlt:
-        "Primera pantalla de este sitio: saludo, título, botones y el retrato en forma de sello.",
-    },
-    /** Experimentos pequenos. A seção só aparece quando houver pelo menos um. */
-    experiments: {
-      title: "Experimentos",
-      items: [],
     },
   },
   resume: {
