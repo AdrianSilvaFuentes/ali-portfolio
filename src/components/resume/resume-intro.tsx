@@ -7,7 +7,8 @@ import { Eyebrow } from "../home/section";
 
 /**
  * Abertura da Experiência: título, a narrativa "Como cheguei aqui", cidade, apelido e idiomas,
- * o botão do currículo e uma foto de pesquisa de campo (original em media/retrato).
+ * o botão do currículo e uma foto de pesquisa de campo, com moldura própria e fundo
+ * transparente (original em media/retrato/resume-img.png).
  * O currículo ainda não existe: o botão fica desabilitado, com o texto entre colchetes.
  */
 export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
@@ -47,7 +48,7 @@ export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
           alt={t.photoAlt}
           preload
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="h-auto w-full rounded-md"
+          className="mx-auto h-auto w-full max-w-xl md:self-center"
         />
       </Container>
     </section>
