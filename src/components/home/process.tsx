@@ -7,7 +7,7 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
     <HomeSection id="processo-titulo" className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
         <Eyebrow>{t.eyebrow}</Eyebrow>
-        <h2 id="processo-titulo" className="max-w-3xl text-title-lg">
+        <h2 id="processo-titulo" className="max-w-3xl text-title-md">
           {t.title}
         </h2>
       </div>

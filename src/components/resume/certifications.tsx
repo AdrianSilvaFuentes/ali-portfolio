@@ -36,7 +36,7 @@ export function Certifications({
 }) {
   return (
     <HomeSection id="certificacoes" sunken className="flex flex-col gap-10">
-      <h2 id="certificacoes" className="text-title-lg">
+      <h2 id="certificacoes" className="text-title-md">
         {t.title}
       </h2>
       <div className="grid gap-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-3">

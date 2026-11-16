@@ -42,7 +42,7 @@ export function CaseFull({
             {item.company} · {item.years} · {item.role}
           </Eyebrow>
           <TagList tags={item.tags} />
-          <h1 id="caso-titulo" className="max-w-4xl text-display">
+          <h1 id="caso-titulo" className="max-w-4xl text-title-lg">
             {item.title}
           </h1>
           <dl className="grid gap-x-6 gap-y-5 border-t-2 border-default pt-4 sm:grid-cols-2 lg:grid-cols-4">
