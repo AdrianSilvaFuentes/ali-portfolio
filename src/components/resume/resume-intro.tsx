@@ -40,7 +40,9 @@ export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
             </li>
           </ul>
           <div>
-            <Button disabled>{t.cv}</Button>
+            <Button size="sm" disabled>
+              {t.cv}
+            </Button>
           </div>
         </div>
         <Image
