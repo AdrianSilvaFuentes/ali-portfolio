@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!pnpm-lock.yaml", "!.claude", "!public/dev"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!pnpm-lock.yaml",
+      "!.claude",
+      "!public/dev",
+      "!public/**/*.svg"
+    ]
   },
   "formatter": {
     "enabled": true,

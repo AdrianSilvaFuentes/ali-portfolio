@@ -12,16 +12,22 @@ import { Container } from "../container";
  */
 export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
   return (
-    <section aria-labelledby="inicio-titulo" className="bg-dots">
+    <section aria-labelledby="inicio-titulo" className="bg-dots overflow-x-clip">
       <Container className="grid gap-10 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           <p className="text-label-md text-subtle">{t.role}</p>
           <h1 id="inicio-titulo" className="text-title-lg">
             {t.title.first}
             <br />
             {t.title.before}
-            {/* O amarelo é só fundo; o texto continua na cor padrão. */}
-            <span className="rounded-sm bg-primary-subtle px-1">{t.title.name}</span>
+            {/*
+              O amarelo é só fundo; o texto continua na cor padrão. Ao carregar, um cursor
+              (decorativo) vai até o nome e o seleciona: veja hero-cursor no globals.css.
+            */}
+            <span className="relative inline-block">
+              <span className="hero-highlight rounded-sm px-1">{t.title.name}</span>
+              <span aria-hidden="true" className="hero-cursor" />
+            </span>
             {t.title.after}
           </h1>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
