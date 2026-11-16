@@ -183,6 +183,249 @@ export const en: Dictionary = {
       ],
     },
     cases: {
+      // TODO(Adrián): confirmar duração das entrevistas e o setor do cliente citado na pergunta 4.
+      support: {
+        company: "Senior Sistemas",
+        years: "2024",
+        role: "UX Designer",
+        tags: ["UX research", "Support", "Model validation"],
+        title: "Validating premium support plans with larger customers",
+        summary: "[Problem → outcome, in one line.]",
+        result: "The most valued support attributes, handed to management to choose the model",
+        study: {
+          skills: ["Qualitative research", "Synthesis and analysis"],
+          method: [
+            "Benchmark",
+            "Certainties and doubts map",
+            "Semi-structured interviews",
+            "Survey",
+          ],
+          tools: ["Miro", "Notion"],
+          cover: {
+            src: "/casos/suporte/suporte-capa",
+            width: 1168,
+            height: 420,
+            alt: "Premium support plans for larger customers, with a sticky note map in the background",
+          },
+          problem: {
+            paragraphs: [
+              "Senior was designing premium support plans and needed to know whether its larger customers would pay for differentiated service. They were large customers, rated AA by monthly recurring revenue (MRR).",
+              "Before investing in new plans, the business team had hypotheses and doubts. The research existed to test them with the people who would pay.",
+            ],
+            goal: {
+              label: "General goal",
+              title:
+                "Explore customers' intention and willingness to pay for a differentiated support plan",
+            },
+            cards: [
+              {
+                label: "Specific goal 1",
+                title: "Understand the current support landscape and how it works",
+              },
+              {
+                label: "Specific goal 2",
+                title: "Identify improvement points in the current process",
+              },
+              {
+                label: "Specific goal 3",
+                title: "Find out which support plan best suits large customers",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Research methods combined: what the market offers, what customers say and what they prioritize when they have to choose.",
+            cards: [
+              {
+                label: "Benchmark",
+                title: "Support plans from other software companies: attributes, tiers and prices",
+                note: "Secondary research",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-benchmark",
+                  width: 394,
+                  height: 180,
+                  alt: "A comparison of other companies' support plans",
+                },
+              },
+              {
+                label: "Certainties and doubts map",
+                title: "The business team's doubts, aligned before the interviews",
+                note: "Before going to the field",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-duvidas",
+                  width: 394,
+                  height: 180,
+                  alt: "A certainties and doubts map with sticky notes",
+                },
+              },
+              {
+                label: "Interviews",
+                title:
+                  "Semi-structured: unbiased opening questions, a presentation of the plans and specific questions",
+                note: "5 customers - [30 to 40] minutes per session",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-entrevistas",
+                  width: 394,
+                  height: 180,
+                  alt: "Open interview questions in Miro",
+                },
+              },
+              {
+                label: "Survey",
+                title: "Closed questions to quantify open answers",
+                note: "3 responses - Interviewed customers",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-formulario",
+                  width: 394,
+                  height: 180,
+                  alt: "The survey sent to customers",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "Each question had a goal. The testimonials became concepts, and the concepts were crossed.",
+            columns: ["Question", "Goal", "Insight"],
+            rows: [
+              {
+                title: "1. What do you understand by high-availability support?",
+                text: "Map perception",
+                data: "24/7 · fast response · shorter SLA",
+                quote: "24/7 service and a direct, prioritized and human channel",
+              },
+              {
+                title: "2. Have you ever needed support outside business hours?",
+                text: "Identify real pain points",
+                data: "Weekly or monthly · unofficial WhatsApp",
+                quote: "Yes, there were times when the response we got came very late",
+              },
+              {
+                title: "3. What do you value most in a support plan?",
+                text: "Map attributes and purchase intent",
+                data: "SLA · key people team (SPOC) · documentation",
+                quote: "Some only reach out through tickets and there's no closeness",
+              },
+              {
+                title: "4. Which plan best matches your expectations?",
+                text: "Prioritize among real plans",
+                data: "SPOC · advanced SLA · remote assistance",
+                quote: "Priority, because of the focal point and the premium SLA",
+                source: "customer from the [confirm] sector",
+              },
+              {
+                title: "4.1 And which would you be least likely to buy?",
+                text: "Identify what adds no value",
+                data: "Extended hours · similar to the standard",
+                quote: "Extended premium wouldn't be useful for our profile",
+              },
+              {
+                title: "5. Additional comments and questions",
+                text: "Leave room for the unexpected",
+                data: "Combine attributes from plans",
+                quote:
+                  "You could take one topic from one, one from another, and build an ideal plan",
+              },
+            ],
+            flow: {
+              kind: "chain",
+              label: "Analysis chain: testimonial, sticky note, recurring concept and conclusion",
+              steps: [
+                {
+                  title: "Testimonial",
+                  note: "what the customer said",
+                },
+                {
+                  title: "Sticky note",
+                  note: "one idea per note",
+                },
+                {
+                  title: "Recurring concept",
+                  note: "groups several notes",
+                },
+                {
+                  title: "Conclusion",
+                  note: "crosses the questions",
+                },
+              ],
+            },
+            crossTitle: "Crossing the data",
+            crossings: [
+              {
+                title: "A shorter SLA is the most cited, but it's a symptom",
+                text: "The causes: little technical knowledge and an insufficient first response.",
+              },
+              {
+                title: "The need outside business hours is low",
+                text: "Weekly or monthly. Extended hours was the least wanted.",
+              },
+              {
+                title: "What they say they value and what they choose match",
+                text: "Advanced SLA, focal point and remote assistance, in both stages.",
+              },
+              {
+                title: "WhatsApp reveals a gap",
+                text: "In emergencies, it becomes an unofficial channel.",
+              },
+              {
+                title: "Documentation is support too",
+                text: "If it were clear, customers would solve things on their own.",
+              },
+            ],
+          },
+          decision: {
+            lead: "Management chose the service model. The research pointed to the attributes that would support the decision: advanced SLA, a focal point (SPOC) and remote assistance.",
+            cards: [
+              {
+                label: "Recommended",
+                title:
+                  "Plans that combine advanced SLA, a focal point and remote assistance. Premium Priority brings all three together",
+              },
+              {
+                label: "Least wanted",
+                title:
+                  "Premium Extended (extended hours with no need) and Online Consulting (similar to today's standard support)",
+              },
+              {
+                label: "Left open",
+                title:
+                  "How much they would pay: only one customer said they would. And the option of combining attributes from different plans",
+              },
+            ],
+          },
+          delivery: {
+            lead: "The synthesis matrix brings the 6 questions into rows and the 5 customers into columns, with the transcript, behavior notes and conclusions for each question. It was the artifact behind the analysis.",
+            items: [
+              {
+                image: {
+                  src: "/casos/suporte/suporte-entrega-matriz",
+                  width: 1920,
+                  height: 1080,
+                  alt: "A synthesis matrix crossing the answers by question and by customer",
+                },
+                caption:
+                  "Rows: questions. Columns: customers, with transcript and notes. Last column: conclusions.",
+              },
+            ],
+          },
+          result: {
+            lead: "The research gave management a synthesis of the support attributes larger customers value most, to inform the choice of service model.",
+            metrics: [
+              {
+                value: "5",
+                label: "customers interviewed, from different segments",
+              },
+              {
+                value: "6",
+                label: "service models tested",
+              },
+              {
+                value: "3",
+                label: "most valued attributes",
+              },
+            ],
+            note: "The research is qualitative: it shows trends and reasons, and doesn't represent all customers.",
+          },
+        },
+      },
       warehouses: {
         company: "[Company]",
         years: "[year]",
@@ -339,6 +582,7 @@ export const en: Dictionary = {
               },
             ],
             flow: {
+              kind: "merge",
               label: "Four types of data lead to the decision for layout A",
               inputs: [
                 "Task: time, success, clicks",
@@ -371,29 +615,31 @@ export const en: Dictionary = {
           },
           decision: {
             lead: "The time clock widget goes in the upper center of the Home: what's used most often each day stays closest, and most people preferred it that way.",
-            chartLabel: "Preference among the 4 layouts",
-            options: [
-              {
-                letter: "A",
-                value: 67,
-                caption: "Time clock widget in the upper center of the Home",
-              },
-              {
-                letter: "B",
-                value: 14,
-                caption: "Widget only in the bottom bar",
-              },
-              {
-                letter: "C",
-                value: 14,
-                caption: "Smaller widget, next to a banner",
-              },
-              {
-                letter: "D",
-                value: 5,
-                caption: "Quick access at the top",
-              },
-            ],
+            chart: {
+              label: "Preference among the 4 layouts",
+              options: [
+                {
+                  letter: "A",
+                  value: 67,
+                  caption: "Time clock widget in the upper center of the Home",
+                },
+                {
+                  letter: "B",
+                  value: 14,
+                  caption: "Widget only in the bottom bar",
+                },
+                {
+                  letter: "C",
+                  value: 14,
+                  caption: "Smaller widget, next to a banner",
+                },
+                {
+                  letter: "D",
+                  value: 5,
+                  caption: "Quick access at the top",
+                },
+              ],
+            },
             cards: [
               {
                 label: "Chosen",
