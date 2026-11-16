@@ -71,7 +71,7 @@ export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">)
 
   return (
     <>
-      <ResumeIntro t={t.resume} reserved={t.home.reserved} />
+      <ResumeIntro t={t.resume} />
       <ExperienceTimeline lang={lang} t={t.resume.experience} />
       <EducationLanguages t={t.resume} />
       <Certifications lang={lang} t={t.resume.certifications} />

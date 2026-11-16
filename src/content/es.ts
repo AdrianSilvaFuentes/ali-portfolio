@@ -326,7 +326,8 @@ export const es: Dictionary = {
       "[Cómo llegué aquí, en 3 párrafos cortos: comunicación y marketing (por qué las personas hacen lo que hacen en la pantalla) → investigación y diseño de interacción, con visitas de campo → producto, con diseño y código. Cerrar con: hoy llevo el problema hasta el producto entregado.]",
     location: "Blumenau, SC",
     nickname: { before: "Todos me dicen ", name: "Ali" },
-    photo: "Foto de investigación de campo",
+    photoAlt:
+      "Visita a un cliente para investigación de campo: un grupo alrededor de una mesa con notebooks y colectores de datos, conversando sobre el trabajo.",
     cv: "[Currículum (PDF)]",
     experience: {
       title: "Experiencia",
