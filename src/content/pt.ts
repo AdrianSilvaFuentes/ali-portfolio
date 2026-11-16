@@ -196,6 +196,7 @@ export const pt = {
       eyebrow: "Casos em destaque",
       title: "Casos selecionados",
       seeAll: "Ver todos os casos",
+      viewCase: "Ver caso",
       image: "Imagem do caso",
     },
     built: {
@@ -277,7 +278,7 @@ export const pt = {
     eyebrow: "Casos",
     title: "Produtos que melhorei e sites e marcas que desenhei.",
     filters: { label: "Filtrar casos", all: "Tudo", product: "Produto", web: "Web e marca" },
-    product: { title: "Produto", readCase: "Ler o caso", image: "Imagem do caso" },
+    product: { title: "Produto", readCase: "Ver caso", image: "Imagem do caso" },
     web: {
       title: "Web e marca",
       thumbnail: "Miniatura",

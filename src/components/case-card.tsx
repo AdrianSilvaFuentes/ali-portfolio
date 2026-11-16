@@ -1,4 +1,4 @@
-import { Tag } from "@adriansilvafuentes/ui";
+import { Button } from "@adriansilvafuentes/ui";
 import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
@@ -9,10 +9,10 @@ import { Placeholder } from "./placeholder";
 type CaseText = Dictionary["work"]["cases"][CaseKey];
 
 /**
- * O card de um caso de produto, usado na Home e na página Trabalho: imagem 16:10, empresa,
- * ano e papel, tags de disciplina, título e resumo. O link fica no título e cobre o card
- * inteiro (after:inset-0), para o leitor de tela ouvir só o título. Com `readCase`, mostra
- * também "Ler o caso" no fim, que é só visual (o card inteiro já é o link).
+ * O card de um caso de produto, usado na Home e na página de casos: imagem 16:10, empresa,
+ * ano e papel, título, resumo e o botão "Ver caso". Só o botão é link; o card em si não é
+ * clicável. O botão também é descrito pelo título (aria-describedby), para o leitor de tela
+ * saber de qual caso é cada "Ver caso".
  */
 export function CaseCard({
   lang,
@@ -25,51 +25,41 @@ export function CaseCard({
   caseKey: CaseKey;
   t: CaseText;
   imageLabel: string;
-  readCase?: string;
+  readCase: string;
 }) {
+  const titleId = `caso-${caseKey}-titulo`;
   return (
-    <article className="group relative flex h-full flex-col gap-3 rounded-xl outline-focus outline-offset-4 has-focus-visible:outline-2">
+    <article className="flex h-full flex-col gap-3 rounded-2xl border border-subtle bg-surface p-4 shadow-sm">
       {t.cardImage ? (
         <CaseImage
           image={t.cardImage}
           label={imageLabel}
           reserved={imageLabel}
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="rounded-xl"
+          className="rounded-xl border border-subtle"
         />
       ) : (
         <Placeholder label={imageLabel} className="aspect-16/10 rounded-xl" />
       )}
-      <p className="font-mono text-body-xs text-subtle">
+      <p className="text-label-md text-subtle">
         {t.company} · {t.years} · {t.role}
       </p>
-      <ul className="flex flex-wrap gap-1.5">
-        {t.tags.map((tag) => (
-          <li key={tag}>
-            <Tag color="gray" size="sm">
-              {tag}
-            </Tag>
-          </li>
-        ))}
-      </ul>
-      <h3 className="text-title-sm">
-        <Link
-          href={casePath(lang, caseKey)}
-          className="underline-offset-4 outline-none group-hover:underline after:absolute after:inset-0"
-        >
-          {t.title}
-        </Link>
+      <h3 id={titleId} className="text-title-sm">
+        {t.title}
       </h3>
-      <p className="text-body-md text-subtle">{t.summary}</p>
-      {readCase && (
-        <span
-          aria-hidden
-          className="mt-auto inline-flex min-h-11 items-center gap-1 text-body-md underline underline-offset-4"
-        >
+      {/* Com o caso pronto, o resumo é o texto do Resultado de dentro do caso. */}
+      <p className="text-body-md text-subtle">{t.study?.result.lead ?? t.summary}</p>
+      <Button
+        asChild
+        size="sm"
+        variant="secondary"
+        iconRight={<IconArrowRight />}
+        className="mt-auto self-start"
+      >
+        <Link href={casePath(lang, caseKey)} aria-describedby={titleId}>
           {readCase}
-          <IconArrowRight className="size-4" />
-        </span>
-      )}
+        </Link>
+      </Button>
     </article>
   );
 }
