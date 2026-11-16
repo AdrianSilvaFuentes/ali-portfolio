@@ -69,13 +69,27 @@ type CaseText = {
   title: string;
   summary: string;
   result: string;
-  /** Imagem 16:10 do card na Home e em Trabalho. Sem ela, o card mostra uma área reservada. */
+  /** Imagem 16:10 do card na Home e em Casos. Sem ela, o card mostra uma área reservada. */
   cardImage?: CaseImage;
   study?: CaseStudyContent;
 };
 
-/** Ícones de ferramentas que o visitante reconhece. As outras ficam só com o nome. */
-export type StackIcon = "react" | "typescript" | "tailwind" | "storybook" | "vercel";
+/**
+ * O ícone de cada ferramenta, os mesmos da Introdução do Storybook do ali-ui. Turborepo, Vitest
+ * e Biome não têm logo: usam um ícone da função (camadas, testes e lint).
+ */
+export type StackIcon =
+  | "react"
+  | "typescript"
+  | "tailwind"
+  | "pnpm"
+  | "turborepo"
+  | "vite"
+  | "vitest"
+  | "biome"
+  | "github"
+  | "storybook"
+  | "vercel";
 /** Um papel na linha do tempo. Texto corrido ou tópicos; o link leva à lista Web e marca. */
 type ExperienceItem = {
   period: string;
@@ -88,7 +102,7 @@ type ExperienceItem = {
 
 type StackGroup = {
   title: string;
-  items: { name: string; description: string; icon?: StackIcon }[];
+  items: { name: string; description: string; icon: StackIcon }[];
 };
 
 export const pt = {
@@ -101,7 +115,7 @@ export const pt = {
   nav: {
     label: "Principal",
     home: "Início",
-    work: "Trabalho",
+    work: "Casos",
     built: "Construído",
     resume: "Experiência",
     contact: "Contato",
@@ -117,8 +131,8 @@ export const pt = {
     greeting: { before: "Oi, sou o Adrián. Todo mundo me chama de ", name: "Ali", after: "." },
     role: "Product Design Engineer",
     title: "Designer de produto sênior que leva o problema até o produto entregue.",
-    lead: "[Uma frase sobre o que você faz e para quem. Ex.: pesquisa com usuários, decisão de produto e código, com IA como ferramenta e julgamento próprio.]",
-    seeWork: "Ver trabalho",
+    lead: "Pesquiso com usuários, decido o que vale construir e levo a solução do Figma ao código, com IA como ferramenta e julgamento próprio.",
+    seeWork: "Ver casos",
     talk: "Falar comigo",
     portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
     /** Rótulo das áreas que ainda esperam imagem, lido pelo leitor de tela antes do nome. */
@@ -167,7 +181,7 @@ export const pt = {
     },
     cases: {
       eyebrow: "Casos em destaque",
-      title: "Trabalho selecionado",
+      title: "Casos selecionados",
       seeAll: "Ver todos os casos",
       image: "Imagem do caso",
     },
@@ -203,17 +217,17 @@ export const pt = {
         {
           title: "Repositório e construção",
           items: [
-            { name: "pnpm", description: "instalação" },
-            { name: "Turborepo", description: "monorepo" },
-            { name: "Vite", description: "build" },
+            { name: "pnpm", description: "instalação", icon: "pnpm" },
+            { name: "Turborepo", description: "monorepo", icon: "turborepo" },
+            { name: "Vite", description: "build", icon: "vite" },
           ],
         },
         {
           title: "Qualidade",
           items: [
-            { name: "Vitest", description: "testes, incluindo contraste WCAG" },
-            { name: "Biome", description: "lint e formatação" },
-            { name: "GitHub Actions", description: "verificação automática" },
+            { name: "Vitest", description: "testes, incluindo contraste WCAG", icon: "vitest" },
+            { name: "Biome", description: "lint e formatação", icon: "biome" },
+            { name: "GitHub Actions", description: "verificação automática", icon: "github" },
           ],
         },
         {
@@ -247,9 +261,9 @@ export const pt = {
     },
   },
   work: {
-    eyebrow: "Trabalho",
+    eyebrow: "Casos",
     title: "Produtos que melhorei e sites e marcas que desenhei.",
-    filters: { label: "Filtrar trabalhos", all: "Tudo", product: "Produto", web: "Web e marca" },
+    filters: { label: "Filtrar casos", all: "Tudo", product: "Produto", web: "Web e marca" },
     product: { title: "Produto", readCase: "Ler o caso", image: "Imagem do caso" },
     web: {
       title: "Web e marca",

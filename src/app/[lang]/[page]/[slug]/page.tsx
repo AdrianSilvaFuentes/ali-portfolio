@@ -8,7 +8,7 @@ import { caseAlternates } from "@/i18n/metadata";
 
 /**
  * As páginas de caso, dentro de Trabalho e com o endereço traduzido:
- * /pt/trabalho/pesquisa-armazens, /en/work/warehouse-research. Só existem dentro de Trabalho;
+ * /pt/casos/pesquisa-armazens, /en/cases/warehouse-research. Só existem dentro de Casos;
  * qualquer outra combinação dá 404.
  */
 export function generateStaticParams() {
