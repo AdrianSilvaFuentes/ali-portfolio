@@ -74,13 +74,20 @@ export function CaseFull({
             {paragraph}
           </p>
         ))}
-        <ul className="flex max-w-2xl list-disc flex-col gap-2 pl-5 text-body-md">
-          {study.problem.points.map((point) => (
-            <li key={point.label}>
-              <strong className="font-medium">{point.label}:</strong> {point.text}
-            </li>
-          ))}
-        </ul>
+        {study.problem.points && (
+          <ul className="flex max-w-2xl list-disc flex-col gap-2 pl-5 text-body-md">
+            {study.problem.points.map((point) => (
+              <li key={point.label}>
+                <strong className="font-medium">{point.label}:</strong> {point.text}
+              </li>
+            ))}
+          </ul>
+        )}
+        {study.problem.goal && (
+          <div className="rounded-md border border-subtle bg-surface-raised p-5">
+            <CardText card={study.problem.goal} />
+          </div>
+        )}
         <CardGrid cards={study.problem.cards} />
       </Section>
 
@@ -106,18 +113,7 @@ export function CaseFull({
 
       <Section id="analise" number={3} title={labels.sections.analysis}>
         <p className="max-w-2xl text-body-lg">{study.analysis.lead}</p>
-        <ul className="border-b border-subtle">
-          {study.analysis.rows.map((row, index) => (
-            <li
-              key={row.title}
-              className={`grid gap-2 border-t py-4 md:grid-cols-[1fr_2fr_2fr] md:gap-6 ${index === 0 ? "border-default" : "border-subtle"}`}
-            >
-              <h3 className="text-label-lg">{row.title}</h3>
-              <p className="text-body-sm text-subtle">{row.text}</p>
-              <p className="font-mono text-body-xs">{row.data}</p>
-            </li>
-          ))}
-        </ul>
+        <AnalysisTable analysis={study.analysis} />
         <Flow flow={study.analysis.flow} />
         <h3 className="text-title-sm">{study.analysis.crossTitle}</h3>
         <ol className="grid gap-5 sm:grid-cols-2">
@@ -138,17 +134,29 @@ export function CaseFull({
 
       <Section id="decisao" number={4} title={labels.sections.decision} sunken>
         <p className="max-w-2xl text-body-lg">{study.decision.lead}</p>
-        <Chart decision={study.decision} />
+        {study.decision.chart && <Chart chart={study.decision.chart} />}
         <CardGrid cards={study.decision.cards} />
       </Section>
 
       <Section id="entrega" number={5} title={labels.sections.delivery}>
         <p className="max-w-2xl text-body-lg">{study.delivery.lead}</p>
-        <ul className="grid gap-6 sm:grid-cols-3 sm:gap-4">
+        <ul
+          className={
+            study.delivery.items.length > 1 ? "grid gap-6 sm:grid-cols-3 sm:gap-4" : "max-w-3xl"
+          }
+        >
           {study.delivery.items.map((item) => (
             <li key={item.image.src}>
               <figure className="flex flex-col gap-2">
-                <CaseImage image={item.image} {...img} sizes="(min-width: 640px) 256px, 100vw" />
+                <CaseImage
+                  image={item.image}
+                  {...img}
+                  sizes={
+                    study.delivery.items.length > 1
+                      ? "(min-width: 640px) 256px, 100vw"
+                      : "(min-width: 1024px) 804px, 100vw"
+                  }
+                />
                 <figcaption className="text-body-sm text-subtle">{item.caption}</figcaption>
               </figure>
             </li>
@@ -166,12 +174,17 @@ export function CaseFull({
             </li>
           ))}
         </ul>
-        <CaseImage
-          image={study.result.image}
-          {...img}
-          sizes="(min-width: 1024px) 804px, 100vw"
-          className="max-w-3xl"
-        />
+        {study.result.note && (
+          <p className="max-w-2xl text-body-sm text-subtle">{study.result.note}</p>
+        )}
+        {study.result.image && (
+          <CaseImage
+            image={study.result.image}
+            {...img}
+            sizes="(min-width: 1024px) 804px, 100vw"
+            className="max-w-3xl"
+          />
+        )}
       </Section>
 
       <NextCase lang={lang} caseKey={caseKey} t={t} />
@@ -252,10 +265,40 @@ function CardGrid({ cards }: { cards: Card[] }) {
 }
 
 /**
- * Os quatro tipos de dado levando à decisão. É texto de verdade (não imagem): o leitor de tela
- * lê as quatro entradas e a decisão; a seta é decorativa.
+ * O diagrama da análise, em texto de verdade (não imagem): o leitor de tela lê as etapas;
+ * as setas são decorativas. "merge": várias entradas levam a uma decisão. "chain": uma
+ * sequência de etapas, a última em destaque. No celular, vira uma coluna.
  */
 function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
+  const arrow = (
+    <span aria-hidden className="flex shrink-0 justify-center text-icon-default">
+      <IconArrowDown className="size-6 md:hidden" />
+      <IconArrowRight className="hidden size-6 md:block" />
+    </span>
+  );
+  // O amarelo é só fundo; o texto continua na cor padrão.
+  const highlight = "rounded-sm border border-default bg-primary-subtle px-5 py-4";
+
+  if (flow.kind === "chain") {
+    return (
+      <figure aria-label={flow.label}>
+        <ol className="flex flex-col items-stretch gap-3 md:flex-row md:items-center">
+          {flow.steps.map((step, index) => (
+            <li key={step.title} className="contents">
+              {index > 0 && arrow}
+              <p
+                className={`flex flex-col gap-1 md:flex-1 ${index === flow.steps.length - 1 ? highlight : "rounded-sm border border-default bg-surface-raised px-4 py-3"}`}
+              >
+                <span className="font-mono text-body-sm">{step.title}</span>
+                <span className="font-mono text-body-xs text-subtle">{step.note}</span>
+              </p>
+            </li>
+          ))}
+        </ol>
+      </figure>
+    );
+  }
+
   return (
     <figure
       aria-label={flow.label}
@@ -271,12 +314,8 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
           </li>
         ))}
       </ul>
-      <span aria-hidden className="flex justify-center text-icon-default">
-        <IconArrowDown className="size-6 md:hidden" />
-        <IconArrowRight className="hidden size-6 md:block" />
-      </span>
-      {/* O amarelo é só fundo; o texto continua na cor padrão. */}
-      <p className="flex flex-col gap-1 rounded-sm border border-default bg-primary-subtle px-5 py-4 md:flex-1">
+      {arrow}
+      <p className={`flex flex-col gap-1 md:flex-1 ${highlight}`}>
         <span className="text-label-lg">{flow.decisionLabel}</span>
         <span className="font-mono text-body-sm">{flow.decision}</span>
       </p>
@@ -285,15 +324,71 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
 }
 
 /**
+ * A tabela da análise. Com `columns`, mostra o cabeçalho a partir do md; no celular, cada
+ * célula leva o próprio rótulo, para não precisar rolar para o lado.
+ */
+function AnalysisTable({ analysis }: { analysis: CaseStudyContent["analysis"] }) {
+  const columns = analysis.columns;
+  const cell = (index: number) =>
+    columns && (
+      <span className="font-mono text-body-xs text-subtle md:sr-only">{columns[index]}</span>
+    );
+
+  return (
+    <div>
+      {columns && (
+        <div
+          aria-hidden
+          className="hidden gap-6 pb-3 font-mono text-body-xs text-subtle md:grid md:grid-cols-[1fr_1fr_1.4fr]"
+        >
+          {columns.map((column) => (
+            <span key={column}>{column}</span>
+          ))}
+        </div>
+      )}
+      <ul className="border-b border-subtle">
+        {analysis.rows.map((row, index) => (
+          <li
+            key={row.title}
+            className={`grid gap-3 border-t py-4 md:gap-6 ${columns ? "md:grid-cols-[1fr_1fr_1.4fr]" : "md:grid-cols-[1fr_2fr_2fr]"} ${index === 0 ? "border-default" : "border-subtle"}`}
+          >
+            <div className="flex flex-col gap-1">
+              {cell(0)}
+              <h3 className="text-label-lg">{row.title}</h3>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              {cell(1)}
+              <p className="text-body-sm text-subtle">{row.text}</p>
+              {row.quote && <p className="font-mono text-body-xs">{row.data}</p>}
+            </div>
+            <div className="flex flex-col gap-1">
+              {cell(2)}
+              {row.quote ? (
+                <blockquote className="text-body-md italic">
+                  “{row.quote}”
+                  {row.source && <span className="not-italic text-subtle"> ({row.source})</span>}
+                </blockquote>
+              ) : (
+                <p className="font-mono text-body-xs">{row.data}</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/**
  * As barras da preferência entre layouts. O número aparece escrito ao lado de cada barra,
  * então a cor e o comprimento nunca são a única informação.
  */
-function Chart({ decision }: { decision: CaseStudyContent["decision"] }) {
+function Chart({ chart }: { chart: NonNullable<CaseStudyContent["decision"]["chart"]> }) {
   return (
     <figure className="flex max-w-2xl flex-col gap-3">
-      <figcaption className="font-mono text-body-xs text-subtle">{decision.chartLabel}</figcaption>
+      <figcaption className="font-mono text-body-xs text-subtle">{chart.label}</figcaption>
       <ul className="flex flex-col gap-3">
-        {decision.options.map((option, index) => (
+        {chart.options.map((option, index) => (
           <li key={option.letter} className="flex flex-col gap-1">
             <div className="flex items-center gap-3">
               <span className="w-5 font-mono text-body-sm font-medium">{option.letter}</span>

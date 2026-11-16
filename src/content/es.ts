@@ -188,6 +188,251 @@ export const es: Dictionary = {
       ],
     },
     cases: {
+      // TODO(Adrián): confirmar duração das entrevistas e o setor do cliente citado na pergunta 4.
+      support: {
+        company: "Senior Sistemas",
+        years: "2024",
+        role: "UX Designer",
+        tags: ["Investigación UX", "Soporte", "Validación de modelos"],
+        title: "Validación de planes de soporte premium con clientes de mayor tamaño",
+        summary: "[Problema → resultado, en una línea.]",
+        result:
+          "Atributos de soporte más valorados, entregados a la gerencia para elegir el modelo",
+        study: {
+          skills: ["Investigación cualitativa", "Síntesis y análisis"],
+          method: [
+            "Benchmark",
+            "Mapa de certezas y dudas",
+            "Entrevistas semiestructuradas",
+            "Formulario",
+          ],
+          tools: ["Miro", "Notion"],
+          cover: {
+            src: "/casos/suporte/suporte-capa",
+            width: 1168,
+            height: 420,
+            alt: "Planes de soporte premium para clientes de mayor tamaño, con un mapa de post-its al fondo",
+          },
+          problem: {
+            paragraphs: [
+              "Senior estaba diseñando planes de soporte premium y necesitaba saber si sus clientes de mayor tamaño pagarían por una atención diferenciada. Eran clientes de gran tamaño, calificados como AA por el ingreso mensual recurrente (MRR).",
+              "Antes de invertir en nuevos planes, el equipo de negocios tenía hipótesis y dudas. La investigación existió para ponerlas a prueba con quienes iban a pagar.",
+            ],
+            goal: {
+              label: "Objetivo general",
+              title:
+                "Explorar la intención y la predisposición de los clientes a pagar por un plan de soporte diferenciado",
+            },
+            cards: [
+              {
+                label: "Objetivo específico 1",
+                title: "Entender el panorama actual del soporte y cómo funciona",
+              },
+              {
+                label: "Objetivo específico 2",
+                title: "Identificar puntos de mejora en el proceso actual",
+              },
+              {
+                label: "Objetivo específico 3",
+                title:
+                  "Constatar cuál sería el plan de soporte más indicado para los clientes de gran tamaño",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Métodos de investigación combinados: lo que ofrece el mercado, lo que dicen los clientes y lo que priorizan cuando tienen que elegir.",
+            cards: [
+              {
+                label: "Benchmark",
+                title:
+                  "Planes de soporte de otras empresas de software: atributos, niveles y precios",
+                note: "Investigación secundaria",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-benchmark",
+                  width: 394,
+                  height: 180,
+                  alt: "Comparativo de planes de soporte de otras empresas",
+                },
+              },
+              {
+                label: "Mapa de certezas y dudas",
+                title: "Dudas del equipo de negocios para alinear antes de las entrevistas",
+                note: "Antes de ir a terreno",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-duvidas",
+                  width: 394,
+                  height: 180,
+                  alt: "Mapa de certezas y dudas con post-its",
+                },
+              },
+              {
+                label: "Entrevistas",
+                title:
+                  "Semiestructuradas: preguntas iniciales sin sesgo, presentación de los planes y preguntas específicas",
+                note: "5 clientes - [30 a 40] minutos por sesión",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-entrevistas",
+                  width: 394,
+                  height: 180,
+                  alt: "Preguntas abiertas de las entrevistas en Miro",
+                },
+              },
+              {
+                label: "Formulario",
+                title: "Preguntas cerradas para cuantificar respuestas abiertas",
+                note: "3 respuestas - Clientes entrevistados",
+                image: {
+                  src: "/casos/suporte/suporte-metodo-formulario",
+                  width: 394,
+                  height: 180,
+                  alt: "Formulario aplicado a los clientes",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "Cada pregunta tenía un objetivo. Los testimonios se convirtieron en conceptos, y los conceptos se cruzaron.",
+            columns: ["Pregunta", "Objetivo", "Insight"],
+            rows: [
+              {
+                title: "1. ¿Qué entiendes por soporte de alta disponibilidad?",
+                text: "Mapear la percepción",
+                data: "24/7 · respuesta rápida · SLA menor",
+                quote: "Una atención 24/7 y un canal directo, priorizado y humanizado",
+              },
+              {
+                title: "2. ¿Has necesitado soporte fuera del horario laboral?",
+                text: "Identificar dolores reales",
+                data: "Frecuencia semanal o mensual · WhatsApp extraoficial",
+                quote: "Sí, hubo ocasiones en que la respuesta que nos dieron llegó muy tarde",
+              },
+              {
+                title: "3. ¿Qué valoras más en un plan de soporte?",
+                text: "Mapear atributos e intención de compra",
+                data: "SLA · equipo de personas clave (SPOC) · documentación",
+                quote: "Hay algunas que solo se contactan por tickets y no hay cercanía",
+              },
+              {
+                title: "4. ¿Qué plan se alinea más con tus expectativas?",
+                text: "Priorizar frente a planes reales",
+                data: "SPOC · SLA avanzado · asistencia remota",
+                quote: "Prioridad, por el focal point y el SLA premium",
+                source: "cliente del sector [confirmar]",
+              },
+              {
+                title: "4.1 ¿Y cuál tendría menos probabilidades de contratar?",
+                text: "Identificar lo que no aporta",
+                data: "Horario extendido · parecido al estándar",
+                quote: "El premium extendido no sería útil para nuestro perfil",
+              },
+              {
+                title: "5. Comentarios y dudas adicionales",
+                text: "Abrir espacio para lo imprevisto",
+                data: "Combinar atributos de planes",
+                quote: "Se puede tomar un punto de uno, de otro, y armar un plan ideal",
+              },
+            ],
+            flow: {
+              kind: "chain",
+              label: "Cadena de análisis: testimonio, post-it, concepto recurrente y conclusión",
+              steps: [
+                {
+                  title: "Testimonio",
+                  note: "lo que dice el cliente",
+                },
+                {
+                  title: "Post-it",
+                  note: "una idea por nota",
+                },
+                {
+                  title: "Concepto recurrente",
+                  note: "agrupa varias notas",
+                },
+                {
+                  title: "Conclusión",
+                  note: "cruza las preguntas",
+                },
+              ],
+            },
+            crossTitle: "El cruce",
+            crossings: [
+              {
+                title: "El SLA menor es el más citado, pero es un síntoma",
+                text: "Las causas: poco conocimiento técnico y una primera respuesta insuficiente.",
+              },
+              {
+                title: "La necesidad fuera del horario es baja",
+                text: "Frecuencia semanal o mensual. El horario extendido fue el menos deseado.",
+              },
+              {
+                title: "Lo que dicen valorar y lo que eligen coincide",
+                text: "SLA avanzado, punto focal y asistencia remota, en las dos etapas.",
+              },
+              {
+                title: "El WhatsApp revela una brecha",
+                text: "En emergencias, se vuelve un canal extraoficial.",
+              },
+              {
+                title: "La documentación también es soporte",
+                text: "Si fuera clara, el cliente lo resolvería solo.",
+              },
+            ],
+          },
+          decision: {
+            lead: "La elección del modelo de atención fue de la gerencia. La investigación indicó los atributos que sostendrían la decisión: SLA avanzado, punto focal (SPOC) y asistencia remota.",
+            cards: [
+              {
+                label: "Indicado",
+                title:
+                  "Planes que combinan SLA avanzado, punto focal y asistencia remota. El Premium Prioridad reúne los tres",
+              },
+              {
+                label: "Menos deseado",
+                title:
+                  "Premium Extendido (horario extendido sin necesidad) y Consultoría Online (parecida al soporte estándar de hoy)",
+              },
+              {
+                label: "Quedó abierto",
+                title:
+                  "Cuánto pagarían: solo un cliente afirmó que pagaría. Y la posibilidad de combinar atributos de planes distintos",
+              },
+            ],
+          },
+          delivery: {
+            lead: "La matriz de síntesis reúne las 6 preguntas en las filas y los 5 clientes en las columnas, con la transcripción, las notas de comportamiento y las conclusiones de cada pregunta. Fue el artefacto que sostuvo el análisis.",
+            items: [
+              {
+                image: {
+                  src: "/casos/suporte/suporte-entrega-matriz",
+                  width: 1920,
+                  height: 1080,
+                  alt: "Matriz de síntesis que cruza las respuestas por pregunta y por cliente",
+                },
+                caption:
+                  "Filas: preguntas. Columnas: clientes, con transcripción y notas. Última columna: conclusiones.",
+              },
+            ],
+          },
+          result: {
+            lead: "La investigación entregó a la gerencia una síntesis de los atributos de soporte más valorados por los clientes de mayor tamaño, para fundamentar la elección del modelo de atención.",
+            metrics: [
+              {
+                value: "5",
+                label: "clientes entrevistados, de segmentos distintos",
+              },
+              {
+                value: "6",
+                label: "modelos de atención probados",
+              },
+              {
+                value: "3",
+                label: "atributos más valorados",
+              },
+            ],
+            note: "La investigación es cualitativa: muestra tendencias y motivos, no representa a todos los clientes.",
+          },
+        },
+      },
       warehouses: {
         company: "[Empresa]",
         years: "[año]",
@@ -353,6 +598,7 @@ export const es: Dictionary = {
               },
             ],
             flow: {
+              kind: "merge",
               label: "Cuatro tipos de dato llevan a la decisión por el layout A",
               inputs: [
                 "Tarea: tiempo, éxito, clics",
@@ -385,29 +631,31 @@ export const es: Dictionary = {
           },
           decision: {
             lead: "El widget de Registro va en la parte central superior de la Home: lo que más se usa al día queda más cerca, y la mayoría lo prefirió así.",
-            chartLabel: "Preferencia entre los 4 layouts",
-            options: [
-              {
-                letter: "A",
-                value: 67,
-                caption: "Widget de Registro en la parte central superior de la Home",
-              },
-              {
-                letter: "B",
-                value: 14,
-                caption: "Widget solo en la barra inferior",
-              },
-              {
-                letter: "C",
-                value: 14,
-                caption: "Widget más pequeño, junto a un banner",
-              },
-              {
-                letter: "D",
-                value: 5,
-                caption: "Acceso rápido arriba",
-              },
-            ],
+            chart: {
+              label: "Preferencia entre los 4 layouts",
+              options: [
+                {
+                  letter: "A",
+                  value: 67,
+                  caption: "Widget de Registro en la parte central superior de la Home",
+                },
+                {
+                  letter: "B",
+                  value: 14,
+                  caption: "Widget solo en la barra inferior",
+                },
+                {
+                  letter: "C",
+                  value: 14,
+                  caption: "Widget más pequeño, junto a un banner",
+                },
+                {
+                  letter: "D",
+                  value: 5,
+                  caption: "Acceso rápido arriba",
+                },
+              ],
+            },
             cards: [
               {
                 label: "Elegido",
