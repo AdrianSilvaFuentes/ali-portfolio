@@ -347,7 +347,8 @@ export const pt = {
       "[Como cheguei aqui, em 3 parágrafos curtos: comunicação e marketing (por que as pessoas fazem o que fazem na tela) → pesquisa e design de interação, com visitas de campo → produto, com design e código. Fechar com: hoje levo o problema até o produto entregue.]",
     location: "Blumenau, SC",
     nickname: { before: "Todo mundo me chama de ", name: "Ali" },
-    photo: "Foto de pesquisa de campo",
+    photoAlt:
+      "Visita a cliente para pesquisa de campo: um grupo ao redor de uma mesa com notebooks e coletores de dados, conversando sobre o trabalho.",
     cv: "[Currículo (PDF)]",
     experience: {
       title: "Experiência",
