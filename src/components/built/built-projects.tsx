@@ -1,7 +1,9 @@
 import { Button } from "@adriansilvafuentes/ui";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Dictionary } from "@/content";
+import { casePath, type Locale } from "@/i18n/config";
 import siteShot from "../../../public/images/construido-site.webp";
 import storybookShot from "../../../public/images/construido-storybook.webp";
 import { Eyebrow, HomeSection, textLinkClass } from "../home/section";
@@ -16,17 +18,17 @@ const shotClass = "h-auto w-full rounded-md border border-subtle";
  * A página Construído: o ali-ui em destaque, depois este site e, só quando houver itens,
  * os experimentos. As capturas são reais: o Storybook do ali-ui e a primeira tela do site.
  */
-export function BuiltProjects({ t }: { t: Built }) {
+export function BuiltProjects({ lang, t }: { lang: Locale; t: Built }) {
   return (
     <>
-      <AliUi t={t.aliUi} />
+      <AliUi lang={lang} t={t.aliUi} />
       <ThisSite t={t.site} />
       {t.experiments.items.length > 0 && <Experiments t={t.experiments} />}
     </>
   );
 }
 
-function AliUi({ t }: { t: Built["aliUi"] }) {
+function AliUi({ lang, t }: { lang: Locale; t: Built["aliUi"] }) {
   return (
     <HomeSection id="ali-ui" sunken className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       <div className="flex flex-col gap-5">
@@ -51,6 +53,11 @@ function AliUi({ t }: { t: Built["aliUi"] }) {
             <a href={t.github.href}>{t.github.label}</a>
           </Button>
         </div>
+        {/* Aqui o ali-ui é um resumo; o caso completo é o aprofundamento. */}
+        <Link href={casePath(lang, "aliUi")} className={`${textLinkClass} self-start`}>
+          {t.caseLink}
+          <IconArrowRight aria-hidden className="size-4" />
+        </Link>
       </div>
       <div className="flex flex-col gap-3">
         <Image
