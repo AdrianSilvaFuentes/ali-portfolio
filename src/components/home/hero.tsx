@@ -15,7 +15,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
     <section aria-labelledby="inicio-titulo" className="bg-dots">
       <Container className="grid gap-10 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
         <div className="flex flex-col gap-6">
-          <p className="font-mono text-label-sm tracking-wider text-subtle uppercase">{t.role}</p>
+          <p className="text-label-md text-subtle">{t.role}</p>
           <h1 id="inicio-titulo" className="text-title-lg">
             {t.title}
           </h1>
