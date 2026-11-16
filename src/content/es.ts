@@ -29,10 +29,15 @@ export const es: Dictionary = {
     dark: "Oscuro",
   },
   home: {
-    greeting: { before: "Hola, soy Adrián. Todos me dicen ", name: "Ali", after: "." },
     role: "Product Design Engineer",
-    title: "Diseñador de producto sénior que lleva el problema hasta el producto entregado.",
-    lead: "Investigo con usuarios, decido qué vale la pena construir y llevo la solución de Figma al código, con IA como herramienta y criterio propio.",
+    /** O título da abertura, em duas linhas; "Ali" leva o destaque amarelo. */
+    title: {
+      first: "¡Hola! Soy Adrián,",
+      before: "pero todos me dicen ",
+      name: "Ali",
+      after: " :)",
+    },
+    lead: "Soy Product Designer Sénior, con una gran pasión por crear productos con propósito a través del UX y el diseño de interacción.",
     seeWork: "Ver casos",
     talk: "Hablemos",
     portraitAlt: "Adrián sonriendo, con gorra y pañuelo, frente a un molino.",

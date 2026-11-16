@@ -137,10 +137,15 @@ export const pt = {
     dark: "Escuro",
   },
   home: {
-    greeting: { before: "Oi, sou o Adrián. Todo mundo me chama de ", name: "Ali", after: "." },
     role: "Product Design Engineer",
-    title: "Designer de produto sênior que leva o problema até o produto entregue.",
-    lead: "Pesquiso com usuários, decido o que vale construir e levo a solução do Figma ao código, com IA como ferramenta e julgamento próprio.",
+    /** O título da abertura, em duas linhas; "Ali" leva o destaque amarelo. */
+    title: {
+      first: "Oi! Sou o Adrián,",
+      before: "mas todo mundo me chama de ",
+      name: "Ali",
+      after: " :)",
+    },
+    lead: "Sou Product Designer Sênior, apaixonado por criar produtos com propósito por meio de UX e design de interação.",
     seeWork: "Ver casos",
     talk: "Falar comigo",
     portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
