@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
 import { Container } from "./container";
+import { HeaderOffset } from "./header-offset";
 import { LanguageSwitcher } from "./language-switcher";
 import { NavLink } from "./nav-link";
 import { ThemeToggle } from "./theme-toggle";
@@ -10,6 +11,7 @@ import { ThemeToggle } from "./theme-toggle";
  * Cabeçalho. No celular: nome, idioma e tema na primeira linha, o menu inteiro na segunda.
  * A partir do md: nome à esquerda, menu, idioma e tema à direita, numa linha só.
  * A ordem no HTML (nome, menu, idioma, tema) é a do teclado e do leitor de tela.
+ * Fica fixo no topo ao rolar, com o fundo surface para o conteúdo não aparecer por baixo.
  */
 export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   const links = [
@@ -20,7 +22,8 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   ];
 
   return (
-    <header className="border-b border-subtle">
+    <header className="sticky top-0 z-40 border-b border-subtle bg-surface shadow-sm">
+      <HeaderOffset />
       <Container className="flex flex-wrap items-center gap-x-7 gap-y-1 py-3">
         <Link
           href={pagePath(lang)}
