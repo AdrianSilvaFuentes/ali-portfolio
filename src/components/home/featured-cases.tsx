@@ -35,7 +35,13 @@ export function FeaturedCases({
       <ul className="grid gap-10 md:grid-cols-3 md:gap-5">
         {featured.map((key) => (
           <li key={key}>
-            <CaseCard lang={lang} caseKey={key} t={cases[key]} imageLabel={t.image} />
+            <CaseCard
+              lang={lang}
+              caseKey={key}
+              t={cases[key]}
+              imageLabel={t.image}
+              readCase={t.viewCase}
+            />
           </li>
         ))}
       </ul>
