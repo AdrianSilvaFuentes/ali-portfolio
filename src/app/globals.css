@@ -27,3 +27,53 @@ body {
   );
   background-size: var(--ali-spacing-6) var(--ali-spacing-6);
 }
+
+/*
+ * Retrato da abertura: entra com fade e depois balança alguns segundos, como um papel preso
+ * pelo clipe numa mesa de trabalho, até parar. O eixo é o clipe (canto de cima, à esquerda).
+ * O ali-ui só tem durações de interface (até duration-slow, 300ms); os tempos aqui são
+ * múltiplos dele: 2× para o fade e 8× para o balanço. Sem animação para quem pede menos
+ * movimento.
+ */
+@keyframes portrait-in {
+  from {
+    opacity: 0;
+    translate: 0 calc(var(--ali-spacing-2) * -1);
+  }
+}
+
+@keyframes portrait-swing {
+  0% {
+    rotate: 0deg;
+  }
+  15% {
+    rotate: 3deg;
+  }
+  32% {
+    rotate: -2.2deg;
+  }
+  50% {
+    rotate: 1.4deg;
+  }
+  68% {
+    rotate: -0.8deg;
+  }
+  84% {
+    rotate: 0.3deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@utility animate-portrait {
+  transform-origin: 25% 8%;
+  animation:
+    portrait-in calc(var(--ali-duration-slow) * 2) ease-out both,
+    portrait-swing calc(var(--ali-duration-slow) * 8) ease-in-out calc(var(--ali-duration-slow) * 2)
+    both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

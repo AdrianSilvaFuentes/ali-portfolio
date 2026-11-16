@@ -46,7 +46,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           alt={t.portraitAlt}
           preload
           sizes="(min-width: 768px) 448px, 100vw"
-          className="mx-auto h-auto w-full max-w-md"
+          className="animate-portrait mx-auto h-auto w-full max-w-md"
         />
       </Container>
     </section>
