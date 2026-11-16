@@ -4,7 +4,26 @@
 /* Faz o Tailwind procurar classes também nos arquivos do próprio site. */
 @source "../";
 
+/*
+ * A pasta .claude (skills e instruções) tem exemplos de classes escritos como texto. Se o
+ * Tailwind ler, gera CSS inválido a partir deles, que quebra o pnpm dev.
+ */
+@source not "../../.claude";
+
 body {
   background-color: var(--ali-color-surface);
   color: var(--ali-color-text-default);
+}
+
+/*
+ * Fundo de pontos, como a mesa de trabalho do Figma. Só tokens: a cor dos pontos é a
+ * border-subtle (muda com o tema) e a grade usa a escala de espaçamento do ali-ui.
+ */
+@utility bg-dots {
+  background-image: radial-gradient(
+    circle,
+    var(--ali-color-border-subtle) var(--ali-spacing-px),
+    transparent var(--ali-spacing-px)
+  );
+  background-size: var(--ali-spacing-6) var(--ali-spacing-6);
 }
