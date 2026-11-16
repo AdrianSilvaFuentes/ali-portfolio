@@ -79,14 +79,15 @@ body {
 }
 
 /*
- * Abertura: um cursor entra, vai até o "Ali" do título e o seleciona, como numa mesa de
- * trabalho. Começa depois do fade do retrato (2× duration-slow) e dura 8× duration-slow.
- * O marca-texto é o token primary-subtle: só o tamanho do fundo é animado, o texto aparece
- * sempre. Com menos movimento, não há cursor e o "Ali" já aparece marcado.
+ * Abertura: um cursor entra, aperta no canto de baixo à esquerda do "Ali" e arrasta até a
+ * direita, desenhando a seleção (moldura e alças com border-primary, como no Figma, nó 53:987).
+ * Começa depois do fade do retrato (2× duration-slow) e dura 8× duration-slow. Com menos
+ * movimento, não há cursor e a seleção já aparece pronta.
  */
 @keyframes hero-cursor {
   0% {
     opacity: 0;
+    top: calc(var(--ali-spacing-1) * -1);
     left: 0%;
     translate: calc(var(--ali-spacing-24) * -1) var(--ali-spacing-24);
     scale: 1;
@@ -95,45 +96,42 @@ body {
     opacity: 1;
   }
   45% {
+    top: calc(var(--ali-spacing-1) * -1);
     left: 0%;
     translate: 0 0;
     scale: 1;
   }
   52% {
+    top: calc(var(--ali-spacing-1) * -1);
     left: 0%;
     scale: 0.9;
   }
   80% {
+    top: calc(100% + var(--ali-spacing-1));
     left: 100%;
     scale: 0.9;
   }
   88% {
+    top: calc(100% + var(--ali-spacing-1));
     left: 100%;
     scale: 1;
     opacity: 1;
   }
   100% {
+    top: calc(100% + var(--ali-spacing-1));
     left: 100%;
     translate: 0 0;
     opacity: 0;
   }
 }
 
-@keyframes hero-highlight {
-  0%,
-  52% {
-    background-size: 0% 100%;
-  }
-  80%,
-  100% {
-    background-size: 100% 100%;
-  }
-}
-
-/* O cursor: 32px de largura (spacing-8); a margem negativa põe a ponta da seta no alvo. */
+/*
+ * O cursor: 32px de largura (spacing-8); a margem negativa põe a ponta da seta no alvo.
+ * Ele aperta no canto de cima à esquerda da seleção e arrasta na diagonal até o de baixo à direita.
+ */
 @utility hero-cursor {
   position: absolute;
-  top: 75%;
+  top: calc(100% + var(--ali-spacing-1));
   left: 100%;
   width: var(--ali-spacing-8);
   aspect-ratio: 42 / 43;
@@ -150,16 +148,34 @@ body {
   }
 }
 
-/* O marca-texto do "Ali": um fundo de cor só (primary-subtle) que cresce da esquerda. */
-@utility hero-highlight {
-  background-image: linear-gradient(
-    var(--ali-color-background-primary-subtle),
-    var(--ali-color-background-primary-subtle)
-  );
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 100% 100%;
-  animation: hero-highlight calc(var(--ali-duration-slow) * 8) ease-in-out
+/*
+ * A seleção abre na diagonal, do canto de cima à esquerda até o de baixo à direita, junto com o
+ * arraste do cursor. O recorte deixa 8px (spacing-2) de folga em volta, para as alças, que ficam
+ * metade para fora da moldura.
+ */
+@keyframes hero-selection {
+  0%,
+  48% {
+    opacity: 0;
+    clip-path: inset(calc(var(--ali-spacing-2) * -1) 100% 100% calc(var(--ali-spacing-2) * -1));
+  }
+  52% {
+    opacity: 1;
+    clip-path: inset(calc(var(--ali-spacing-2) * -1) 100% 100% calc(var(--ali-spacing-2) * -1));
+  }
+  80%,
+  100% {
+    opacity: 1;
+    clip-path: inset(calc(var(--ali-spacing-2) * -1));
+  }
+}
+
+@utility hero-selection {
+  position: absolute;
+  /* 4px (spacing-1) de respiro em cima e embaixo; nas laterais, o px-1 do nome já dá o espaço. */
+  inset: calc(var(--ali-spacing-1) * -1) 0;
+  pointer-events: none;
+  animation: hero-selection calc(var(--ali-duration-slow) * 8) ease-in-out
     calc(var(--ali-duration-slow) * 2) both;
 
   @media (prefers-reduced-motion: reduce) {
