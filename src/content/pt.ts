@@ -301,6 +301,12 @@ export const pt = {
         summary: "[Problema → resultado, em uma linha.]",
         result:
           "Atributos de suporte mais valorizados, entregues à gerência para a escolha do modelo",
+        cardImage: {
+          src: "/casos/suporte/suporte-card",
+          width: 1024,
+          height: 640,
+          alt: "Recortes da pesquisa de suporte: planos comparados, resultado do formulário, matriz de síntese e perguntas abertas",
+        },
         study: {
           skills: ["Pesquisa qualitativa", "Síntese e análise"],
           method: [
@@ -1072,12 +1078,11 @@ export const pt = {
   },
   footer: {
     title: "Vamos conversar.",
-    email: "[e-mail público]",
     linksLabel: "Perfis",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
-      { label: "[LinkedIn]", href: null },
-      { label: "[Behance]", href: null },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
+      { label: "Behance", href: "https://www.behance.net/adriansilva" },
       { label: "[Currículo (PDF)]", href: null },
     ] as { label: string; href: string | null }[],
     madeWith: "Feito com ali-ui",

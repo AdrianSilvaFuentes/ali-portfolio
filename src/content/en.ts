@@ -192,6 +192,12 @@ export const en: Dictionary = {
         title: "Validating premium support plans with larger customers",
         summary: "[Problem → outcome, in one line.]",
         result: "The most valued support attributes, handed to management to choose the model",
+        cardImage: {
+          src: "/casos/suporte/suporte-card",
+          width: 1024,
+          height: 640,
+          alt: "Snippets from the support research: compared plans, survey results, synthesis matrix and open questions",
+        },
         study: {
           skills: ["Qualitative research", "Synthesis and analysis"],
           method: [
@@ -950,12 +956,11 @@ export const en: Dictionary = {
   },
   footer: {
     title: "Let's talk.",
-    email: "[public e-mail]",
     linksLabel: "Profiles",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
-      { label: "[LinkedIn]", href: null },
-      { label: "[Behance]", href: null },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
+      { label: "Behance", href: "https://www.behance.net/adriansilva" },
       { label: "[Résumé (PDF)]", href: null },
     ],
     madeWith: "Made with ali-ui",
