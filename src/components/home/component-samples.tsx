@@ -14,7 +14,9 @@ export function ComponentSamples({ t }: { t: Samples }) {
   return (
     <ul aria-label={t.label} className="grid gap-3 sm:grid-cols-3">
       <Sample name={t.button.name}>
-        <Button type="button">{t.button.label}</Button>
+        <Button size="sm" type="button">
+          {t.button.label}
+        </Button>
       </Sample>
       <Sample name={t.input.name}>
         <Input label={t.input.label} defaultValue={t.input.value} className="w-full" />

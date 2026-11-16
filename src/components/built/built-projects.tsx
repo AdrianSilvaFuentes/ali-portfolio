@@ -44,10 +44,10 @@ function AliUi({ t }: { t: Built["aliUi"] }) {
           ))}
         </dl>
         <div className="flex flex-wrap gap-3">
-          <Button asChild>
+          <Button size="sm" asChild>
             <a href={t.storybook.href}>{t.storybook.label}</a>
           </Button>
-          <Button asChild variant="secondary">
+          <Button size="sm" asChild variant="secondary">
             <a href={t.github.href}>{t.github.label}</a>
           </Button>
         </div>

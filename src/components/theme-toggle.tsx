@@ -36,13 +36,13 @@ export function ThemeToggle({ labels }: { labels: Dictionary["theme"] }) {
 
   return (
     <Button
+      size="sm"
       variant="secondary"
       aria-label={label}
       title={label}
       onClick={toggle}
-      className="size-11 px-0"
-    >
-      {theme === "dark" ? <IconSun aria-hidden="true" /> : <IconMoon aria-hidden="true" />}
-    </Button>
+      className="w-8 px-0"
+      iconLeft={theme === "dark" ? <IconSun /> : <IconMoon />}
+    />
   );
 }
