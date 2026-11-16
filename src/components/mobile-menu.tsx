@@ -1,17 +1,19 @@
 "use client";
 
-import { Button } from "@adriansilvafuentes/ui";
+import { Button, cn } from "@adriansilvafuentes/ui";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
+import { Container } from "./container";
 import { NavLink } from "./nav-link";
 
 /**
  * Menu do celular (abaixo do md). O botão é o Button do ali-ui, só com ícone (sm, w-8 px-0,
- * como na história "Só ícone"). Ao tocar, abre a lista de páginas na largura toda, logo abaixo
- * da linha do cabeçalho. Fecha com o mesmo botão, com Esc (o foco volta ao botão) ou ao escolher
- * um item. Dentro dele também fica o tema, que não cabe na linha do celular. O painel é feito aqui porque o ali-ui ainda não tem componente de menu que abre: está
- * na lista de lacunas da skill ali-ui-a-risca.
+ * como na história "Só ícone"). Ao tocar, abre a lista de páginas por cima do conteúdo, logo
+ * abaixo do cabeçalho. Fecha com o mesmo botão, com Esc (o foco volta ao botão) ou ao escolher
+ * um item. Dentro dele também fica o tema, que não cabe na linha do celular. O painel é feito
+ * aqui porque o ali-ui ainda não tem componente de menu que abre: está na lista de lacunas da
+ * skill ali-ui-a-risca.
  */
 export function MobileMenu({
   label,
@@ -63,22 +65,35 @@ export function MobileMenu({
         className="w-8 px-0 md:hidden"
         iconLeft={open ? <IconX /> : <IconMenu2 />}
       />
+      {/*
+        O painel fica por cima do conteúdo, logo abaixo do cabeçalho (que é sticky, por isso o
+        absolute se prende a ele). O movimento é o dos balões do ali-ui (animate-enter-exit):
+        abre com fade e 4px de deslize em duration-base, ease-out; fecha em duration-fast,
+        ease-in. Fechado, fica invisível: sai da ordem do teclado e do leitor de tela.
+      */}
       <nav
         id={panelId}
         aria-label={label}
-        hidden={!open}
-        className="order-last w-full border-t border-subtle pt-2 md:hidden"
+        className={cn(
+          "absolute inset-x-0 top-full border-b border-subtle bg-surface shadow-overlay md:hidden",
+          "transition-[opacity,translate,visibility] motion-reduce:transition-none",
+          open
+            ? "visible translate-y-0 opacity-100 duration-base ease-out"
+            : "invisible -translate-y-1 opacity-0 duration-fast ease-in",
+        )}
       >
-        <ul className="flex flex-col">
-          {links.map((link) => (
-            <li key={link.href}>
-              <NavLink href={link.href} onClick={() => setOpen(false)}>
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-        {children && <div className="border-t border-subtle py-3">{children}</div>}
+        <Container className="flex flex-col py-2">
+          <ul className="flex flex-col">
+            {links.map((link) => (
+              <li key={link.href}>
+                <NavLink href={link.href} onClick={() => setOpen(false)}>
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          {children && <div className="border-t border-subtle py-3">{children}</div>}
+        </Container>
       </nav>
     </>
   );
