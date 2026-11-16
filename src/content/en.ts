@@ -212,13 +212,272 @@ export const en: Dictionary = {
       },
       wiipo: {
         company: "Wiipo",
-        years: "2024–2025",
+        years: "2025",
         role: "UX Designer",
-        tags: ["Mobile", "Design system", "React Native"],
-        title: "A design system in React Native",
+        tags: ["UX research", "Super app", "Usability testing"],
+        title: "A time clock feature inside the company app",
         summary: "[Problem → outcome, in one line.]",
-        result: "[Result]",
+        result: "Widget launched on the Home (layout A, 67%)",
+        study: {
+          skills: ["Quantitative research", "Qualitative research", "Design and prototyping"],
+          method: ["Benchmark", "Survey", "Semi-structured interviews", "Usability testing"],
+          tools: ["Figma", "Google Forms", "Maze"],
+          cover: {
+            src: "/casos/wiipo/wiipo-capa",
+            width: 1168,
+            height: 420,
+            alt: "The app's home screen with the time clock widget in the upper center",
+          },
+          problem: {
+            paragraphs: [
+              "Wiipo, a financial product by Senior Sistemas, wanted to become a super app for employees: bringing meal vouchers, payslips and wallets together with modules for time clock, feedback and vacation planning, among others.",
+              "The first service to integrate was the time clock. It's a task of seconds, repeated several times a day, that would now live inside an app built for financial services. The question was: where to place it so it's easy to find, without getting lost behind financial content?",
+            ],
+            points: [
+              {
+                label: "Risk",
+                text: "the time clock getting hidden behind financial content.",
+              },
+              {
+                label: "Hypothesis",
+                text: "adding employee services makes the app more convenient and increases usage.",
+              },
+            ],
+            cards: [
+              {
+                label: "Goal 1",
+                title: "Understand how users perceive the Wiipo + Time clock journey",
+              },
+              {
+                label: "Goal 2",
+                title: "Validate the integration journey and the information architecture",
+              },
+              {
+                label: "Goal 3",
+                title: "Define the technical scope of the integration",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Quantitative and qualitative methods combined: what people do, what they say and why.",
+            cards: [
+              {
+                label: "Benchmark",
+                title:
+                  "Fintechs and digital banks: architecture, design system, interactions, naming",
+                note: "Study of 4 apps - Inter, Nubank, Itaú and Tenpo",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-benchmark",
+                  width: 394,
+                  height: 180,
+                  alt: "A crop of financial app screens used in the benchmark",
+                },
+              },
+              {
+                label: "Survey",
+                title: "Single and multiple choice with active users",
+                note: "Calculated sample: 384 participants - 95% confidence",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-formulario",
+                  width: 394,
+                  height: 180,
+                  alt: "A chart with answers from the survey sent to users",
+                },
+              },
+              {
+                label: "Interviews",
+                title: "Semi-structured, based on the survey questions",
+                note: "5 users - 40 minutes per session",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-entrevistas",
+                  width: 394,
+                  height: 180,
+                  alt: "An illustration of an interview session with a user",
+                },
+              },
+              {
+                label: "Usability testing",
+                title: "Guided task, CES, choice between layouts and an open question",
+                note: "27 responses - Senior Sistemas employees",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-teste",
+                  width: 394,
+                  height: 180,
+                  alt: "The prototype screen used in the usability test",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "The numbers show what; the comments explain why. Each type of data was read on its own and only then crossed with the others.",
+            rows: [
+              {
+                title: "Guided task",
+                text: "Real effort, not opinion: time, success, wrong clicks and a heat map of taps.",
+                data: "23.4 s · 100% success · 51.5% wrong clicks",
+              },
+              {
+                title: "1 to 5 scales",
+                text: "The mean and the whole distribution, not just the top.",
+                data: "Would use often: 4.2 · Too complex: 1.8 · Quick to learn: 4.5",
+              },
+              {
+                title: "Choice between 4 layouts",
+                text: "A single vote, read as stated preference.",
+                data: "A 67% · B 14% · C 14% · D 5%",
+              },
+              {
+                title: "Open question",
+                text: "Comments grouped into categories, with the weight of each.",
+                data: "Organization 33.3% · fewer banners 16.7% · positive feedback 16.7% · technical 8.3% · ideas 8.3%",
+              },
+            ],
+            flow: {
+              label: "Four types of data lead to the decision for layout A",
+              inputs: [
+                "Task: time, success, clicks",
+                "Scales: mean and distribution",
+                "Layouts: preference vote",
+                "Open question: categories",
+              ],
+              decisionLabel: "Decision",
+              decision: "Layout A on the Home",
+            },
+            crossTitle: "Crossing the data",
+            crossings: [
+              {
+                title: "Preference makes sense through frequency",
+                text: "Layout A got 67%, and one participant explains: the time clock is used at least 4 times a day; the balance, only now and then.",
+              },
+              {
+                title: "The remaining 33% show what layout A doesn't solve yet",
+                text: "One participant felt A takes up too much space and preferred C. Another found it confusing to mix the time clock with a financial app and suggested a shortcut before login.",
+              },
+              {
+                title: "Requests outside the widget were set apart",
+                text: "The requests for fewer banners come from the home context, not the widget. They were handled as a separate finding.",
+              },
+              {
+                title: "Technical failures stay out of the design decision",
+                text: "The facial recognition failure is an authentication issue and belongs to the technical scope.",
+              },
+            ],
+          },
+          decision: {
+            lead: "The time clock widget goes in the upper center of the Home: what's used most often each day stays closest, and most people preferred it that way.",
+            chartLabel: "Preference among the 4 layouts",
+            options: [
+              {
+                letter: "A",
+                value: 67,
+                caption: "Time clock widget in the upper center of the Home",
+              },
+              {
+                letter: "B",
+                value: 14,
+                caption: "Widget only in the bottom bar",
+              },
+              {
+                letter: "C",
+                value: 14,
+                caption: "Smaller widget, next to a banner",
+              },
+              {
+                letter: "D",
+                value: 5,
+                caption: "Quick access at the top",
+              },
+            ],
+            cards: [
+              {
+                label: "Chosen",
+                title: "Layout A",
+              },
+              {
+                label: "Discarded",
+                title: "B, C and D, by vote and by space",
+              },
+              {
+                label: "Left open",
+                title: "A shortcut before login. Fewer banners on the home",
+              },
+            ],
+          },
+          delivery: {
+            lead: "The prototypes used in the test and the Home time clock widget that was later launched.",
+            items: [
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-layouts",
+                  width: 256,
+                  height: 280,
+                  alt: "Four positions tested for the time clock module on the Home, side by side",
+                },
+                caption: "The same module in four positions.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-modulo",
+                  width: 256,
+                  height: 280,
+                  alt: "Time clock module, with clock-ins and an offline notice",
+                },
+                caption: "Press and hold to clock in, with a notice that it works offline.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-widgets",
+                  width: 256,
+                  height: 280,
+                  alt: "Three time clock widgets for the phone's home screen",
+                },
+                caption: "Tested on the phone.",
+              },
+            ],
+          },
+          result: {
+            lead: "The time clock widget launched on the Home, in the position most test participants preferred.",
+            metrics: [
+              {
+                value: "67%",
+                label: "chose the launched layout",
+              },
+              {
+                value: "100%",
+                label: "task success, in 23.4 s",
+              },
+              {
+                value: "1.8",
+                label: "complexity, on a 1 to 5 scale",
+              },
+            ],
+            image: {
+              src: "/casos/wiipo/wiipo-resultado",
+              width: 1920,
+              height: 1080,
+              alt: "The time clock widget live on the app's Home",
+            },
+          },
+        },
       },
+    },
+    /** Rótulos do molde real dos casos (os que têm `study`). */
+    caseStudy: {
+      meta: {
+        result: "Result",
+        skills: "Skills",
+        method: "Method",
+        tools: "Tools",
+      },
+      sections: {
+        problem: "Problem",
+        method: "Methodology",
+        analysis: "Analysis",
+        decision: "Decision",
+        delivery: "Delivery",
+        result: "Result",
+      },
+      image: "Image",
     },
     caseTemplate: {
       back: "All cases",

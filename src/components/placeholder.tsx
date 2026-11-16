@@ -1,4 +1,5 @@
 import { cn } from "@adriansilvafuentes/ui";
+import type { CSSProperties } from "react";
 
 /**
  * Área reservada para uma imagem que ainda não existe, com o nome do que vai ali.
@@ -8,19 +9,25 @@ import { cn } from "@adriansilvafuentes/ui";
 export function Placeholder({
   label,
   reservedLabel,
+  description,
   className,
+  style,
 }: {
   label: string;
   reservedLabel?: string;
+  /** O que o leitor de tela ouve depois de "Espaço reservado:", no lugar do rótulo visível. */
+  description?: string;
   className?: string;
+  style?: CSSProperties;
 }) {
   const a11y = reservedLabel
-    ? { role: "img", "aria-label": `${reservedLabel}: ${label}` }
+    ? { role: "img", "aria-label": `${reservedLabel}: ${description ?? label}` }
     : { "aria-hidden": true };
 
   return (
     <div
       {...a11y}
+      style={style}
       className={cn(
         "flex items-center justify-center rounded-md border border-dashed border-default bg-neutral-subtle p-4",
         className,
