@@ -17,7 +17,7 @@ const SLIDE_MS = 200;
 
 /**
  * Seletor PT · EN · ES, com o SegmentedControl do ali-ui (tamanho sm). Escolher um idioma leva
- * à mesma página nele (/pt/trabalho vira /en/work). Cada opção é lida no próprio idioma
+ * à mesma página nele (/pt/casos vira /en/cases). Cada opção é lida no próprio idioma
  * ("EN, English"). Pelo teclado, Tab entra no idioma atual e as setas trocam de idioma.
  *
  * A página do outro idioma monta um cabeçalho novo. Para o fundo da opção deslizar como no
