@@ -124,8 +124,9 @@ export const pt = {
     label: "Idioma",
   },
   theme: {
-    toDark: "Ativar tema escuro",
-    toLight: "Ativar tema claro",
+    label: "Tema",
+    light: "Claro",
+    dark: "Escuro",
   },
   home: {
     greeting: { before: "Oi, sou o Adrián. Todo mundo me chama de ", name: "Ali", after: "." },

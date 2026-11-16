@@ -42,7 +42,12 @@ export default async function RootLayout({
 
   return (
     // data-theme muda no navegador antes do React assumir; suppressHydrationWarning evita o aviso.
-    <html lang={htmlLang[lang]} data-brand="yellow" suppressHydrationWarning>
+    <html
+      lang={htmlLang[lang]}
+      data-brand="yellow"
+      className="scroll-pt-[var(--header-height)]"
+      suppressHydrationWarning
+    >
       <head>
         {/* biome-ignore lint/security/noDangerouslySetInnerHtml: script fixo, escrito aqui, sem dados de fora. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
