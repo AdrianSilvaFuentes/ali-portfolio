@@ -35,6 +35,11 @@ export type PageKey = keyof typeof pages;
  * casos no site (e do "próximo caso").
  */
 export const cases = {
+  wiipo: {
+    pt: "wiipo-registro-de-ponto",
+    en: "wiipo-time-clock",
+    es: "wiipo-registro-de-jornada",
+  },
   warehouses: {
     pt: "pesquisa-armazens",
     en: "warehouse-research",
@@ -42,11 +47,6 @@ export const cases = {
   },
   gko: { pt: "gko-fretes-xt", en: "gko-fretes-xt", es: "gko-fretes-xt" },
   icons: { pt: "biblioteca-de-icones", en: "icon-library", es: "biblioteca-de-iconos" },
-  wiipo: {
-    pt: "design-system-wiipo",
-    en: "wiipo-design-system",
-    es: "design-system-wiipo",
-  },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type CaseKey = keyof typeof cases;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CaseFull } from "@/components/case/case-full";
 import { CaseStudy } from "@/components/case/case-study";
 import { getDictionary } from "@/content";
 import { caseKeyFromSlug, caseKeys, cases, isLocale, locales, pages } from "@/i18n/config";
@@ -41,5 +42,9 @@ export async function generateMetadata({
 export default async function CasePage({ params }: PageProps<"/[lang]/[page]/[slug]">) {
   const found = await resolve(params);
   if (!found) notFound();
-  return <CaseStudy lang={found.lang} caseKey={found.key} t={found.t} />;
+  const { lang, key, t } = found;
+  // Casos com conteúdo real (study) usam o molde novo; os outros, o modelo provisório.
+  const study = t.work.cases[key].study;
+  if (study) return <CaseFull lang={lang} caseKey={key} t={t} study={study} />;
+  return <CaseStudy lang={lang} caseKey={key} t={t} />;
 }

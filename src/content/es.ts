@@ -217,13 +217,288 @@ export const es: Dictionary = {
       },
       wiipo: {
         company: "Wiipo",
-        years: "2024–2025",
+        years: "2025",
         role: "UX Designer",
-        tags: ["Mobile", "Design system", "React Native"],
-        title: "Design system en React Native",
+        tags: ["Investigación UX", "Super app", "Prueba de usabilidad"],
+        title: "Función de registro de jornada dentro de la app de la empresa",
         summary: "[Problema → resultado, en una línea.]",
-        result: "[Resultado]",
+        result: "Widget lanzado en la Home (layout A, 67%)",
+        cardImage: {
+          src: "/casos/wiipo/wiipo-card",
+          width: 1024,
+          height: 640,
+          alt: "Pantalla de inicio de la app Wiipo con el botón para marcar la jornada destacado",
+        },
+        study: {
+          skills: [
+            "Investigación cuantitativa",
+            "Investigación cualitativa",
+            "Diseño y prototipado",
+          ],
+          method: [
+            "Benchmark",
+            "Formulario",
+            "Entrevistas semiestructuradas",
+            "Prueba de usabilidad",
+          ],
+          tools: ["Figma", "Google Forms", "Maze"],
+          cover: {
+            src: "/casos/wiipo/wiipo-capa",
+            width: 1168,
+            height: 420,
+            alt: "Pantalla de inicio de la app con el widget de registro de jornada en la parte central superior",
+          },
+          problem: {
+            paragraphs: [
+              "Wiipo, producto financiero de Senior Sistemas, quería convertirse en una super app para colaboradores: reunir vale de alimentación, liquidación de sueldo y billeteras con módulos de registro de jornada, feedback y planificación de vacaciones, entre otros.",
+              "El primer servicio en integrarse fue el registro de jornada. Es una tarea de segundos, repetida varias veces al día, que pasaría a vivir dentro de una app pensada para servicios financieros. La pregunta era: ¿dónde ubicarlo para que sea fácil de encontrar, sin perderse detrás del contenido financiero?",
+            ],
+            points: [
+              {
+                label: "Riesgo",
+                text: "que el registro quedara escondido detrás del contenido financiero.",
+              },
+              {
+                label: "Hipótesis",
+                text: "incorporar servicios del colaborador hace la app más conveniente y aumenta el uso.",
+              },
+            ],
+            cards: [
+              {
+                label: "Objetivo 1",
+                title: "Conocer la percepción de los usuarios sobre el recorrido Wiipo + Registro",
+              },
+              {
+                label: "Objetivo 2",
+                title: "Validar el recorrido de integración y la arquitectura de información",
+              },
+              {
+                label: "Objetivo 3",
+                title: "Definir los alcances técnicos de la integración",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Métodos cuantitativos y cualitativos combinados: lo que las personas hacen, lo que dicen y por qué.",
+            cards: [
+              {
+                label: "Benchmark",
+                title:
+                  "Fintechs y bancos digitales: arquitectura, design system, interacciones, nomenclatura",
+                note: "Estudio de 4 apps - Inter, Nubank, Itaú y Tenpo",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-benchmark",
+                  width: 394,
+                  height: 180,
+                  alt: "Recorte de pantallas de apps financieras usadas en el benchmark",
+                },
+              },
+              {
+                label: "Formulario",
+                title: "Alternativa y selección múltiple con usuarios activos",
+                note: "Muestra calculada: 384 participantes - 95% de confianza",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-formulario",
+                  width: 394,
+                  height: 180,
+                  alt: "Gráfico con respuestas del formulario aplicado a usuarios",
+                },
+              },
+              {
+                label: "Entrevistas",
+                title: "Semiestructuradas, con las preguntas del formulario como base",
+                note: "5 usuarios - 40 minutos por sesión",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-entrevistas",
+                  width: 394,
+                  height: 180,
+                  alt: "Ilustración de una sesión de entrevista con un usuario",
+                },
+              },
+              {
+                label: "Prueba de usabilidad",
+                title: "Tarea guiada, CES, elección entre layouts y pregunta abierta",
+                note: "27 respuestas - Colaboradores de Senior Sistemas",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-teste",
+                  width: 394,
+                  height: 180,
+                  alt: "Pantalla del prototipo usado en la prueba de usabilidad",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "Los números muestran el qué; los comentarios explican el porqué. Cada tipo de dato se leyó por separado y solo después se cruzó con los demás.",
+            rows: [
+              {
+                title: "Tarea guiada",
+                text: "Esfuerzo real, no opinión: tiempo, éxito, clics erróneos y mapa de calor del toque.",
+                data: "23,4 s · 100% de éxito · 51,5% de clics erróneos",
+              },
+              {
+                title: "Escalas de 1 a 5",
+                text: "Promedio y distribución completa, no solo la parte alta.",
+                data: "Lo usaría con frecuencia: 4,2 · Demasiado complejo: 1,8 · Se aprende rápido: 4,5",
+              },
+              {
+                title: "Elección entre 4 layouts",
+                text: "Voto único, leído como preferencia declarada.",
+                data: "A 67% · B 14% · C 14% · D 5%",
+              },
+              {
+                title: "Pregunta abierta",
+                text: "Comentarios agrupados en categorías, con el peso de cada una.",
+                data: "Organización 33,3% · menos banners 16,7% · feedback positivo 16,7% · técnicas 8,3% · ideas 8,3%",
+              },
+            ],
+            flow: {
+              label: "Cuatro tipos de dato llevan a la decisión por el layout A",
+              inputs: [
+                "Tarea: tiempo, éxito, clics",
+                "Escalas: promedio y distribución",
+                "Layouts: voto de preferencia",
+                "Pregunta abierta: categorías",
+              ],
+              decisionLabel: "Decisión",
+              decision: "Layout A en la Home",
+            },
+            crossTitle: "El cruce",
+            crossings: [
+              {
+                title: "La preferencia cobra sentido por la frecuencia",
+                text: "El layout A tuvo 67%, y un participante lo explica: el registro se usa al menos 4 veces al día; el saldo, de vez en cuando.",
+              },
+              {
+                title: "El 33% restante muestra lo que el layout A todavía no resuelve",
+                text: "Un participante sintió que el A ocupa mucho espacio y prefirió el C. Otro encontró confuso mezclar el registro con una app financiera y sugirió un atajo antes del login.",
+              },
+              {
+                title: "Los pedidos fuera del widget se separaron",
+                text: "Los pedidos de menos banners vienen del contexto de la home, no del widget. Se trataron como un hallazgo aparte.",
+              },
+              {
+                title: "Las fallas técnicas no entran en la decisión de diseño",
+                text: "La falla del reconocimiento facial es de autenticación y pertenece al alcance técnico.",
+              },
+            ],
+          },
+          decision: {
+            lead: "El widget de Registro va en la parte central superior de la Home: lo que más se usa al día queda más cerca, y la mayoría lo prefirió así.",
+            chartLabel: "Preferencia entre los 4 layouts",
+            options: [
+              {
+                letter: "A",
+                value: 67,
+                caption: "Widget de Registro en la parte central superior de la Home",
+              },
+              {
+                letter: "B",
+                value: 14,
+                caption: "Widget solo en la barra inferior",
+              },
+              {
+                letter: "C",
+                value: 14,
+                caption: "Widget más pequeño, junto a un banner",
+              },
+              {
+                letter: "D",
+                value: 5,
+                caption: "Acceso rápido arriba",
+              },
+            ],
+            cards: [
+              {
+                label: "Elegido",
+                title: "Layout A",
+              },
+              {
+                label: "Descartado",
+                title: "B, C y D, por el voto y por el espacio",
+              },
+              {
+                label: "Quedó abierto",
+                title: "Atajo antes del login. Menos banners en la home",
+              },
+            ],
+          },
+          delivery: {
+            lead: "Los prototipos usados en la prueba y el widget de Registro de la Home que después se lanzó.",
+            items: [
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-layouts",
+                  width: 256,
+                  height: 280,
+                  alt: "Cuatro posiciones probadas para el módulo de registro en la Home, lado a lado",
+                },
+                caption: "El mismo módulo en cuatro posiciones.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-modulo",
+                  width: 256,
+                  height: 280,
+                  alt: "Módulo de registro de jornada, con marcaciones y aviso de uso sin internet",
+                },
+                caption:
+                  "Presión prolongada para registrar, y aviso de que se puede marcar sin conexión.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-widgets",
+                  width: 256,
+                  height: 280,
+                  alt: "Tres widgets de registro de jornada para la pantalla de inicio del celular",
+                },
+                caption: "Probados en el celular.",
+              },
+            ],
+          },
+          result: {
+            lead: "El widget de registro de jornada se lanzó en la Home, en la posición que prefirió la mayoría de los participantes de la prueba.",
+            metrics: [
+              {
+                value: "67%",
+                label: "eligió el layout lanzado",
+              },
+              {
+                value: "100%",
+                label: "de éxito en la tarea, en 23,4 s",
+              },
+              {
+                value: "1,8",
+                label: "de complejidad, en escala de 1 a 5",
+              },
+            ],
+            image: {
+              src: "/casos/wiipo/wiipo-resultado",
+              width: 1920,
+              height: 1080,
+              alt: "Widget de registro de jornada en producción, en la Home de la app",
+            },
+          },
+        },
       },
+    },
+    /** Rótulos do molde real dos casos (os que têm `study`). */
+    caseStudy: {
+      meta: {
+        result: "Resultado",
+        skills: "Skills",
+        method: "Método",
+        tools: "Herramientas",
+      },
+      sections: {
+        problem: "Problema",
+        method: "Metodología",
+        analysis: "Análisis",
+        decision: "Decisión",
+        delivery: "Entrega",
+        result: "Resultado",
+      },
+      image: "Imagen",
     },
     caseTemplate: {
       back: "Todos los casos",
