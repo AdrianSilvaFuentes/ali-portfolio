@@ -53,6 +53,7 @@ Mantenha esta lista em dia. Quando o ali-ui ganhar a peça, troque e tire daqui.
 | Link de texto (menu, rodapé, "Ver todos os casos", "Ler o caso") | `nav-link.tsx`, `site-footer.tsx`, `home/section.tsx` (`textLinkClass`), `case-card.tsx` | O ali-ui não tem componente de link | Componente `Link` com variantes (navegação, inline, com seta) |
 | "Ver todas" das certificações (abre e fecha) | `resume/certifications.tsx` (`details`/`summary`) | O ali-ui não tem accordion ou disclosure | Componente `Disclosure` ou `Accordion` |
 | Área reservada de imagem | `placeholder.tsx` | Peça de conteúdo provisório, não de interface | Nenhuma por enquanto |
+| Painel do menu do celular (o botão ☰ é o Button do ali-ui) | `mobile-menu.tsx` | O ali-ui não tem menu que abre (gaveta ou disclosure) | Componente `Disclosure` ou `Sheet`, que também serviria ao "Ver todas" |
 
 ## Desvios a corrigir (estão quebrando a regra 3)
 
