@@ -6,7 +6,7 @@ import { CaseCard } from "../case-card";
 import { Eyebrow, HomeSection, textLinkClass } from "./section";
 
 /** Os três casos que a Home destaca, entre os quatro da página Trabalho. */
-const featured: CaseKey[] = ["wiipo", "support", "warehouses"];
+const featured: CaseKey[] = ["wiipo", "support", "aliUi"];
 
 /** 4. Casos em destaque, com link para a página Trabalho e cards que levam a cada caso. */
 export function FeaturedCases({
