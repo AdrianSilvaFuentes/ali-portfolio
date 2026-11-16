@@ -315,8 +315,127 @@ export const en: Dictionary = {
   resume: {
     eyebrow: "Resume",
     title: "From collecting behavior in data to designing the journeys that shape it.",
+    intro:
+      "[How I got here, in 3 short paragraphs: communication and marketing (why people do what they do on screen) → research and interaction design, with field visits → product, with design and code. Close with: today I take the problem all the way to the shipped product.]",
+    location: "Blumenau, SC",
+    nickname: { before: "Everyone calls me ", name: "Ali" },
+    photo: "Field research photo",
+    cv: "[Resume (PDF)]",
+    experience: {
+      title: "Experience",
+      items: [
+        {
+          period: "Apr 2025 — present",
+          place: "São Paulo · remote",
+          title: "UX Product Designer · Nuvia",
+          bullets: [
+            "Led UX strategy and end-to-end product design for Nuvia, a platform that empowers B2B sales teams with AI-driven data and automation.",
+            "Designed and documented user journeys across core modules including Search, Campaigns, Inbound, Records and Billing.",
+            "Authored product copy, onboarding flows and internal documentation in Mintlify to ensure clarity and consistency.",
+            "Used AI-powered tools like V0, Lovable and Figma Compose to accelerate design workflows, generate interface ideas and optimize content.",
+            "Acted as the bridge between Development, Marketing and Ops, aligning cross-functional teams around the product roadmap and delivery.",
+            "Conducted user research and interviews to validate flows and guide iterative design decisions.",
+            "Helped shape the go-to-market narrative with leadership, on value proposition and product positioning.",
+          ],
+        },
+        {
+          period: "Dec 2024 — Apr 2025",
+          place: "Blumenau, Brazil · hybrid",
+          title: "UX Designer · Wiipo",
+          bullets: [
+            "Research, design and documentation of Wiipo's design system for desktop and mobile (React Native).",
+            "Qualitative and quantitative user research.",
+            "Integrations between Senior Sistemas products and Wiipo to build a SuperApp.",
+          ],
+        },
+        {
+          period: "Nov 2022 — Jan 2025",
+          place: "Blumenau, Brazil",
+          title: "UX Designer · Senior Sistemas",
+          bullets: [
+            "Research with focus groups, semi-structured interviews, quantitative forms and data triangulation to define personas, journey maps, customer journey and product-market fit.",
+            "Web results analysis with Google Analytics, HubSpot and Maze to improve the UI.",
+            "Technical documentation of new Senior Design System components, covering usability, accessibility, core tokens and scenarios (React and Angular on the web; iOS, Flutter and Android on mobile).",
+            "Navigable prototypes in Figma for usability tests in Maze, analyzing heat maps, journey clicks, average time and device support.",
+            "Created the Senior Systems Icon Lib: more than 1,500 vector icons in Figma for the Senior Design System, saving costs compared to external resources.",
+            "Design improvements that raised the NPS of GKO Fretes XT by adopting the colors and visual patterns of the SDS (Senior Design System) adapted to Delphi.",
+            "Work sessions with back-end, front-end and full stack developers to improve processes on desktop, mobile devices and data collectors used in warehouses.",
+          ],
+        },
+        {
+          period: "Jun 2021 — Aug 2022",
+          place: "Chile",
+          title: "Digital Marketing Specialist · STAFF Chile",
+          bullets: [
+            "Reports with Google Analytics, Google Data Studio and Facebook Business Manager, among others, to track campaign budgets, user behavior on the website and improvements to digital products.",
+            "Email marketing campaigns from content design to HTML, with contact database cleanup in Excel for mass sends through Mailchimp.",
+            "Campaigns in Google Ads and Facebook Business Manager.",
+          ],
+        },
+        {
+          period: "Jan 2021 — Nov 2022",
+          place: "Colorado, USA · remote",
+          title: "Digital Marketing Consultant · The Rio System",
+          bullets: [
+            "Created the company's brand and visual identity, along with the SEO content strategy and its web presence.",
+            "Market research and benchmarking to build brand elements.",
+            "Landing page UI design and front-end development in WordPress with Elementor Pro.",
+          ],
+          link: "See brand",
+        },
+        {
+          period: "Jan 2020 — Jan 2023",
+          place: "Santiago, Chile · remote",
+          title: "UI Designer and Web Developer · NODO.team",
+          bullets: [
+            "Exponential growth in the delivery of websites of different depth, such as landing pages, blogs and e-commerce, using Figma, HTML5, CSS3, Elementor and WordPress.",
+            "Research and benchmarking presentations to clients and stakeholders to create the information architecture of their websites.",
+            "Review of content maps and improvements to restructure websites, focused on SEO and HTML best practices.",
+          ],
+          link: "See websites",
+        },
+        {
+          period: "Nov 2018 — Jun 2021",
+          place: "Chile",
+          title: "Account Executive · Agencia MRC",
+          bullets: [
+            "Active role in creating strategies for clients from many sectors, such as hotels, private aviation, foundations, dealerships, real estate, e-commerce and science.",
+            "Worked with a team of 5 UI/UX specialists and front-end and back-end developers to create strategic proposals for clients.",
+            "Prototyping and UI design with Figma and Adobe XD.",
+            "Supervised and maintained websites in advanced WordPress.",
+            "Research and benchmark presentations for new clients and stakeholders.",
+            "Nurtured client relationships that led to contract extensions and new business.",
+          ],
+        },
+      ],
+    },
+    education: {
+      title: "Education",
+      degree: "Marketing",
+      school: "Pontificia Universidad Católica de Chile",
+      years: "2014 — 2018",
+      honorsTitle: "Honors",
+      honors: [
+        "Matrícula de Honor",
+        "Beca de Excelencia Académica UC",
+        "Beca de Excelencia Académica (Government of Chile)",
+      ],
+    },
+    languages: {
+      title: "Languages",
+      items: [
+        { name: "Português", lang: "pt-BR", level: "native" },
+        { name: "Español", lang: "es", level: "native" },
+        { name: "English", lang: "en", level: "full professional" },
+      ],
+    },
+    certifications: {
+      title: "Certifications",
+      courses: { one: "course", many: "courses" },
+      showAll: "See all",
+      showLess: "See less",
+    },
   },
-  placeholder: "[This page is under construction.]",
   footer: {
     title: "Let's talk.",
     email: "[public e-mail]",
