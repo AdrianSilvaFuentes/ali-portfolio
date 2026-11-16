@@ -54,10 +54,7 @@ export function Certifications({
               className="flex flex-col gap-3"
             >
               <div className="flex flex-col gap-1">
-                <h3
-                  id={`cert-${group.id}`}
-                  className="font-mono text-body-xs tracking-wider text-subtle uppercase"
-                >
+                <h3 id={`cert-${group.id}`} className="text-label-md text-subtle">
                   {group.title[lang]}
                 </h3>
                 <p className="text-body-sm text-subtle">
