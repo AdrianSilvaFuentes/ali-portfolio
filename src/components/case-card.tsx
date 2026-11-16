@@ -3,6 +3,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type CaseKey, casePath, type Locale } from "@/i18n/config";
+import { CaseImage } from "./case/case-image";
 import { Placeholder } from "./placeholder";
 
 type CaseText = Dictionary["work"]["cases"][CaseKey];
@@ -28,7 +29,16 @@ export function CaseCard({
 }) {
   return (
     <article className="group relative flex h-full flex-col gap-3 rounded-md outline-focus outline-offset-4 has-focus-visible:outline-2">
-      <Placeholder label={imageLabel} className="aspect-16/10" />
+      {t.cardImage ? (
+        <CaseImage
+          image={t.cardImage}
+          label={imageLabel}
+          reserved={imageLabel}
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
+      ) : (
+        <Placeholder label={imageLabel} className="aspect-16/10" />
+      )}
       <p className="font-mono text-body-xs text-subtle">
         {t.company} · {t.years} · {t.role}
       </p>

@@ -45,6 +45,8 @@ type CaseText = {
   title: string;
   summary: string;
   result: string;
+  /** Imagem 16:10 do card na Home e em Trabalho. Sem ela, o card mostra uma área reservada. */
+  cardImage?: CaseImage;
   study?: CaseStudyContent;
 };
 
@@ -286,6 +288,12 @@ export const pt = {
         title: "Feature de registro de ponto dentro do app da empresa",
         summary: "[Problema → resultado, em uma linha.]",
         result: "Widget lançado na Home (layout A, 67%)",
+        cardImage: {
+          src: "/casos/wiipo/wiipo-card",
+          width: 1024,
+          height: 640,
+          alt: "Tela inicial do app Wiipo com o botão Marcar Ponto em destaque",
+        },
         study: {
           skills: ["Pesquisa quantitativa", "Pesquisa qualitativa", "Design e prototipação"],
           method: [

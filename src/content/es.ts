@@ -223,6 +223,12 @@ export const es: Dictionary = {
         title: "Función de registro de jornada dentro de la app de la empresa",
         summary: "[Problema → resultado, en una línea.]",
         result: "Widget lanzado en la Home (layout A, 67%)",
+        cardImage: {
+          src: "/casos/wiipo/wiipo-card",
+          width: 1024,
+          height: 640,
+          alt: "Pantalla de inicio de la app Wiipo con el botón para marcar la jornada destacado",
+        },
         study: {
           skills: [
             "Investigación cuantitativa",
