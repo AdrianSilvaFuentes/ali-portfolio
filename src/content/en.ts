@@ -433,6 +433,216 @@ export const en: Dictionary = {
           },
         },
       },
+      aliUi: {
+        company: "Personal project",
+        years: "2026",
+        role: "Design and code",
+        tags: ["Design system", "Tokens", "Accessibility"],
+        title: "ali-ui: a lean design system, from token to test",
+        summary: "[Problem → outcome, in one line.]",
+        result:
+          "21 components in light and dark themes, with WCAG AA contrast checked on every build",
+        study: {
+          skills: ["Systems design", "AI-assisted front-end", "Accessibility"],
+          method: ["Semantic tokens", "Components on Radix", "Contrast tests"],
+          tools: ["Figma", "Claude Code", "Storybook", "GitHub"],
+          cover: {
+            src: "/casos/ali-ui/ali-capa",
+            width: 1168,
+            height: 420,
+            alt: "The ali-ui form in light and dark themes, side by side",
+          },
+          problem: {
+            paragraphs: [
+              "Generic kits repeat what every design system already offers. ali-ui takes another route: few components, each with personality, solving concrete problems across different kinds of operations and industries.",
+              "For that to work, design and code have to move together: each design decision becomes a token, a component and a test, with the reasoning recorded in pull requests.",
+            ],
+            goal: {
+              label: "General goal",
+              title:
+                "Build a compact design system, with few well-finished components, from token to test",
+            },
+            cards: [
+              {
+                label: "Specific goal 1",
+                title: "Define tokens by role, with the same names in Figma, CSS and code",
+              },
+              {
+                label: "Specific goal 2",
+                title: "Ensure accessibility by default, with contrast checked in both themes",
+              },
+              {
+                label: "Specific goal 3",
+                title: "Prove the system in a real product: this site",
+              },
+            ],
+          },
+          methodology: {
+            lead: "References from mature systems, combined with a workflow where every change goes through a branch, automated checks and a pull request.",
+            cards: [
+              {
+                label: "References",
+                title:
+                  "Carbon, Atlassian Design System and Material Design as a comparison baseline",
+                note: "Study of mature systems",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-referencias",
+                  width: 394,
+                  height: 180,
+                  alt: "Mature design system references used as a baseline",
+                },
+              },
+              {
+                label: "Tokens",
+                title: "Two tiers: primitives (values) and semantics (roles)",
+                note: "Color, spacing, radius, shadow, typography and motion",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-tokens",
+                  width: 394,
+                  height: 180,
+                  alt: "ali-ui primitive and semantic tokens",
+                },
+              },
+              {
+                label: "Components",
+                title: "Radix UI for accessibility, CVA for variants, Tailwind CSS 4 for styling",
+                note: "Component, story and test together",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-componentes",
+                  width: 394,
+                  height: 180,
+                  alt: "ali-ui components in Storybook",
+                },
+              },
+              {
+                label: "Verification",
+                title: "Lint, types, tests and build on every pull request",
+                note: "A contrast failure breaks the build",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-verificacao",
+                  width: 394,
+                  height: 180,
+                  alt: "Automated contrast checks and tests",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "The whole system rests on one rule: a component never knows the value, only the role.",
+            columns: ["Layer", "Example", "Role"],
+            rows: [
+              {
+                title: "Primitive",
+                text: "11-step scales (50 to 950): neutrals, brand and status",
+                data: "neutral-light-50 · primary · red-500",
+              },
+              {
+                title: "Semantic",
+                text: "Names the role of a value and changes per theme (light and dark)",
+                data: "surface · surface-raised · text-subtle · border-focus",
+              },
+              {
+                title: "Usage",
+                text: "Tailwind classes generated from the tokens; loose values are blocked by lint",
+                data: "bg-surface-raised · text-subtle",
+              },
+            ],
+            flow: {
+              kind: "chips",
+              label:
+                "One name everywhere: spacing becomes --ali-spacing-4 in CSS and p-4 in Tailwind",
+              title: "One name everywhere",
+              chips: ["spacing", "--ali-spacing-4", "p-4"],
+              caption: "TypeScript → CSS → Tailwind",
+            },
+            crossTitle: "Crossing the decisions",
+            crossings: [
+              {
+                title: "Elevation instead of decoration",
+                text: "Four surface heights: in the light theme height comes from shadow; in the dark theme, from color.",
+              },
+              {
+                title: "Contrast as a test",
+                text: "Text and borders checked against WCAG AA (4.5:1 for text, 3:1 for controls) on every surface.",
+              },
+              {
+                title: "Lint as the system's guard",
+                text: "Rules block importing primitives, arbitrary values (like a hand-written hex color) and filled icons.",
+              },
+              {
+                title: "Figma synced from code",
+                text: "A plugin creates and updates Figma variables from the tokens, without duplicating collections.",
+              },
+            ],
+          },
+          decision: {
+            lead: "Decisions that keep the system small and consistent, and the ones still open.",
+            cards: [
+              {
+                label: "Chosen",
+                title:
+                  "Radix UI for accessibility, CVA for variants and semantic tokens as the only source of values",
+              },
+              {
+                label: "Discarded",
+                title: "Loose color, size and spacing values in components, blocked by lint",
+              },
+              {
+                label: "Deliberate exceptions",
+                title:
+                  "3 points below AA documented in Storybook: white text on the brand gradient (≈ 2.35:1), the subtle border at rest and the placeholder in the light theme",
+              },
+              {
+                label: "Left open",
+                title:
+                  "Dark mode in Figma: the free plan allows one mode per collection, so only light is created",
+              },
+            ],
+          },
+          delivery: {
+            lead: "The system ships as living documentation: the published Storybook brings together foundations, components and the contrast and token pages.",
+            items: [
+              {
+                image: {
+                  src: "/casos/ali-ui/ali-entrega-storybook",
+                  width: 804,
+                  height: 470,
+                  alt: "The published ali-ui Storybook, with foundations and components",
+                },
+                caption: "Published Storybook - code on GitHub - Figma plugin to sync the tokens",
+              },
+            ],
+            links: [
+              {
+                label: "Open Storybook",
+                href: "https://ali-ui-delta.vercel.app",
+              },
+              {
+                label: "View on GitHub",
+                href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+              },
+            ],
+          },
+          result: {
+            lead: "ali-ui already supports a real product: this site is built with the system's components.",
+            metrics: [
+              {
+                value: "21",
+                label: "components, each with a story and a test",
+              },
+              {
+                value: "2",
+                label: "themes, light and dark",
+              },
+              {
+                value: "AA",
+                label: "contrast checked on every build",
+              },
+            ],
+            note: "A personal project that keeps evolving: the code is open to view and every decision is recorded in the pull requests.",
+          },
+        },
+      },
       warehouses: {
         company: "[Company]",
         years: "[year]",
@@ -799,6 +1009,7 @@ export const en: Dictionary = {
     lead: "Personal projects, no company in between. Here you see how I decide and implement.",
     aliUi: {
       eyebrow: "Main project · 2026",
+      caseLink: "Read the full case",
       title: "ali-ui",
       lead: "[In one sentence: a lean design system, with few components, each one well finished, from token to test.]",
       facts: [
