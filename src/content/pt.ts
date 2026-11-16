@@ -1,8 +1,55 @@
+import type { CaseKey } from "@/i18n/config";
+
 /**
  * Textos do site em português, a língua-fonte. en.ts e es.ts seguem esta mesma forma.
  * Nenhum texto vive dentro dos componentes.
  * Trechos entre [colchetes] são provisórios e continuam visíveis até o conteúdo final.
  */
+/** Uma imagem de caso: caminho em public/ sem extensão (.webp ou .png), tamanho exibido e texto alternativo. */
+export type CaseImage = { src: string; width: number; height: number; alt: string };
+
+/** Um card: rótulo, título sem ponto final e, opcionalmente, uma nota curta com " - ". */
+type CaseCard = { label: string; title: string; note?: string };
+
+/** O conteúdo real de um caso, no molde: Problema, Metodologia, Análise, Decisão, Entrega, Resultado. */
+export type CaseStudyContent = {
+  skills: string[];
+  method: string[];
+  tools: string[];
+  cover: CaseImage;
+  problem: { paragraphs: string[]; points: { label: string; text: string }[]; cards: CaseCard[] };
+  methodology: { lead: string; cards: (CaseCard & { image: CaseImage })[] };
+  analysis: {
+    lead: string;
+    rows: { title: string; text: string; data: string }[];
+    flow: { label: string; inputs: string[]; decisionLabel: string; decision: string };
+    crossTitle: string;
+    crossings: { title: string; text: string }[];
+  };
+  decision: {
+    lead: string;
+    chartLabel: string;
+    options: { letter: string; value: number; caption: string }[];
+    cards: CaseCard[];
+  };
+  delivery: { lead: string; items: { image: CaseImage; caption: string }[] };
+  result: { lead: string; metrics: { value: string; label: string }[]; image: CaseImage };
+};
+
+/** Um caso de produto. Com `study`, a página usa o molde real; sem ele, o modelo provisório. */
+type CaseText = {
+  company: string;
+  years: string;
+  role: string;
+  tags: string[];
+  title: string;
+  summary: string;
+  result: string;
+  /** Imagem 16:10 do card na Home e em Trabalho. Sem ela, o card mostra uma área reservada. */
+  cardImage?: CaseImage;
+  study?: CaseStudyContent;
+};
+
 /** Ícones de ferramentas que o visitante reconhece. As outras ficam só com o nome. */
 export type StackIcon = "react" | "typescript" | "tailwind" | "storybook" | "vercel";
 /** Um papel na linha do tempo. Texto corrido ou tópicos; o link leva à lista Web e marca. */
@@ -235,18 +282,289 @@ export const pt = {
       },
       wiipo: {
         company: "Wiipo",
-        years: "2024–2025",
+        years: "2025",
         role: "UX Designer",
-        tags: ["Mobile", "Design system", "React Native"],
-        title: "Design system em React Native",
+        tags: ["Pesquisa UX", "Super app", "Teste de usabilidade"],
+        title: "Feature de registro de ponto dentro do app da empresa",
         summary: "[Problema → resultado, em uma linha.]",
-        result: "[Resultado]",
+        result: "Widget lançado na Home (layout A, 67%)",
+        cardImage: {
+          src: "/casos/wiipo/wiipo-card",
+          width: 1024,
+          height: 640,
+          alt: "Tela inicial do app Wiipo com o botão Marcar Ponto em destaque",
+        },
+        study: {
+          skills: ["Pesquisa quantitativa", "Pesquisa qualitativa", "Design e prototipação"],
+          method: [
+            "Benchmark",
+            "Formulário",
+            "Entrevistas semiestruturadas",
+            "Teste de usabilidade",
+          ],
+          tools: ["Figma", "Google Forms", "Maze"],
+          cover: {
+            src: "/casos/wiipo/wiipo-capa",
+            width: 1168,
+            height: 420,
+            alt: "Tela inicial do app com o widget de registro de ponto na parte central-superior",
+          },
+          problem: {
+            paragraphs: [
+              "A Wiipo, produto financeiro da Senior Sistemas, queria virar um super app para colaboradores: reunir vale-alimentação, holerite e carteiras com módulos de registro de ponto, feedbacks e programação de férias, entre outros.",
+              "O primeiro serviço a integrar foi o registro de ponto. É uma tarefa de segundos, repetida várias vezes ao dia, que passaria a morar dentro de um app pensado para serviços financeiros. A pergunta era: onde colocá-lo para que fique fácil de achar, sem se perder atrás do conteúdo financeiro?",
+            ],
+            points: [
+              {
+                label: "Risco",
+                text: "o ponto ficar escondido atrás de conteúdo financeiro.",
+              },
+              {
+                label: "Hipótese",
+                text: "incorporar serviços do colaborador torna o app mais conveniente e aumenta o uso.",
+              },
+            ],
+            cards: [
+              {
+                label: "Objetivo 1",
+                title: "Conhecer a percepção dos usuários sobre a jornada Wiipo + Ponto",
+              },
+              {
+                label: "Objetivo 2",
+                title: "Validar a jornada de integração e a arquitetura de informação",
+              },
+              {
+                label: "Objetivo 3",
+                title: "Definir os alcances técnicos da integração",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Métodos quantitativos e qualitativos combinados: o que as pessoas fazem, o que dizem e por quê.",
+            cards: [
+              {
+                label: "Benchmark",
+                title:
+                  "Fintechs e bancos digitais: arquitetura, design system, interações, nomenclatura",
+                note: "Estudo de 4 apps - Inter, Nubank, Itaú e Tenpo",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-benchmark",
+                  width: 394,
+                  height: 180,
+                  alt: "Recorte de telas de apps financeiros usados no benchmark",
+                },
+              },
+              {
+                label: "Formulário",
+                title: "Alternativa e seleção múltipla com usuários ativos",
+                note: "Amostra calculada: 384 participantes - 95% de confiança",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-formulario",
+                  width: 394,
+                  height: 180,
+                  alt: "Gráfico com respostas do formulário aplicado a usuários",
+                },
+              },
+              {
+                label: "Entrevistas",
+                title: "Semiestruturadas, com as perguntas do formulário como base",
+                note: "5 usuários - 40 minutos por sessão",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-entrevistas",
+                  width: 394,
+                  height: 180,
+                  alt: "Ilustração de uma sessão de entrevista com um usuário",
+                },
+              },
+              {
+                label: "Teste de usabilidade",
+                title: "Tarefa guiada, CES, escolha entre layouts e pergunta aberta",
+                note: "27 respostas - Colaboradores da Senior Sistemas",
+                image: {
+                  src: "/casos/wiipo/wiipo-metodo-teste",
+                  width: 394,
+                  height: 180,
+                  alt: "Tela do protótipo usado no teste de usabilidade",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "Os números mostram o quê; os comentários explicam por quê. Cada tipo de dado foi lido separadamente e só depois cruzado com os outros.",
+            rows: [
+              {
+                title: "Tarefa guiada",
+                text: "Esforço real, não opinião: tempo, sucesso, cliques errados e mapa de calor do toque.",
+                data: "23,4 s · 100% de sucesso · 51,5% de cliques errados",
+              },
+              {
+                title: "Escalas de 1 a 5",
+                text: "Média e distribuição inteira, não só o topo.",
+                data: "Usaria com frequência: 4,2 · Complexo demais: 1,8 · Aprende rápido: 4,5",
+              },
+              {
+                title: "Escolha entre 4 layouts",
+                text: "Voto único, lido como preferência declarada.",
+                data: "A 67% · B 14% · C 14% · D 5%",
+              },
+              {
+                title: "Pergunta aberta",
+                text: "Comentários agrupados em categorias, com o peso de cada uma.",
+                data: "Organização 33,3% · menos banners 16,7% · feedback positivo 16,7% · técnicas 8,3% · ideias 8,3%",
+              },
+            ],
+            flow: {
+              label: "Quatro tipos de dado levam à decisão pelo layout A",
+              inputs: [
+                "Tarefa: tempo, sucesso, cliques",
+                "Escalas: média e distribuição",
+                "Layouts: voto de preferência",
+                "Pergunta aberta: categorias",
+              ],
+              decisionLabel: "Decisão",
+              decision: "Layout A na Home",
+            },
+            crossTitle: "O cruzamento",
+            crossings: [
+              {
+                title: "A preferência ganha sentido pela frequência",
+                text: "O layout A teve 67%, e um participante explica: o ponto é usado ao menos 4 vezes ao dia; o saldo, esporadicamente.",
+              },
+              {
+                title: "Os 33% restantes mostram o que o layout A ainda não resolve",
+                text: "Um participante achou que o A ocupa muito espaço e preferiu o C. Outro achou confuso misturar ponto e app financeiro e sugeriu um atalho antes do login.",
+              },
+              {
+                title: "Pedidos fora do widget foram separados",
+                text: "Os pedidos de menos banners vêm do contexto da home, não do widget. Foram tratados como achado à parte.",
+              },
+              {
+                title: "Falhas técnicas não entram na decisão de design",
+                text: "A falha do reconhecimento facial é de autenticação e pertence ao alcance técnico.",
+              },
+            ],
+          },
+          decision: {
+            lead: "O widget de Ponto entra na parte central-superior da Home: o que se usa mais vezes por dia fica mais perto, e a maioria preferiu assim.",
+            chartLabel: "Preferência entre os 4 layouts",
+            options: [
+              {
+                letter: "A",
+                value: 67,
+                caption: "Widget de Ponto na parte central-superior da Home",
+              },
+              {
+                letter: "B",
+                value: 14,
+                caption: "Widget só na barra inferior",
+              },
+              {
+                letter: "C",
+                value: 14,
+                caption: "Widget menor, junto com banner",
+              },
+              {
+                letter: "D",
+                value: 5,
+                caption: "Acesso rápido no topo",
+              },
+            ],
+            cards: [
+              {
+                label: "Escolhido",
+                title: "Layout A",
+              },
+              {
+                label: "Descartado",
+                title: "B, C e D, pelo voto e pelo espaço",
+              },
+              {
+                label: "Ficou em aberto",
+                title: "Atalho antes do login. Menos banners na home",
+              },
+            ],
+          },
+          delivery: {
+            lead: "Os protótipos usados no teste e o widget de Ponto da Home que depois foi lançado.",
+            items: [
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-layouts",
+                  width: 256,
+                  height: 280,
+                  alt: "Quatro posições testadas para o módulo de ponto na Home, lado a lado",
+                },
+                caption: "O mesmo módulo em quatro posições.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-modulo",
+                  width: 256,
+                  height: 280,
+                  alt: "Módulo de registro de ponto, com marcações e aviso de uso sem internet",
+                },
+                caption:
+                  "Pressão prolongada para registrar, e aviso de que dá para bater o ponto offline.",
+              },
+              {
+                image: {
+                  src: "/casos/wiipo/wiipo-entrega-widgets",
+                  width: 256,
+                  height: 280,
+                  alt: "Três widgets de registro de ponto para a tela inicial do celular",
+                },
+                caption: "Testados no celular.",
+              },
+            ],
+          },
+          result: {
+            lead: "O widget de registro de ponto foi lançado na Home, na posição preferida pela maioria dos participantes do teste.",
+            metrics: [
+              {
+                value: "67%",
+                label: "escolheram o layout lançado",
+              },
+              {
+                value: "100%",
+                label: "de sucesso na tarefa, em 23,4 s",
+              },
+              {
+                value: "1,8",
+                label: "de complexidade, em escala de 1 a 5",
+              },
+            ],
+            image: {
+              src: "/casos/wiipo/wiipo-resultado",
+              width: 1920,
+              height: 1080,
+              alt: "Widget de registro de ponto no ar, na Home do app",
+            },
+          },
+        },
       },
-    },
+    } as Record<CaseKey, CaseText>,
     /**
      * O modelo da página de caso, igual para todos enquanto o conteúdo real não chega.
      * Quando chegar, cada caso ganha os próprios textos.
      */
+    /** Rótulos do molde real dos casos (os que têm `study`). */
+    caseStudy: {
+      meta: {
+        result: "Resultado",
+        skills: "Skills",
+        method: "Método",
+        tools: "Ferramentas",
+      },
+      sections: {
+        problem: "Problema",
+        method: "Metodologia",
+        analysis: "Análise",
+        decision: "Decisão",
+        delivery: "Entrega",
+        result: "Resultado",
+      },
+      image: "Imagem",
+    },
     caseTemplate: {
       back: "Todos os casos",
       meta: {

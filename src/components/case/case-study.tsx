@@ -88,7 +88,7 @@ function Header({
 }
 
 /** Número pequeno e título de cada seção (01 O problema...). */
-function SectionTitle({
+export function SectionTitle({
   id,
   number,
   children,
@@ -227,7 +227,7 @@ function Result({ tpl }: { tpl: Template }) {
 }
 
 /** O próximo caso, na ordem de src/i18n/config.ts. Depois do último, volta ao primeiro. */
-function NextCase({ lang, caseKey, t }: { lang: Locale; caseKey: CaseKey; t: Dictionary }) {
+export function NextCase({ lang, caseKey, t }: { lang: Locale; caseKey: CaseKey; t: Dictionary }) {
   const index = caseKeys.indexOf(caseKey);
   const nextKey = caseKeys[(index + 1) % caseKeys.length] ?? caseKey;
   const next = t.work.cases[nextKey];
