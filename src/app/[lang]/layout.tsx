@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -58,6 +59,14 @@ export default async function RootLayout({
           {children}
         </main>
         <SiteFooter t={t} />
+        {/*
+          Dev Grabber: inspeciona elementos e copia seletor e CSS para colar no Claude. Só
+          carrega com NEXT_PUBLIC_DEV_GRABBER=1, que fica no .env.local (fora do Git e da
+          Vercel). No site publicado, a variável não existe e o script não entra.
+        */}
+        {process.env.NEXT_PUBLIC_DEV_GRABBER === "1" && (
+          <Script src="/dev/grabber.js" strategy="afterInteractive" />
+        )}
       </body>
     </html>
   );

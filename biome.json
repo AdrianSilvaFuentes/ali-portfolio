@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!pnpm-lock.yaml", "!.claude"]
+    "includes": ["**", "!node_modules", "!.next", "!pnpm-lock.yaml", "!.claude", "!public/dev"]
   },
   "formatter": {
     "enabled": true,
