@@ -135,7 +135,11 @@ body {
   left: 100%;
   width: var(--ali-spacing-8);
   aspect-ratio: 42 / 43;
-  background: url("/images/cursor.svg") no-repeat center / contain;
+  /*
+   * PNG a 4x gerado do cursor.svg: o Safari do iPhone desenha os filtros (sombras) do SVG em
+   * baixa resolução e o cursor saía pixelado.
+   */
+  background: url("/images/cursor.png") no-repeat center / contain;
   margin-left: calc(var(--ali-spacing-8) * -0.7);
   margin-top: calc(var(--ali-spacing-8) * -0.18);
   pointer-events: none;
