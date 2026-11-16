@@ -1,4 +1,4 @@
-import { Tag } from "@adriansilvafuentes/ui";
+import { Button, Tag } from "@adriansilvafuentes/ui";
 import { IconArrowDown, IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -162,6 +162,20 @@ export function CaseFull({
             </li>
           ))}
         </ul>
+        {study.delivery.links && (
+          <div className="flex flex-wrap gap-3">
+            {study.delivery.links.map((link, index) => (
+              <Button
+                key={link.href}
+                size="sm"
+                variant={index === 0 ? "primary" : "secondary"}
+                asChild
+              >
+                <a href={link.href}>{link.label}</a>
+              </Button>
+            ))}
+          </div>
+        )}
       </Section>
 
       <Section id="resultado" number={6} title={labels.sections.result} sunken>
@@ -253,8 +267,9 @@ function CardText({ card, className }: { card: Card; className?: string }) {
 }
 
 function CardGrid({ cards }: { cards: Card[] }) {
+  // Com 4 cards, duas colunas (2 × 2); com 3, três colunas.
   return (
-    <ul className="grid gap-4 sm:grid-cols-3">
+    <ul className={`grid gap-4 ${cards.length === 4 ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
       {cards.map((card) => (
         <li key={card.label} className="rounded-md border border-subtle bg-surface-raised p-5">
           <CardText card={card} />
@@ -278,6 +293,27 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
   );
   // O amarelo é só fundo; o texto continua na cor padrão.
   const highlight = "rounded-sm border border-default bg-primary-subtle px-5 py-4";
+
+  if (flow.kind === "chips") {
+    return (
+      <figure aria-label={flow.label} className="flex flex-col gap-3">
+        <figcaption className="font-mono text-body-xs text-subtle">{flow.title}</figcaption>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <ol className="flex flex-wrap items-center gap-2">
+            {flow.chips.map((chip, index) => (
+              <li key={chip} className="flex items-center gap-2">
+                {index > 0 && <IconArrowRight aria-hidden className="size-4 text-icon-subtle" />}
+                <Tag color="gray" size="sm">
+                  {chip}
+                </Tag>
+              </li>
+            ))}
+          </ol>
+          <span className="text-body-sm text-subtle">{flow.caption}</span>
+        </div>
+      </figure>
+    );
+  }
 
   if (flow.kind === "chain") {
     return (
@@ -329,6 +365,9 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
  */
 function AnalysisTable({ analysis }: { analysis: CaseStudyContent["analysis"] }) {
   const columns = analysis.columns;
+  // Tabela com cabeçalho e sem citações (ex.: Camada | Exemplo | Papel): o dado em código vem
+  // na coluna do meio e o texto na última.
+  const dataFirst = Boolean(columns) && analysis.rows.every((row) => !row.quote);
   const cell = (index: number) =>
     columns && (
       <span className="font-mono text-body-xs text-subtle md:sr-only">{columns[index]}</span>
@@ -358,12 +397,18 @@ function AnalysisTable({ analysis }: { analysis: CaseStudyContent["analysis"] })
             </div>
             <div className="flex flex-col gap-1.5">
               {cell(1)}
-              <p className="text-body-sm text-subtle">{row.text}</p>
+              {dataFirst ? (
+                <p className="font-mono text-body-xs">{row.data}</p>
+              ) : (
+                <p className="text-body-sm text-subtle">{row.text}</p>
+              )}
               {row.quote && <p className="font-mono text-body-xs">{row.data}</p>}
             </div>
             <div className="flex flex-col gap-1">
               {cell(2)}
-              {row.quote ? (
+              {dataFirst ? (
+                <p className="text-body-sm text-subtle">{row.text}</p>
+              ) : row.quote ? (
                 <blockquote className="text-body-md italic">
                   “{row.quote}”
                   {row.source && <span className="not-italic text-subtle"> ({row.source})</span>}

@@ -64,7 +64,7 @@ export default async function InnerPage({ params }: PageProps<"/[lang]/[page]">)
         <PageIntro eyebrow={t.built.eyebrow} title={t.built.title}>
           <p className="max-w-xl text-body-lg text-subtle">{t.built.lead}</p>
         </PageIntro>
-        <BuiltProjects t={t.built} />
+        <BuiltProjects lang={lang} t={t.built} />
       </>
     );
   }

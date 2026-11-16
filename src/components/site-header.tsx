@@ -22,7 +22,7 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-subtle bg-surface shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-subtle bg-surface shadow-xs">
       <HeaderOffset />
       <Container className="flex flex-wrap items-center gap-x-7 gap-y-1 py-3">
         <Link

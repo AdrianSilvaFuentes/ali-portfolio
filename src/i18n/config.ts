@@ -45,6 +45,11 @@ export const cases = {
     en: "premium-support-plans",
     es: "soporte-planes-premium",
   },
+  aliUi: {
+    pt: "ali-ui-design-system",
+    en: "ali-ui-design-system",
+    es: "ali-ui-design-system",
+  },
   warehouses: {
     pt: "pesquisa-armazens",
     en: "warehouse-research",

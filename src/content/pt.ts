@@ -42,7 +42,12 @@ export type CaseStudyContent = {
     chart?: { label: string; options: { letter: string; value: number; caption: string }[] };
     cards: CaseCard[];
   };
-  delivery: { lead: string; items: { image: CaseImage; caption: string }[] };
+  delivery: {
+    lead: string;
+    items: { image: CaseImage; caption: string }[];
+    /** Links para o que foi entregue (ex.: Storybook e GitHub), como botões. */
+    links?: { label: string; href: string }[];
+  };
   result: {
     lead: string;
     metrics: { value: string; label: string }[];
@@ -55,10 +60,12 @@ export type CaseStudyContent = {
 /**
  * O diagrama da análise. "merge": várias entradas levam a uma decisão.
  * "chain": uma sequência de etapas, a última em destaque.
+ * "chips": um nome passando por etapas, em etiquetas (ex.: spacing → --ali-spacing-4 → p-4).
  */
 type CaseFlow =
   | { kind: "merge"; label: string; inputs: string[]; decisionLabel: string; decision: string }
-  | { kind: "chain"; label: string; steps: { title: string; note: string }[] };
+  | { kind: "chain"; label: string; steps: { title: string; note: string }[] }
+  | { kind: "chips"; label: string; title: string; chips: string[]; caption: string };
 
 /** Um caso de produto. Com `study`, a página usa o molde real; sem ele, o modelo provisório. */
 type CaseText = {
@@ -543,6 +550,217 @@ export const pt = {
           },
         },
       },
+      aliUi: {
+        company: "Projeto pessoal",
+        years: "2026",
+        role: "Design e código",
+        tags: ["Design system", "Tokens", "Acessibilidade"],
+        title: "ali-ui: um design system enxuto, do token ao teste",
+        summary: "[Problema → resultado, em uma linha.]",
+        result:
+          "21 componentes em tema claro e escuro, com contraste WCAG AA verificado a cada build",
+        study: {
+          skills: ["Design de sistemas", "Front-end com IA", "Acessibilidade"],
+          method: ["Tokens semânticos", "Componentes sobre Radix", "Testes de contraste"],
+          tools: ["Figma", "Claude Code", "Storybook", "GitHub"],
+          cover: {
+            src: "/casos/ali-ui/ali-capa",
+            width: 1168,
+            height: 420,
+            alt: "Formulário do ali-ui nos temas claro e escuro, lado a lado",
+          },
+          problem: {
+            paragraphs: [
+              "Kits genéricos repetem o que todo design system já oferece. A proposta do ali-ui é outra: poucos componentes, cada um com personalidade, resolvendo problemas concretos em diferentes tipos de operação e de indústria.",
+              "Para isso funcionar, o desenho e o código precisam andar juntos: cada decisão de design vira um token, um componente e um teste, com o raciocínio registrado em pull requests.",
+            ],
+            goal: {
+              label: "Objetivo geral",
+              title:
+                "Construir um design system compacto, com poucos componentes bem acabados, do token ao teste",
+            },
+            cards: [
+              {
+                label: "Objetivo específico 1",
+                title: "Definir tokens por papel, com os mesmos nomes no Figma, no CSS e no código",
+              },
+              {
+                label: "Objetivo específico 2",
+                title: "Garantir acessibilidade por padrão, com contraste checado nos dois temas",
+              },
+              {
+                label: "Objetivo específico 3",
+                title: "Provar o sistema em um produto real: este site",
+              },
+            ],
+          },
+          methodology: {
+            lead: "Referências de sistemas maduros, combinadas com um fluxo de trabalho em que cada mudança passa por branch, verificação automática e pull request.",
+            cards: [
+              {
+                label: "Referências",
+                title: "Carbon, Atlassian Design System e Material Design como base de comparação",
+                note: "Estudo de sistemas maduros",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-referencias",
+                  width: 394,
+                  height: 180,
+                  alt: "Referências de design systems maduros usadas como base",
+                },
+              },
+              {
+                label: "Tokens",
+                title: "Dois níveis: primitivos (valores) e semânticos (papéis)",
+                note: "Cor, espaçamento, raio, sombra, tipografia e movimento",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-tokens",
+                  width: 394,
+                  height: 180,
+                  alt: "Tokens primitivos e semânticos do ali-ui",
+                },
+              },
+              {
+                label: "Componentes",
+                title:
+                  "Radix UI para acessibilidade, CVA para variantes, Tailwind CSS 4 para estilo",
+                note: "Componente, story e teste juntos",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-componentes",
+                  width: 394,
+                  height: 180,
+                  alt: "Componentes do ali-ui no Storybook",
+                },
+              },
+              {
+                label: "Verificação",
+                title: "Lint, tipos, testes e build a cada pull request",
+                note: "Falha de contraste quebra o build",
+                image: {
+                  src: "/casos/ali-ui/ali-metodo-verificacao",
+                  width: 394,
+                  height: 180,
+                  alt: "Verificação automática de contraste e testes",
+                },
+              },
+            ],
+          },
+          analysis: {
+            lead: "O sistema inteiro depende de uma regra: o componente nunca conhece o valor, só o papel.",
+            columns: ["Camada", "Exemplo", "Papel"],
+            rows: [
+              {
+                title: "Primitivo",
+                text: "Escalas de 11 passos (50 a 950): neutras, marca e status",
+                data: "neutral-light-50 · primary · red-500",
+              },
+              {
+                title: "Semântico",
+                text: "Nomeia o papel do valor e muda por tema (claro e escuro)",
+                data: "surface · surface-raised · text-subtle · border-focus",
+              },
+              {
+                title: "Uso",
+                text: "Classes do Tailwind geradas dos tokens; valores soltos são bloqueados por lint",
+                data: "bg-surface-raised · text-subtle",
+              },
+            ],
+            flow: {
+              kind: "chips",
+              label: "Um nome em todo lugar: spacing vira --ali-spacing-4 no CSS e p-4 no Tailwind",
+              title: "Um nome em todo lugar",
+              chips: ["spacing", "--ali-spacing-4", "p-4"],
+              caption: "TypeScript → CSS → Tailwind",
+            },
+            crossTitle: "O cruzamento",
+            crossings: [
+              {
+                title: "Elevação em vez de decoração",
+                text: "Quatro alturas de superfície: no tema claro a altura vem da sombra; no escuro, da cor.",
+              },
+              {
+                title: "Contraste como teste",
+                text: "Texto e bordas checados contra WCAG AA (4,5:1 para texto, 3:1 para controles) em cada superfície.",
+              },
+              {
+                title: "Lint como guarda do sistema",
+                text: "Regras bloqueiam importar primitivos, valores arbitrários (como uma cor em hexadecimal escrita à mão) e ícones preenchidos.",
+              },
+              {
+                title: "Figma sincronizado pelo código",
+                text: "Um plugin cria e atualiza as variáveis do Figma a partir dos tokens, sem duplicar coleções.",
+              },
+            ],
+          },
+          decision: {
+            lead: "Decisões que mantêm o sistema pequeno e consistente, e as que ainda estão em aberto.",
+            cards: [
+              {
+                label: "Escolhido",
+                title:
+                  "Radix UI para acessibilidade, CVA para variantes e tokens semânticos como única fonte de valores",
+              },
+              {
+                label: "Descartado",
+                title:
+                  "Valores soltos de cor, tamanho e espaçamento nos componentes, bloqueados por lint",
+              },
+              {
+                label: "Exceções conscientes",
+                title:
+                  "3 pontos abaixo do AA documentados no Storybook: texto branco sobre o degradê da marca (≈ 2,35:1), borda subtle em repouso e placeholder no tema claro",
+              },
+              {
+                label: "Ficou em aberto",
+                title:
+                  "Modo escuro no Figma: o plano gratuito permite um modo por coleção, então só o claro é criado",
+              },
+            ],
+          },
+          delivery: {
+            lead: "O sistema é entregue como documentação viva: o Storybook publicado reúne fundamentos, componentes e as páginas de contraste e tokens.",
+            items: [
+              {
+                image: {
+                  src: "/casos/ali-ui/ali-entrega-storybook",
+                  width: 804,
+                  height: 470,
+                  alt: "Storybook publicado do ali-ui, com fundamentos e componentes",
+                },
+                caption:
+                  "Storybook publicado - código no GitHub - plugin do Figma para sincronizar os tokens",
+              },
+            ],
+            links: [
+              {
+                label: "Abrir o Storybook",
+                href: "https://ali-ui-delta.vercel.app",
+              },
+              {
+                label: "Ver no GitHub",
+                href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+              },
+            ],
+          },
+          result: {
+            lead: "O ali-ui já sustenta um produto real: este site é feito com os componentes do sistema.",
+            metrics: [
+              {
+                value: "21",
+                label: "componentes, cada um com story e teste",
+              },
+              {
+                value: "2",
+                label: "temas, claro e escuro",
+              },
+              {
+                value: "AA",
+                label: "contraste verificado a cada build",
+              },
+            ],
+            note: "Projeto pessoal e em evolução: o código é aberto para visualização e cada decisão fica registrada nos pull requests.",
+          },
+        },
+      },
       warehouses: {
         company: "[Empresa]",
         years: "[ano]",
@@ -919,6 +1137,7 @@ export const pt = {
     lead: "Projetos próprios, sem empresa no meio. Aqui você vê como eu decido e implemento.",
     aliUi: {
       eyebrow: "Projeto principal · 2026",
+      caseLink: "Ler o caso completo",
       title: "ali-ui",
       lead: "[Em uma frase: um design system enxuto, com poucos componentes, cada um bem acabado, do token ao teste.]",
       facts: [

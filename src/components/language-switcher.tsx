@@ -26,7 +26,8 @@ const flags: Record<Locale, ReactElement<SVGProps<SVGSVGElement>>> = {
 
 /**
  * Seletor de idioma com o Select do ali-ui (tamanho sm). Escolher um idioma leva à mesma página
- * nele (/pt/casos vira /en/cases). Cada idioma aparece escrito nele mesmo. Pelo teclado, as
+ * nele (/pt/casos vira /en/cases). Cada opção mostra a sigla (PT, EN, ES), e o leitor de tela
+ * ouve o nome do idioma escrito nele mesmo ("EN, English"). Pelo teclado, as
  * setas só andam pela lista: a troca acontece no Enter. As páginas nos outros idiomas ficam
  * pré-carregadas, para a troca ser rápida.
  */
@@ -55,8 +56,9 @@ export function LanguageSwitcher({ current, label }: { current: Locale; label: s
           value={locale}
           lang={htmlLang[locale]}
           leading={<Flag>{flags[locale]}</Flag>}
+          aria-label={`${locale.toUpperCase()}, ${localeNames[locale]}`}
         >
-          {localeNames[locale]}
+          {locale.toUpperCase()}
         </SelectItem>
       ))}
     </Select>
