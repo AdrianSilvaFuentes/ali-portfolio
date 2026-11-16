@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { isLocale, pickLocale } from "@/i18n/config";
 
 /**
- * Endereços sem idioma (como "/" ou "/trabalho") vão para o idioma do navegador:
+ * Endereços sem idioma (como "/" ou "/casos") vão para o idioma do navegador:
  * português, espanhol ou, para todos os outros, inglês.
  */
 export function proxy(request: NextRequest) {

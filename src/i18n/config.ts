@@ -20,9 +20,9 @@ export const localeNames: Record<Locale, string> = {
   es: "Español",
 };
 
-/** O endereço de cada página em cada idioma: /pt/trabalho, /en/work, /es/trabajo. */
+/** O endereço de cada página em cada idioma: /pt/casos, /en/cases, /es/casos. */
 export const pages = {
-  work: { pt: "trabalho", en: "work", es: "trabajo" },
+  work: { pt: "casos", en: "cases", es: "casos" },
   built: { pt: "construido", en: "built", es: "construido" },
   resume: { pt: "experiencia", en: "resume", es: "experiencia" },
 } as const satisfies Record<string, Record<Locale, string>>;
@@ -30,8 +30,8 @@ export const pages = {
 export type PageKey = keyof typeof pages;
 
 /**
- * O endereço de cada caso em cada idioma, dentro da página Trabalho:
- * /pt/trabalho/pesquisa-armazens, /en/work/warehouse-research. A ordem aqui é a ordem dos
+ * O endereço de cada caso em cada idioma, dentro da página Casos:
+ * /pt/casos/pesquisa-armazens, /en/cases/warehouse-research. A ordem aqui é a ordem dos
  * casos no site (e do "próximo caso").
  */
 export const cases = {
@@ -63,7 +63,7 @@ export function pagePath(lang: Locale, page?: PageKey): string {
   return page ? `/${lang}/${pages[page][lang]}` : `/${lang}`;
 }
 
-/** Caminho de um caso num idioma: /pt/trabalho/pesquisa-armazens. */
+/** Caminho de um caso num idioma: /pt/casos/pesquisa-armazens. */
 export function casePath(lang: Locale, key: CaseKey): string {
   return `${pagePath(lang, "work")}/${cases[key][lang]}`;
 }
@@ -79,8 +79,8 @@ export function pageKeyFromSlug(lang: Locale, slug: string): PageKey | undefined
 }
 
 /**
- * O mesmo endereço em outro idioma, para o seletor: /pt/trabalho vira /en/work, e
- * /pt/trabalho/pesquisa-armazens vira /en/work/warehouse-research.
+ * O mesmo endereço em outro idioma, para o seletor: /pt/casos vira /en/cases, e
+ * /pt/casos/pesquisa-armazens vira /en/cases/warehouse-research.
  */
 export function translatePath(pathname: string, to: Locale): string {
   const [, from, slug, ...rest] = pathname.split("/");
