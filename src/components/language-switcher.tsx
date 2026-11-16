@@ -1,37 +1,47 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { htmlLang, type Locale, localeNames, locales, translatePath } from "@/i18n/config";
+import { SegmentedControl, SegmentedControlItem } from "@adriansilvafuentes/ui";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  htmlLang,
+  isLocale,
+  type Locale,
+  localeNames,
+  locales,
+  translatePath,
+} from "@/i18n/config";
 
 /**
- * Seletor PT · EN · ES. São links (trocar de idioma é navegar), que levam à mesma página
- * no outro idioma. O idioma atual fica preenchido e recebe aria-current. Cada link é lido
- * no próprio idioma ("EN, English") e tem 44px de área de toque.
+ * Seletor PT · EN · ES, com o SegmentedControl do ali-ui (tamanho sm). Escolher um idioma leva
+ * à mesma página nele (/pt/trabalho vira /en/work). Cada opção é lida no próprio idioma
+ * ("EN, English"). Pelo teclado, Tab entra no idioma atual e as setas trocam de idioma.
  */
 export function LanguageSwitcher({ current, label }: { current: Locale; label: string }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
-    <ul aria-label={label} className="flex items-center">
+    <SegmentedControl
+      size="sm"
+      aria-label={label}
+      value={current}
+      onValueChange={(value) => {
+        if (isLocale(value) && value !== current) router.push(translatePath(pathname, value));
+      }}
+    >
       {locales.map((locale) => {
         const code = locale.toUpperCase();
-        const active = locale === current;
         return (
-          <li key={locale} className="-ml-px first:ml-0">
-            <Link
-              href={translatePath(pathname, locale)}
-              hrefLang={htmlLang[locale]}
-              lang={htmlLang[locale]}
-              aria-label={`${code}, ${localeNames[locale]}`}
-              aria-current={active ? "true" : undefined}
-              className="relative inline-flex size-11 in-[li:first-child]:rounded-l-xl in-[li:last-child]:rounded-r-xl items-center justify-center border border-default font-mono text-label-sm text-default transition-interactive duration-fast outline-focus hover:bg-neutral-hovered focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 aria-[current=true]:border-transparent aria-[current=true]:bg-surface-inverse aria-[current=true]:text-inverse"
-            >
-              {code}
-            </Link>
-          </li>
+          <SegmentedControlItem
+            key={locale}
+            value={locale}
+            lang={htmlLang[locale]}
+            aria-label={`${code}, ${localeNames[locale]}`}
+          >
+            {code}
+          </SegmentedControlItem>
         );
       })}
-    </ul>
+    </SegmentedControl>
   );
 }
