@@ -31,7 +31,7 @@ function AliUi({ t }: { t: Built["aliUi"] }) {
     <HomeSection id="ali-ui" sunken className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       <div className="flex flex-col gap-5">
         <Eyebrow>{t.eyebrow}</Eyebrow>
-        <h2 id="ali-ui" className="text-display">
+        <h2 id="ali-ui" className="text-title-md">
           {t.title}
         </h2>
         <p className="max-w-lg text-body-lg">{t.lead}</p>
@@ -76,7 +76,7 @@ function ThisSite({ t }: { t: Built["site"] }) {
     <HomeSection id="este-site" className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
       <div className="flex flex-col gap-4">
         <Eyebrow>{t.eyebrow}</Eyebrow>
-        <h2 id="este-site" className="text-title-lg">
+        <h2 id="este-site" className="text-title-md">
           {t.title}
         </h2>
         <p className="max-w-lg text-body-lg text-subtle">{t.lead}</p>
