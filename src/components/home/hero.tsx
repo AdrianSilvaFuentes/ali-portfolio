@@ -1,4 +1,5 @@
 import { Button } from "@adriansilvafuentes/ui";
+import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
@@ -21,7 +22,7 @@ const selectionHandles = [
 export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
   return (
     <section aria-labelledby="inicio-titulo" className="bg-dots overflow-x-clip">
-      <Container className="grid gap-10 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
+      <Container className="grid gap-6 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
         <div className="flex flex-col gap-4">
           <p className="text-label-md text-subtle">{t.role}</p>
           <h1 id="inicio-titulo" className="text-title-lg">
@@ -49,7 +50,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           </h1>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
           <div className="flex flex-wrap gap-3">
-            <Button size="sm" asChild>
+            <Button size="sm" asChild iconRight={<IconArrowRight />}>
               <Link href={pagePath(lang, "work")}>{t.seeWork}</Link>
             </Button>
             <Button size="sm" asChild variant="secondary">
@@ -65,8 +66,8 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           src={portrait}
           alt={t.portraitAlt}
           preload
-          sizes="(min-width: 768px) 448px, 100vw"
-          className="animate-portrait mx-auto h-auto w-full max-w-md"
+          sizes="(min-width: 768px) 448px, 288px"
+          className="animate-portrait mx-auto h-auto w-full max-w-2xs md:max-w-md"
         />
       </Container>
     </section>
