@@ -449,6 +449,12 @@ export const es: Dictionary = {
         summary: "[Problema → resultado, en una línea.]",
         result:
           "21 componentes en tema claro y oscuro, con contraste WCAG AA verificado en cada build",
+        cardImage: {
+          src: "/casos/ali-ui/ali-card",
+          width: 1024,
+          height: 640,
+          alt: "Componentes de ali-ui en uso: slider, campo de e-mail, selección múltiple con etiquetas, botones, control segmentado, select con avatares, checkbox, radio y switch",
+        },
         study: {
           skills: ["Diseño de sistemas", "Front-end con IA", "Accesibilidad"],
           method: ["Tokens semánticos", "Componentes sobre Radix", "Pruebas de contraste"],
@@ -457,7 +463,7 @@ export const es: Dictionary = {
             src: "/casos/ali-ui/ali-capa",
             width: 1168,
             height: 420,
-            alt: "Formulario de ali-ui en los temas claro y oscuro, lado a lado",
+            alt: "Componentes de ali-ui en uso (slider, selección múltiple con etiquetas, botones, select, checkbox, radio y switch), con la marca Ali Design System",
           },
           problem: {
             paragraphs: [

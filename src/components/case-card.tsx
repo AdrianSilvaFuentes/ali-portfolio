@@ -28,16 +28,17 @@ export function CaseCard({
   readCase?: string;
 }) {
   return (
-    <article className="group relative flex h-full flex-col gap-3 rounded-md outline-focus outline-offset-4 has-focus-visible:outline-2">
+    <article className="group relative flex h-full flex-col gap-3 rounded-xl outline-focus outline-offset-4 has-focus-visible:outline-2">
       {t.cardImage ? (
         <CaseImage
           image={t.cardImage}
           label={imageLabel}
           reserved={imageLabel}
           sizes="(min-width: 768px) 50vw, 100vw"
+          className="rounded-xl"
         />
       ) : (
-        <Placeholder label={imageLabel} className="aspect-16/10" />
+        <Placeholder label={imageLabel} className="aspect-16/10 rounded-xl" />
       )}
       <p className="font-mono text-body-xs text-subtle">
         {t.company} · {t.years} · {t.role}
