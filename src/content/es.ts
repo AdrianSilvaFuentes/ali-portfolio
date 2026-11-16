@@ -14,7 +14,7 @@ export const es: Dictionary = {
   nav: {
     label: "Principal",
     home: "Inicio",
-    work: "Trabajo",
+    work: "Casos",
     built: "Construido",
     resume: "Experiencia",
     contact: "Contacto",
@@ -30,8 +30,8 @@ export const es: Dictionary = {
     greeting: { before: "Hola, soy Adrián. Todos me dicen ", name: "Ali", after: "." },
     role: "Product Design Engineer",
     title: "Diseñador de producto sénior que lleva el problema hasta el producto entregado.",
-    lead: "[Una frase sobre lo que haces y para quién. Ej.: investigación con usuarios, decisión de producto y código, con IA como herramienta y criterio propio.]",
-    seeWork: "Ver trabajo",
+    lead: "Investigo con usuarios, decido qué vale la pena construir y llevo la solución de Figma al código, con IA como herramienta y criterio propio.",
+    seeWork: "Ver casos",
     talk: "Hablemos",
     portraitAlt: "Adrián sonriendo, con gorra y pañuelo, frente a un molino.",
     reserved: "Espacio reservado",
@@ -79,7 +79,7 @@ export const es: Dictionary = {
     },
     cases: {
       eyebrow: "Casos destacados",
-      title: "Trabajo seleccionado",
+      title: "Casos seleccionados",
       seeAll: "Ver todos los casos",
       image: "Imagen del caso",
     },
@@ -115,17 +115,17 @@ export const es: Dictionary = {
         {
           title: "Repositorio y construcción",
           items: [
-            { name: "pnpm", description: "instalación" },
-            { name: "Turborepo", description: "monorepo" },
-            { name: "Vite", description: "build" },
+            { name: "pnpm", description: "instalación", icon: "pnpm" },
+            { name: "Turborepo", description: "monorepo", icon: "turborepo" },
+            { name: "Vite", description: "build", icon: "vite" },
           ],
         },
         {
           title: "Calidad",
           items: [
-            { name: "Vitest", description: "pruebas, incluido el contraste WCAG" },
-            { name: "Biome", description: "lint y formato" },
-            { name: "GitHub Actions", description: "verificación automática" },
+            { name: "Vitest", description: "pruebas, incluido el contraste WCAG", icon: "vitest" },
+            { name: "Biome", description: "lint y formato", icon: "biome" },
+            { name: "GitHub Actions", description: "verificación automática", icon: "github" },
           ],
         },
         {
@@ -159,9 +159,9 @@ export const es: Dictionary = {
     },
   },
   work: {
-    eyebrow: "Trabajo",
+    eyebrow: "Casos",
     title: "Productos que mejoré y sitios y marcas que diseñé.",
-    filters: { label: "Filtrar trabajos", all: "Todo", product: "Producto", web: "Web y marca" },
+    filters: { label: "Filtrar casos", all: "Todo", product: "Producto", web: "Web y marca" },
     product: { title: "Producto", readCase: "Leer el caso", image: "Imagen del caso" },
     web: {
       title: "Web y marca",

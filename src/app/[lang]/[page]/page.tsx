@@ -14,7 +14,7 @@ import { isLocale, locales, pageKeyFromSlug, pageKeys, pages } from "@/i18n/conf
 import { alternates } from "@/i18n/metadata";
 
 /**
- * As páginas internas, com o endereço traduzido: /pt/trabalho, /en/work, /es/trabajo.
+ * As páginas internas, com o endereço traduzido: /pt/casos, /en/cases, /es/casos.
  * Cada combinação de idioma e página é gerada no build; qualquer outra dá 404.
  */
 export function generateStaticParams() {
