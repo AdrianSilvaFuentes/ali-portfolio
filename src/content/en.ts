@@ -442,6 +442,12 @@ export const en: Dictionary = {
         summary: "[Problem → outcome, in one line.]",
         result:
           "21 components in light and dark themes, with WCAG AA contrast checked on every build",
+        cardImage: {
+          src: "/casos/ali-ui/ali-card",
+          width: 1024,
+          height: 640,
+          alt: "ali-ui components in use: slider, email field, multi-select with tags, buttons, segmented control, select with avatars, checkbox, radio and switch",
+        },
         study: {
           skills: ["Systems design", "AI-assisted front-end", "Accessibility"],
           method: ["Semantic tokens", "Components on Radix", "Contrast tests"],
@@ -450,7 +456,7 @@ export const en: Dictionary = {
             src: "/casos/ali-ui/ali-capa",
             width: 1168,
             height: 420,
-            alt: "The ali-ui form in light and dark themes, side by side",
+            alt: "ali-ui components in use (slider, multi-select with tags, buttons, select, checkbox, radio and switch), with the Ali Design System mark",
           },
           problem: {
             paragraphs: [

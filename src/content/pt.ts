@@ -559,6 +559,12 @@ export const pt = {
         summary: "[Problema → resultado, em uma linha.]",
         result:
           "21 componentes em tema claro e escuro, com contraste WCAG AA verificado a cada build",
+        cardImage: {
+          src: "/casos/ali-ui/ali-card",
+          width: 1024,
+          height: 640,
+          alt: "Componentes do ali-ui em uso: slider, campo de e-mail, multisseleção com tags, botões, controle segmentado, select com avatares, checkbox, radio e switch",
+        },
         study: {
           skills: ["Design de sistemas", "Front-end com IA", "Acessibilidade"],
           method: ["Tokens semânticos", "Componentes sobre Radix", "Testes de contraste"],
@@ -567,7 +573,7 @@ export const pt = {
             src: "/casos/ali-ui/ali-capa",
             width: 1168,
             height: 420,
-            alt: "Formulário do ali-ui nos temas claro e escuro, lado a lado",
+            alt: "Componentes do ali-ui em uso (slider, multisseleção com tags, botões, select, checkbox, radio e switch), com a marca Ali Design System",
           },
           problem: {
             paragraphs: [

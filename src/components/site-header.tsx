@@ -4,6 +4,7 @@ import { type Locale, pagePath } from "@/i18n/config";
 import { Container } from "./container";
 import { HeaderOffset } from "./header-offset";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 import { NavLink } from "./nav-link";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -27,9 +28,10 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
       <Container className="flex flex-wrap items-center gap-x-7 gap-y-1 py-3">
         <Link
           href={pagePath(lang)}
+          aria-label={t.site.name}
           className="mr-auto inline-flex min-h-11 items-center rounded-sm text-title-sm text-default outline-focus focus-visible:outline-2 focus-visible:outline-offset-2"
         >
-          {t.site.name}
+          <Logo className="h-10 w-auto" />
         </Link>
         <nav aria-label={t.nav.label} className="order-last w-full md:order-none md:w-auto">
           <ul className="flex flex-wrap items-center gap-x-4 md:gap-x-7">
