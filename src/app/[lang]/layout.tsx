@@ -60,12 +60,16 @@ export default async function RootLayout({
         </main>
         <SiteFooter t={t} />
         {/*
-          Dev Grabber: inspeciona elementos e copia seletor e CSS para colar no Claude. Só
-          carrega com NEXT_PUBLIC_DEV_GRABBER=1, que fica no .env.local (fora do Git e da
-          Vercel). No site publicado, a variável não existe e o script não entra.
+          UI Grabber (github.com/AdrianSilvaFuentes/ui-grabber): inspeciona elementos e copia
+          seletor, CSS e espaçamentos para colar no Claude. Vem do CDN e só carrega com
+          NEXT_PUBLIC_DEV_GRABBER=1, que fica no .env.local (fora do Git e da Vercel). No site
+          publicado, a variável não existe e o script não entra. "@0.1" recebe as correções 0.1.x.
         */}
         {process.env.NEXT_PUBLIC_DEV_GRABBER === "1" && (
-          <Script src="/dev/grabber.js" strategy="afterInteractive" />
+          <Script
+            src="https://cdn.jsdelivr.net/gh/AdrianSilvaFuentes/ui-grabber@0.1/ui-grabber.js"
+            strategy="afterInteractive"
+          />
         )}
       </body>
     </html>
