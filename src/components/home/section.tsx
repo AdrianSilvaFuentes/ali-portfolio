@@ -27,18 +27,13 @@ export function HomeSection({
   );
 }
 
-/** Rótulo pequeno em mono, acima dos títulos. Pode virar o próprio h2 (`as="h2"`). */
+/** Rótulo acima dos títulos, com o token label-md do ali-ui. Pode virar o próprio h2 (`as="h2"`). */
 export function Eyebrow({
   as: Tag = "p",
   className,
   ...props
 }: ComponentProps<"p"> & { as?: "p" | "h2" | "h3" }) {
-  return (
-    <Tag
-      className={cn("font-mono text-label-sm tracking-wider text-subtle uppercase", className)}
-      {...props}
-    />
-  );
+  return <Tag className={cn("text-label-md text-subtle", className)} {...props} />;
 }
 
 /** Link de texto sublinhado, com 44px de área de toque e foco visível. */

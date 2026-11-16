@@ -13,9 +13,10 @@ export const en: Dictionary = {
   },
   nav: {
     label: "Main",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
     home: "Home",
     work: "Cases",
-    built: "Built",
     resume: "Resume",
     contact: "Contact",
   },
@@ -442,6 +443,12 @@ export const en: Dictionary = {
         summary: "[Problem → outcome, in one line.]",
         result:
           "21 components in light and dark themes, with WCAG AA contrast checked on every build",
+        cardImage: {
+          src: "/casos/ali-ui/ali-card",
+          width: 1024,
+          height: 640,
+          alt: "ali-ui components in use: slider, email field, multi-select with tags, buttons, segmented control, select with avatars, checkbox, radio and switch",
+        },
         study: {
           skills: ["Systems design", "AI-assisted front-end", "Accessibility"],
           method: ["Semantic tokens", "Components on Radix", "Contrast tests"],
@@ -450,7 +457,7 @@ export const en: Dictionary = {
             src: "/casos/ali-ui/ali-capa",
             width: 1168,
             height: 420,
-            alt: "The ali-ui form in light and dark themes, side by side",
+            alt: "ali-ui components in use (slider, multi-select with tags, buttons, select, checkbox, radio and switch), with the Ali Design System mark",
           },
           problem: {
             paragraphs: [
@@ -1001,44 +1008,6 @@ export const en: Dictionary = {
         different: "[An honest reflection. It shows judgment, not just execution.]",
       },
       next: "Next case",
-    },
-  },
-  built: {
-    eyebrow: "Built",
-    title: "What I made with my own hands, from Figma to code.",
-    lead: "Personal projects, no company in between. Here you see how I decide and implement.",
-    aliUi: {
-      eyebrow: "Main project · 2026",
-      caseLink: "Read the full case",
-      title: "ali-ui",
-      lead: "[In one sentence: a lean design system, with few components, each one well finished, from token to test.]",
-      facts: [
-        { label: "Problem", text: "[Why build another system.]" },
-        {
-          label: "Decisions",
-          text: "Two-tier tokens, Radix for accessibility, WCAG AA contrast tests.",
-        },
-        {
-          label: "What I built",
-          text: "Monorepo, published Storybook, pipeline with automated checks.",
-        },
-      ],
-      storybook: { label: "Open Storybook", href: "https://ali-ui-delta.vercel.app" },
-      github: { label: "View on GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
-      imageAlt: "An ali-ui sample form in Storybook, side by side in light and dark themes.",
-      thumbnails: ["Tokens", "Figma ↔ code", "AA test"],
-    },
-    site: {
-      eyebrow: "Project · 2026",
-      title: "This site",
-      lead: "Built with ali-ui components. Proof that the system works in a real product.",
-      code: { label: "View the code", href: "https://github.com/AdrianSilvaFuentes/ali-portfolio" },
-      imageAlt: "This site's first screen: greeting, title, buttons and the stamp-shaped portrait.",
-    },
-    /** Experimentos pequenos. A seção só aparece quando houver pelo menos um. */
-    experiments: {
-      title: "Experiments",
-      items: [],
     },
   },
   resume: {

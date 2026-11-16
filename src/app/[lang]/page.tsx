@@ -9,7 +9,11 @@ import { Stack } from "@/components/home/stack";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/i18n/config";
 
-/** Início: as sete seções na ordem do wireframe. A oitava, o contato, é o rodapé do site. */
+/**
+ * Início: abertura, casos selecionados (logo depois da abertura, a pedido do Adrián), provas,
+ * como trabalho, construído, stack e antes do produto. O contato é o rodapé do site.
+ * As seções alternam fundo branco e cinza (sunken).
+ */
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
@@ -19,9 +23,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Hero lang={lang} t={t} />
+      <FeaturedCases lang={lang} t={t.cases} cases={dictionary.work.cases} />
       <Proofs t={t.proofs} />
       <Process t={t.process} />
-      <FeaturedCases lang={lang} t={t.cases} cases={dictionary.work.cases} />
       <Built t={t.built} />
       <Stack t={t.stack} />
       <BeforeProduct lang={lang} t={t.before} />

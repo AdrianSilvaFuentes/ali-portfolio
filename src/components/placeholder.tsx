@@ -33,9 +33,7 @@ export function Placeholder({
         className,
       )}
     >
-      <span className="text-center font-mono text-label-sm tracking-wider text-subtle uppercase">
-        {label}
-      </span>
+      <span className="text-center text-label-md text-subtle">{label}</span>
     </div>
   );
 }

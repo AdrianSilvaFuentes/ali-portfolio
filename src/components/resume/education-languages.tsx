@@ -19,9 +19,7 @@ export function EducationLanguages({ t }: { t: Dictionary["resume"] }) {
             <p className="font-mono text-body-xs text-subtle">{edu.years}</p>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="font-mono text-body-xs tracking-wider text-subtle uppercase">
-              {edu.honorsTitle}
-            </h3>
+            <h3 className="text-label-md text-subtle">{edu.honorsTitle}</h3>
             <ul className="flex flex-col gap-1 text-body-md text-subtle">
               {edu.honors.map((honor) => (
                 <li key={honor} lang="es">

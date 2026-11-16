@@ -4,7 +4,76 @@
 /* Faz o Tailwind procurar classes também nos arquivos do próprio site. */
 @source "../";
 
+/*
+ * A pasta .claude (skills e instruções) tem exemplos de classes escritos como texto. Se o
+ * Tailwind ler, gera CSS inválido a partir deles, que quebra o pnpm dev.
+ */
+@source not "../../.claude";
+
 body {
   background-color: var(--ali-color-surface);
   color: var(--ali-color-text-default);
+}
+
+/*
+ * Fundo de pontos, como a mesa de trabalho do Figma. Só tokens: a cor dos pontos é a
+ * border-subtle (muda com o tema) e a grade usa a escala de espaçamento do ali-ui.
+ */
+@utility bg-dots {
+  background-image: radial-gradient(
+    circle,
+    var(--ali-color-border-subtle) var(--ali-spacing-px),
+    transparent var(--ali-spacing-px)
+  );
+  background-size: var(--ali-spacing-6) var(--ali-spacing-6);
+}
+
+/*
+ * Retrato da abertura: entra com fade e depois balança alguns segundos, como um papel preso
+ * pelo clipe numa mesa de trabalho, até parar. O eixo é o clipe (canto de cima, à esquerda).
+ * O ali-ui só tem durações de interface (até duration-slow, 300ms); os tempos aqui são
+ * múltiplos dele: 2× para o fade e 8× para o balanço. Sem animação para quem pede menos
+ * movimento.
+ */
+@keyframes portrait-in {
+  from {
+    opacity: 0;
+    translate: 0 calc(var(--ali-spacing-2) * -1);
+  }
+}
+
+@keyframes portrait-swing {
+  0% {
+    rotate: 0deg;
+  }
+  15% {
+    rotate: 1.5deg;
+  }
+  32% {
+    rotate: -1.1deg;
+  }
+  50% {
+    rotate: 0.7deg;
+  }
+  68% {
+    rotate: -0.4deg;
+  }
+  84% {
+    rotate: 0.15deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@utility animate-portrait {
+  transform-origin: 25% 8%;
+  animation:
+    portrait-in calc(var(--ali-duration-slow) * 2) ease-out both,
+    portrait-swing calc(var(--ali-duration-slow) * 8) ease-in-out calc(var(--ali-duration-slow) * 2)
+    both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
