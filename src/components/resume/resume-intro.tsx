@@ -7,7 +7,7 @@ import { Eyebrow } from "../home/section";
 
 /**
  * Abertura da Experiência: título, a narrativa "Como cheguei aqui", cidade, apelido e idiomas,
- * o botão do currículo e uma foto de pesquisa de campo, com moldura própria e fundo
+ * o botão do currículo e uma foto de pesquisa de campo (marcas borradas), com moldura e fundo
  * transparente (original em media/retrato/resume-img.png).
  * O currículo ainda não existe: o botão fica desabilitado, com o texto entre colchetes.
  */
