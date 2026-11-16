@@ -21,7 +21,8 @@ A component change happens in ali-ui, gets a new version on npm, and only then i
 - **Nothing from Nuvia.** No screens, flows, docs, internal product names or metrics. Job title and period may appear on the timeline, only after I confirm.
 - **No phone number** anywhere. The public e-mail stays a placeholder until I choose one.
 - **Semantic tokens only.** Never hardcode colors, font sizes, spacing, radii or shadows, and never import `@adriansilvafuentes/tokens/primitives` (Biome blocks both). The yellow accent is a fill, never text or border on a light background.
-- **Accessibility:** AA contrast in light and dark themes, touch targets of at least 44px, visible focus, semantic HTML, menu and language selector usable by keyboard.
+- **Follow ali-ui to the letter.** Any interface change follows the `ali-ui-a-risca` skill (`.claude/skills/ali-ui-a-risca/SKILL.md`): use the ali-ui component whenever one exists, exactly as its Storybook stories do, keep its animations and states, and never restyle it with `className` beyond layout. If ali-ui lacks something, stop and ask.
+- **Accessibility:** AA contrast in light and dark themes, touch targets at least the WCAG AA minimum (24px) with ali-ui sizes taking precedence, visible focus, semantic HTML, menu and language selector usable by keyboard.
 - **Responsive from the start** (mobile first), light and dark themes derived from the tokens.
 - Interactive Radix components need `"use client"`. Prefer server components.
 - **All text lives in content files** (`src/content/pt.ts`, `en.ts`, `es.ts`), never inside components. Portuguese is the source language; EN and ES translations are marked `REVISAR` for my review.
@@ -41,5 +42,5 @@ A component change happens in ali-ui, gets a new version on npm, and only then i
 ## Boundaries
 
 - This repository is public. Planning material that mentions pending authorizations or personal data stays outside it, in `../portfolio-handoff/`.
-- The repository lives on an external disk. Keep the pnpm store inside the project folder.
+- The repositories live inside the encrypted disk image `Ali Workspace` (`~/Documents/Ali Workspace.sparsebundle`), mounted at `/Volumes/Ali Workspace`. Eject it when done. Keep the pnpm store inside the project folder.
 - Original photos and media go in `media/` (ignored by Git, never committed). Only optimized versions for the site go in `public/images/`.
