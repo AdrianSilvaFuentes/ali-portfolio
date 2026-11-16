@@ -13,6 +13,8 @@ export const es: Dictionary = {
   },
   nav: {
     label: "Principal",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
     home: "Inicio",
     work: "Casos",
     resume: "Experiencia",

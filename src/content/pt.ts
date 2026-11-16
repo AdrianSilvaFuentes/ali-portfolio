@@ -121,6 +121,8 @@ export const pt = {
   },
   nav: {
     label: "Principal",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
     home: "Início",
     work: "Casos",
     resume: "Experiência",
