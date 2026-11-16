@@ -1,11 +1,26 @@
 "use client";
 
-import { Button } from "@adriansilvafuentes/ui";
+import { SegmentedControl, SegmentedControlItem } from "@adriansilvafuentes/ui";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/content";
 
 type Theme = "light" | "dark";
+
+/**
+ * Reaplica o tema guardado. Ao trocar de idioma, o Next monta um <html> novo, sem o data-theme
+ * que o script do layout pôs na primeira carga; sem isso, o tema escolhido se perderia.
+ */
+function restoreSavedTheme() {
+  try {
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch {
+    // Sem acesso ao armazenamento: segue o tema do sistema.
+  }
+}
 
 /** O tema em uso: o escolhido pela pessoa ou, sem escolha, o do sistema. */
 function currentTheme(): Theme {
@@ -14,15 +29,22 @@ function currentTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
-/** Alterna entre claro e escuro e guarda a escolha neste navegador. */
+/**
+ * Claro ou escuro, com o SegmentedControl do ali-ui (sm, só ícones, como na história "Com
+ * ícones"). A escolha vale na hora e fica guardada neste navegador. Cada opção tem o nome
+ * no aria-label, para o leitor de tela.
+ */
 export function ThemeToggle({ labels }: { labels: Dictionary["theme"] }) {
-  // Antes de montar no navegador não dá para saber o tema; o rótulo genérico evita divergência.
-  const [theme, setTheme] = useState<Theme | null>(null);
+  // Antes de montar no navegador não dá para saber o tema: nenhuma opção marcada, sem divergência.
+  const [theme, setTheme] = useState<Theme | "">("");
 
-  useEffect(() => setTheme(currentTheme()), []);
+  useEffect(() => {
+    restoreSavedTheme();
+    setTheme(currentTheme());
+  }, []);
 
-  function toggle() {
-    const next: Theme = currentTheme() === "dark" ? "light" : "dark";
+  function choose(next: string) {
+    if (next !== "light" && next !== "dark") return;
     document.documentElement.setAttribute("data-theme", next);
     try {
       localStorage.setItem("theme", next);
@@ -32,17 +54,10 @@ export function ThemeToggle({ labels }: { labels: Dictionary["theme"] }) {
     setTheme(next);
   }
 
-  const label = theme === "dark" ? labels.toLight : labels.toDark;
-
   return (
-    <Button
-      size="sm"
-      variant="secondary"
-      aria-label={label}
-      title={label}
-      onClick={toggle}
-      className="w-8 px-0"
-      iconLeft={theme === "dark" ? <IconSun /> : <IconMoon />}
-    />
+    <SegmentedControl size="sm" aria-label={labels.label} value={theme} onValueChange={choose}>
+      <SegmentedControlItem value="light" aria-label={labels.light} icon={<IconSun />} />
+      <SegmentedControlItem value="dark" aria-label={labels.dark} icon={<IconMoon />} />
+    </SegmentedControl>
   );
 }
