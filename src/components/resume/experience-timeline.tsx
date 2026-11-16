@@ -17,7 +17,7 @@ export function ExperienceTimeline({
 }) {
   return (
     <HomeSection id="linha-do-tempo" sunken className="flex flex-col gap-8">
-      <h2 id="linha-do-tempo" className="text-title-lg">
+      <h2 id="linha-do-tempo" className="text-title-md">
         {t.title}
       </h2>
       <ol className="border-b border-default">

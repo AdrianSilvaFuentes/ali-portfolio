@@ -23,7 +23,7 @@ export function FeaturedCases({
       <div className="flex flex-col gap-4">
         <Eyebrow>{t.eyebrow}</Eyebrow>
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
-          <h2 id="casos-titulo" className="text-title-lg">
+          <h2 id="casos-titulo" className="text-title-md">
             {t.title}
           </h2>
           <Link href={pagePath(lang, "work")} className={textLinkClass}>

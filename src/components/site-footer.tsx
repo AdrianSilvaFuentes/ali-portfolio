@@ -9,7 +9,7 @@ export function SiteFooter({ t }: { t: Dictionary }) {
   return (
     <footer id="contato" className="bg-surface-inverse text-inverse">
       <Container className="flex flex-col gap-10 pt-16 pb-10">
-        <h2 className="text-display">{t.footer.title}</h2>
+        <h2 className="text-title-md">{t.footer.title}</h2>
         <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:gap-x-8">
           <p className="text-title-sm">{t.footer.email}</p>
           <ul aria-label={t.footer.linksLabel} className="flex flex-wrap items-center gap-x-6">

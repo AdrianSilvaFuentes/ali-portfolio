@@ -7,7 +7,7 @@ import { HomeSection } from "../home/section";
 export function ProductCases({ lang, t }: { lang: Locale; t: Dictionary["work"] }) {
   return (
     <HomeSection id="produto-titulo" sunken className="flex flex-col gap-10">
-      <h2 id="produto-titulo" className="text-title-lg">
+      <h2 id="produto-titulo" className="text-title-md">
         {t.product.title}
       </h2>
       <ul className="grid gap-12 md:grid-cols-2 md:gap-x-6">

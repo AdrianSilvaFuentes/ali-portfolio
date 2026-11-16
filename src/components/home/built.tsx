@@ -26,7 +26,7 @@ export function Built({ t }: { t: Dictionary["home"]["built"] }) {
     <HomeSection id="construido-titulo" className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       <div className="flex flex-col gap-5">
         <Eyebrow>{t.eyebrow}</Eyebrow>
-        <h2 id="construido-titulo" className="text-title-lg">
+        <h2 id="construido-titulo" className="text-title-md">
           {t.title}
         </h2>
         <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>

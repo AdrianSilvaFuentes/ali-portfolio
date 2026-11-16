@@ -22,7 +22,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
             {t.greeting.after}
           </p>
           <p className="font-mono text-label-sm tracking-wider text-subtle uppercase">{t.role}</p>
-          <h1 id="inicio-titulo" className="text-display">
+          <h1 id="inicio-titulo" className="text-title-lg">
             {t.title}
           </h1>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>

@@ -17,7 +17,7 @@ export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
       <Container className="grid gap-10 py-12 md:grid-cols-2 md:gap-14 md:py-16">
         <div className="flex flex-col gap-5">
           <Eyebrow>{t.eyebrow}</Eyebrow>
-          <h1 id="experiencia-titulo" className="text-display">
+          <h1 id="experiencia-titulo" className="text-title-lg">
             {t.title}
           </h1>
           <p className="text-body-lg text-subtle">{t.intro}</p>

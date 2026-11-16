@@ -70,7 +70,7 @@ function Header({
             </li>
           ))}
         </ul>
-        <h1 id="caso-titulo" className="max-w-4xl text-display">
+        <h1 id="caso-titulo" className="max-w-4xl text-title-lg">
           {item.title}
         </h1>
         <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-t-2 border-default pt-4 lg:grid-cols-4">
