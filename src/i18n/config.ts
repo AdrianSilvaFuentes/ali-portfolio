@@ -23,7 +23,6 @@ export const localeNames: Record<Locale, string> = {
 /** O endereço de cada página em cada idioma: /pt/casos, /en/cases, /es/casos. */
 export const pages = {
   work: { pt: "casos", en: "cases", es: "casos" },
-  built: { pt: "construido", en: "built", es: "construido" },
   resume: { pt: "experiencia", en: "resume", es: "experiencia" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
