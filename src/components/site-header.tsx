@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
+import logoSticker from "../../public/images/logo-adrian.svg";
 import { Container } from "./container";
 import { HeaderOffset } from "./header-offset";
 import { LanguageSwitcher } from "./language-switcher";
@@ -31,7 +33,8 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
           aria-label={t.site.name}
           className="mr-auto inline-flex min-h-11 items-center rounded-sm text-title-sm text-default outline-focus focus-visible:outline-2 focus-visible:outline-offset-2"
         >
-          {t.site.shortName}
+          {/* Teste: logo em adesivo (imagem). O nome acessível vem do aria-label do link. */}
+          <Image src={logoSticker} alt="" priority unoptimized className="h-10 w-auto" />
         </Link>
         <nav aria-label={t.nav.label} className="hidden md:block">
           <ul className="flex flex-wrap items-center gap-x-4 md:gap-x-7">
