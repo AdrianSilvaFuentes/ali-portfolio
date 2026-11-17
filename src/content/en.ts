@@ -1229,7 +1229,7 @@ export const en: Dictionary = {
         icon: "linkedin",
       },
       { label: "Behance", href: "https://www.behance.net/adriansilva", icon: "behance" },
-      { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf", icon: "cv" },
+      { label: "Résumé", href: "/cv/adrian-silva-fuentes-cv-en.pdf", icon: "cv" },
     ],
     madeWith: {
       before: "Made with ",
