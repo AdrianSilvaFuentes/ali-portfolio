@@ -25,7 +25,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
       <Container className="grid gap-6 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
         <div className="flex flex-col gap-4">
           <p className="text-label-md text-subtle">{t.role}</p>
-          <h1 id="inicio-titulo" className="text-title-lg">
+          <h1 id="inicio-titulo" className="text-title-lg lg:text-display">
             {t.title.first}
             <br />
             {t.title.before}
