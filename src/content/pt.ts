@@ -216,7 +216,6 @@ export const pt = {
       ],
     },
     cases: {
-      eyebrow: "Casos em destaque",
       title: "Casos selecionados",
       seeAll: "Ver todos os casos",
       viewCase: "Ver caso",

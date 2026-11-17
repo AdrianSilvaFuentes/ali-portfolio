@@ -94,7 +94,6 @@ export const en: Dictionary = {
       ],
     },
     cases: {
-      eyebrow: "Featured cases",
       title: "Selected cases",
       seeAll: "See all cases",
       viewCase: "View case",

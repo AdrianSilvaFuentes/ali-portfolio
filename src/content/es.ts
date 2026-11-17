@@ -94,7 +94,6 @@ export const es: Dictionary = {
       ],
     },
     cases: {
-      eyebrow: "Casos destacados",
       title: "Casos seleccionados",
       seeAll: "Ver todos los casos",
       viewCase: "Ver caso",
