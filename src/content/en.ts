@@ -40,7 +40,7 @@ export const en: Dictionary = {
     seeWork: "See cases",
     talk: "Get in touch",
     portraitAlt: "Adrián smiling, wearing a cap and a scarf, in front of a windmill.",
-    tags: { uxUi: "UX/UI Design", product: "Product Engineer", branding: "Branding & Identity" },
+    tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },
     reserved: "Reserved space",
     proofs: {
       title: "Proof",

@@ -5,20 +5,21 @@ import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
 import portrait from "../../../public/images/retrato.webp";
-import tagBranding from "../../../public/images/tags/branding-identity.webp";
-import tagProduct from "../../../public/images/tags/product-engineer.webp";
-import tagUxUi from "../../../public/images/tags/ux-ui-design.webp";
+import tagBranding from "../../../public/images/tags/branding-identity.svg";
+import tagProduct from "../../../public/images/tags/product-engineer.svg";
+import tagUxUi from "../../../public/images/tags/ux-ui-design.svg";
 import { Container } from "../container";
 
 /** As quatro alças da seleção, centradas nos cantos da moldura. */
 /**
  * Os adesivos sobre o selo, na posição da referência do Adrián: em % da imagem do retrato
  * (esquerda, topo e largura), para acompanhar o selo em qualquer tamanho de tela.
+ * São SVG (vetor, nítidos em qualquer tela), com a margem do Figma em volta de cada adesivo.
  */
 const tags = [
-  { key: "branding", src: tagBranding, left: "62%", top: "19%", width: "37%" },
-  { key: "product", src: tagProduct, left: "5%", top: "58%", width: "34%" },
-  { key: "uxUi", src: tagUxUi, left: "75%", top: "64%", width: "21%" },
+  { key: "branding", src: tagBranding, left: "59.7%", top: "16.7%", width: "43%" },
+  { key: "product", src: tagProduct, left: "1%", top: "56.2%", width: "42%" },
+  { key: "uxUi", src: tagUxUi, left: "66.3%", top: "62.6%", width: "32%" },
 ] as const;
 
 const selectionHandles = [
@@ -89,7 +90,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
               key={tag.key}
               src={tag.src}
               alt={t.tags[tag.key]}
-              sizes="(min-width: 768px) 170px, 110px"
+              unoptimized
               className="absolute h-auto"
               style={{ left: tag.left, top: tag.top, width: tag.width }}
             />
