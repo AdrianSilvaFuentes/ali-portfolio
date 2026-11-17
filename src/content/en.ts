@@ -94,7 +94,6 @@ export const en: Dictionary = {
       ],
     },
     cases: {
-      eyebrow: "Featured cases",
       title: "Selected cases",
       seeAll: "See all cases",
       viewCase: "View case",
@@ -1219,13 +1218,16 @@ export const en: Dictionary = {
     },
   },
   footer: {
-    title: "Let's talk.",
     linksLabel: "Profiles",
     links: [
-      { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
-      { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
+      { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes", icon: "github" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/adriansilvafuentes/",
+        icon: "linkedin",
+      },
+      { label: "Behance", href: "https://www.behance.net/adriansilva", icon: "behance" },
+      { label: "Résumé", href: "/cv/adrian-silva-fuentes-cv-en.pdf", icon: "cv" },
     ],
     madeWith: {
       before: "Made with ",

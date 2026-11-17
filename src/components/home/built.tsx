@@ -1,5 +1,5 @@
 import { Badge, Button } from "@adriansilvafuentes/ui";
-import { IconProgress } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandStorybook, IconProgress } from "@tabler/icons-react";
 import type { Dictionary } from "@/content";
 import { StorybookDemo } from "../storybook-demo";
 import { Eyebrow, HomeSection } from "./section";
@@ -31,10 +31,10 @@ export function Built({
           </h2>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
           <div className="flex flex-wrap gap-3">
-            <Button size="md" asChild>
+            <Button size="md" asChild iconLeft={<IconBrandStorybook />}>
               <a href={t.storybook.href}>{t.storybook.label}</a>
             </Button>
-            <Button size="md" asChild variant="secondary">
+            <Button size="md" asChild variant="secondary" iconLeft={<IconBrandGithub />}>
               <a href={t.github.href}>{t.github.label}</a>
             </Button>
           </div>

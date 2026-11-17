@@ -3,7 +3,8 @@ import type { ComponentProps, ReactNode } from "react";
 import { Container } from "../container";
 
 /**
- * Uma seção da Home: linha fina no topo, respiro vertical e, quando `sunken`, o fundo afundado,
+ * Uma seção da Home: respiro vertical e, quando `sunken`, um degradê sutil a 45° de
+ * background-neutral para background-neutral-hovered,
  * para as seções se alternarem. Com `dotted`, o fundo ganha o pontilhado da abertura (bg-dots). O título (h2) é ligado à seção pelo `aria-labelledby`.
  */
 export function HomeSection({
@@ -23,8 +24,9 @@ export function HomeSection({
     <section
       aria-labelledby={id}
       className={cn(
-        "border-t border-subtle py-16 md:py-24",
-        sunken && "bg-surface-sunken",
+        "py-16 md:py-24",
+        sunken &&
+          "bg-linear-45 from-[var(--ali-color-background-neutral)] to-[var(--ali-color-background-neutral-hovered)]",
         dotted && "bg-dots",
       )}
     >

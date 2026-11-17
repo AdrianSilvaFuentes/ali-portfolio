@@ -5,7 +5,7 @@ import { Container } from "../container";
 export function EducationLanguages({ t }: { t: Dictionary["resume"] }) {
   const edu = t.education;
   return (
-    <div className="border-t border-subtle py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <Container className="grid gap-12 md:grid-cols-2 md:gap-14">
         <section aria-labelledby="formacao" className="flex flex-col gap-4">
           <h2 id="formacao" className="border-b-2 border-default pb-4 text-title-md">

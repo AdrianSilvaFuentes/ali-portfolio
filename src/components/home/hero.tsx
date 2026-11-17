@@ -37,7 +37,7 @@ const selectionHandles = [
 export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
   return (
     <section aria-labelledby="inicio-titulo" className="bg-dots overflow-x-clip">
-      <Container className="grid gap-6 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
+      <Container className="grid gap-4 py-12 md:grid-cols-2 md:items-center md:gap-14 md:py-20">
         <div className="flex flex-col gap-4">
           <p className="text-label-md text-subtle">{t.role}</p>
           <h1 id="inicio-titulo" className="text-title-lg lg:text-display">
