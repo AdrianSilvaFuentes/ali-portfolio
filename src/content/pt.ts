@@ -1228,7 +1228,7 @@ export const pt = {
     nickname: { before: "Todo mundo me chama de ", name: "Ali" },
     photoAlt:
       "Visita a cliente para pesquisa de campo: um grupo ao redor de uma mesa com notebooks e coletores de dados, conversando sobre o trabalho.",
-    cv: "[Currículo (PDF)]",
+    cv: { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     experience: {
       title: "Experiência",
       items: [
@@ -1352,7 +1352,7 @@ export const pt = {
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "[Currículo (PDF)]", href: null },
+      { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ] as { label: string; href: string | null }[],
     madeWith: "Feito com ali-ui",
   },

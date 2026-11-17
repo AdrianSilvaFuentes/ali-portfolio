@@ -1091,7 +1091,7 @@ export const en: Dictionary = {
     nickname: { before: "Everyone calls me ", name: "Ali" },
     photoAlt:
       "A client visit for field research: a group around a table with laptops and data collectors, talking about the work.",
-    cv: "[Resume (PDF)]",
+    cv: { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     experience: {
       title: "Experience",
       items: [
@@ -1214,7 +1214,7 @@ export const en: Dictionary = {
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "[Résumé (PDF)]", href: null },
+      { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ],
     madeWith: "Made with ali-ui",
   },
