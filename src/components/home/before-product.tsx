@@ -50,10 +50,10 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
                 label={thumb.label}
                 reserved={thumb.label}
                 sizes="(min-width: 768px) 25vw, 50vw"
-                className="aspect-4/3 object-cover object-top"
+                className="aspect-4/3 rounded-2xl object-cover object-top"
               />
             ) : (
-              <Placeholder label={thumb.label} className="aspect-4/3" />
+              <Placeholder label={thumb.label} className="aspect-4/3 rounded-2xl" />
             )}
           </li>
         ))}
