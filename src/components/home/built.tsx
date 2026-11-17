@@ -22,7 +22,7 @@ export function Built({
         <div className="flex flex-col gap-5 lg:col-span-2">
           <div className="flex flex-wrap items-center gap-3">
             <Eyebrow>{t.eyebrow}</Eyebrow>
-            <Badge tone="info" icon={<IconProgress />}>
+            <Badge tone="caution" icon={<IconProgress />}>
               {t.status}
             </Badge>
           </div>
