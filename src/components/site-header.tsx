@@ -29,7 +29,7 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
     <header className="sticky top-0 z-40 pt-3 md:pt-4">
       <HeaderOffset />
       <Container>
-        <div className="relative flex items-center gap-x-3 rounded-2xl border border-subtle bg-surface/80 py-2 pr-2 pl-4 shadow-sm backdrop-blur-md md:gap-x-7 md:pl-5">
+        <div className="relative flex items-center gap-x-3 rounded-2xl border border-subtle bg-surface/80 p-2 shadow-sm backdrop-blur-md md:gap-x-7">
           <Link
             href={pagePath(lang)}
             aria-label={t.site.name}
