@@ -92,8 +92,9 @@ export const es: Dictionary = {
     },
     built: {
       eyebrow: "Construido",
-      title: "ali-ui, un sistema hecho desde cero.",
-      lead: "Tokens, componentes y documentación, con pruebas de accesibilidad. Se abre en Storybook, con el código en GitHub.",
+      title: "Ali Design System, hecho desde cero.",
+      lead: "Tokens, componentes y documentación, con contraste probado en cada build. Este panel es el Storybook real: se puede hacer clic y escribir.",
+      demo: "Demostración interactiva del Ali Design System, cargada desde Storybook",
       storybook: { label: "Abrir Storybook", href: "https://ali-ui-delta.vercel.app" },
       github: { label: "Ver en GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
       palette: "Escala de grises y el amarillo de la marca, tomados de los tokens de ali-ui",
@@ -693,6 +694,7 @@ export const es: Dictionary = {
                   height: 470,
                   alt: "Storybook publicado de ali-ui, con fundamentos y componentes",
                 },
+                demo: "Demostración interactiva del Ali Design System, cargada desde Storybook",
                 caption:
                   "Storybook publicado - código en GitHub - plugin de Figma para sincronizar los tokens",
               },

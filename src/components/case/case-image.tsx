@@ -26,6 +26,7 @@ export function CaseImage({
   reserved,
   sizes,
   preload,
+  hideIfMissing,
   className,
 }: {
   image: CaseImageData;
@@ -35,10 +36,13 @@ export function CaseImage({
   reserved: string;
   sizes: string;
   preload?: boolean;
+  /** Sem o arquivo, não mostra nada (em vez da área reservada). */
+  hideIfMissing?: boolean;
   className?: string;
 }) {
   const file = findFile(image.src);
   if (!file) {
+    if (hideIfMissing) return null;
     return (
       <Placeholder
         label={`${label} · ${image.width} × ${image.height}`}

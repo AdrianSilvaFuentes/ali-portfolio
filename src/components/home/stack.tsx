@@ -32,7 +32,7 @@ const icons: Record<StackIcon, typeof IconBrandReact> = {
 /** 6. Stack: as ferramentas agrupadas por função. */
 export function Stack({ t }: { t: Dictionary["home"]["stack"] }) {
   return (
-    <HomeSection id="stack-titulo" sunken className="flex flex-col gap-8">
+    <HomeSection id="stack-titulo" className="flex flex-col gap-8">
       <Eyebrow as="h2" id="stack-titulo">
         {t.title}
       </Eyebrow>

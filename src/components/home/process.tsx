@@ -4,7 +4,7 @@ import { Eyebrow, HomeSection } from "./section";
 /** 3. Como trabalho: as quatro etapas numeradas, numa lista ordenada. */
 export function Process({ t }: { t: Dictionary["home"]["process"] }) {
   return (
-    <HomeSection id="processo-titulo" sunken className="flex flex-col gap-10">
+    <HomeSection id="processo-titulo" className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
         <Eyebrow>{t.eyebrow}</Eyebrow>
         <h2 id="processo-titulo" className="max-w-3xl text-title-md">

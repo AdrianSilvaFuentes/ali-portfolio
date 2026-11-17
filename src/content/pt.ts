@@ -44,7 +44,8 @@ export type CaseStudyContent = {
   };
   delivery: {
     lead: string;
-    items: { image: CaseImage; caption: string }[];
+    /** Com `demo` (título do iframe para o leitor de tela), mostra o Storybook ao vivo no lugar da imagem. */
+    items: { image: CaseImage; caption: string; demo?: string }[];
     /** Links para o que foi entregue (ex.: Storybook e GitHub), como botões. */
     links?: { label: string; href: string }[];
   };
@@ -212,8 +213,9 @@ export const pt = {
     },
     built: {
       eyebrow: "Construído",
-      title: "ali-ui, um sistema feito do zero.",
-      lead: "Tokens, componentes e documentação, com testes de acessibilidade. Abre no Storybook, com o código no GitHub.",
+      title: "Ali Design System, feito do zero.",
+      lead: "Tokens, componentes e documentação, com contraste testado a cada build. Este painel é o Storybook de verdade: dá para clicar e digitar.",
+      demo: "Demonstração interativa do Ali Design System, carregada do Storybook",
       storybook: { label: "Abrir o Storybook", href: "https://ali-ui-delta.vercel.app" },
       github: { label: "Ver no GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
       palette: "Escala de cinzas e o amarelo da marca, tirados dos tokens do ali-ui",
@@ -811,6 +813,7 @@ export const pt = {
                   height: 470,
                   alt: "Storybook publicado do ali-ui, com fundamentos e componentes",
                 },
+                demo: "Demonstração interativa do Ali Design System, carregada do Storybook",
                 caption:
                   "Storybook publicado - código no GitHub - plugin do Figma para sincronizar os tokens",
               },
