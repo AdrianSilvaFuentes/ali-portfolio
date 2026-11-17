@@ -15,7 +15,7 @@ import { ThemeToggle } from "./theme-toggle";
  * A partir do md: nome à esquerda, menu, idioma e tema à direita, numa linha só.
  * A ordem no HTML (nome, menu, idioma, tema) é a do teclado e do leitor de tela.
  * Fica fixo no topo ao rolar, como uma barra flutuante: o cabeçalho em si é transparente, e a
- * barra (cantos de 16px, rounded-2xl, com fundo surface, borda subtle e shadow-sm) fica afastada das bordas, com o
+ * barra (cantos de 16px, rounded-2xl, com fundo surface a 80% e desfoque do que passa por trás, borda subtle e shadow-sm) fica afastada das bordas, com o
  * conteúdo passando por trás. O painel do menu do celular abre logo abaixo dela, também solto.
  */
 export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
@@ -29,7 +29,7 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
     <header className="sticky top-0 z-40 pt-3 md:pt-4">
       <HeaderOffset />
       <Container>
-        <div className="relative flex items-center gap-x-3 rounded-2xl border border-subtle bg-surface py-2 pr-2 pl-4 shadow-sm md:gap-x-7 md:pl-5">
+        <div className="relative flex items-center gap-x-3 rounded-2xl border border-subtle bg-surface/80 py-2 pr-2 pl-4 shadow-sm backdrop-blur-md md:gap-x-7 md:pl-5">
           <Link
             href={pagePath(lang)}
             aria-label={t.site.name}
