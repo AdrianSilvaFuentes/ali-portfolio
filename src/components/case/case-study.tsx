@@ -217,7 +217,7 @@ function Result({ tpl }: { tpl: Template }) {
           <figcaption className="text-body-sm text-subtle">{r.quoteAuthor}</figcaption>
         </figure>
       </div>
-      {/* O amarelo é só fundo, sem borda; o texto continua na cor padrão. */}
+      {/* A cor da marca é só fundo, sem borda; o texto continua na cor padrão. */}
       <aside className="flex max-w-2xl flex-col gap-1 rounded-md bg-primary-subtle p-5">
         <h3 className="font-mono text-body-xs">{r.differentLabel}</h3>
         <p className="text-body-md">{r.different}</p>

@@ -25,7 +25,7 @@ export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
             <li>{t.location}</li>
             <li>
               {t.nickname.before}
-              {/* O amarelo é só fundo; o texto continua na cor padrão. */}
+              {/* A cor da marca é só fundo; o texto continua na cor padrão. */}
               <span className="rounded-sm bg-primary-subtle px-1 text-default">
                 {t.nickname.name}
               </span>

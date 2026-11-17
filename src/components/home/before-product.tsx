@@ -8,7 +8,7 @@ import { Eyebrow, HomeSection, textLinkClass } from "./section";
 
 /**
  * 7. Antes do produto: web design e branding. Peso menor que os casos de propósito:
- * título menor, sem número grande e sem amarelo. Os links levam à lista "Web e marca" da página Trabalho.
+ * título menor, sem número grande e sem a cor da marca. Os links levam à lista "Web e marca" da página Trabalho.
  */
 export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]["before"] }) {
   const webPath = `${pagePath(lang, "work")}#web-e-marca`;

@@ -150,7 +150,7 @@ export const pt = {
   },
   home: {
     role: "Product Design Engineer",
-    /** O título da abertura, em duas linhas; "Ali" leva o destaque amarelo. */
+    /** O título da abertura, em duas linhas; "Ali" leva o destaque na cor da marca. */
     title: {
       first: "Oi! Sou o Adrián,",
       before: "mas todo mundo me chama de ",

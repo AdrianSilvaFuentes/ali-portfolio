@@ -297,7 +297,7 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
       <IconArrowRight className="hidden size-6 md:block" />
     </span>
   );
-  // O amarelo é só fundo; o texto continua na cor padrão.
+  // A cor da marca é só fundo; o texto continua na cor padrão.
   const highlight = "rounded-sm border border-default bg-primary-subtle px-5 py-4";
 
   if (flow.kind === "chips") {

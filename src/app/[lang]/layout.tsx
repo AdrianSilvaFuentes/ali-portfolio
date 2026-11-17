@@ -45,7 +45,7 @@ export default async function RootLayout({
     // data-theme muda no navegador antes do React assumir; suppressHydrationWarning evita o aviso.
     <html
       lang={htmlLang[lang]}
-      data-brand="yellow"
+      data-brand="teal"
       className="scroll-pt-[var(--header-height)]"
       suppressHydrationWarning
     >
