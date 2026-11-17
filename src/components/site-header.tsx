@@ -15,7 +15,9 @@ import { ThemeToggle } from "./theme-toggle";
  * páginas e o tema.
  * A partir do md: nome à esquerda, menu, idioma e tema à direita, numa linha só.
  * A ordem no HTML (nome, menu, idioma, tema) é a do teclado e do leitor de tela.
- * Fica fixo no topo ao rolar, com o fundo surface para o conteúdo não aparecer por baixo.
+ * Fica fixo no topo ao rolar, como uma barra flutuante: o cabeçalho em si é transparente, e a
+ * barra (cantos de 16px, rounded-2xl, com fundo surface, borda subtle e shadow-lg) fica afastada das bordas, com o
+ * conteúdo passando por trás. O painel do menu do celular abre logo abaixo dela, também solto.
  */
 export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   const links = [
@@ -25,41 +27,43 @@ export function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-subtle bg-surface shadow-xs">
+    <header className="sticky top-0 z-40 pt-3 md:pt-4">
       <HeaderOffset />
-      <Container className="flex flex-wrap items-center gap-x-3 gap-y-1 py-3 md:gap-x-7">
-        <Link
-          href={pagePath(lang)}
-          aria-label={t.site.name}
-          className="mr-auto inline-flex min-h-11 items-center rounded-sm text-title-sm text-default outline-focus focus-visible:outline-2 focus-visible:outline-offset-2"
-        >
-          {/* Teste: logo em adesivo (imagem). O nome acessível vem do aria-label do link. */}
-          <Image src={logoSticker} alt="" priority unoptimized className="h-10 w-auto" />
-        </Link>
-        <nav aria-label={t.nav.label} className="hidden md:block">
-          <ul className="flex flex-wrap items-center gap-x-4 md:gap-x-7">
-            {links.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href}>{link.label}</NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="flex items-center gap-3">
-          <LanguageSwitcher current={lang} label={t.language.label} />
-          {/* No celular, o tema vai para dentro do menu. */}
-          <div className="hidden md:block">
-            <ThemeToggle labels={t.theme} />
+      <Container>
+        <div className="relative flex items-center gap-x-3 rounded-2xl border border-subtle bg-surface py-2 pr-2 pl-4 shadow-lg md:gap-x-7 md:pl-5">
+          <Link
+            href={pagePath(lang)}
+            aria-label={t.site.name}
+            className="mr-auto inline-flex min-h-11 items-center rounded-sm text-title-sm text-default outline-focus focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            {/* Logo em adesivo (SVG). O nome acessível vem do aria-label do link. */}
+            <Image src={logoSticker} alt="" priority unoptimized className="h-10 w-auto" />
+          </Link>
+          <nav aria-label={t.nav.label} className="hidden md:block">
+            <ul className="flex flex-wrap items-center gap-x-4 md:gap-x-7">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <NavLink href={link.href}>{link.label}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher current={lang} label={t.language.label} />
+            {/* No celular, o tema vai para dentro do menu. */}
+            <div className="hidden md:block">
+              <ThemeToggle labels={t.theme} />
+            </div>
           </div>
+          <MobileMenu
+            label={t.nav.label}
+            openLabel={t.nav.openMenu}
+            closeLabel={t.nav.closeMenu}
+            links={links}
+          >
+            <ThemeToggle labels={t.theme} />
+          </MobileMenu>
         </div>
-        <MobileMenu
-          label={t.nav.label}
-          openLabel={t.nav.openMenu}
-          closeLabel={t.nav.closeMenu}
-          links={links}
-        >
-          <ThemeToggle labels={t.theme} />
-        </MobileMenu>
       </Container>
     </header>
   );

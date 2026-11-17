@@ -75,7 +75,7 @@ export function MobileMenu({
         id={panelId}
         aria-label={label}
         className={cn(
-          "absolute inset-x-0 top-full border-b border-subtle bg-surface shadow-overlay md:hidden",
+          "absolute inset-x-0 top-full mt-2 overflow-hidden rounded-2xl border border-subtle bg-surface shadow-overlay md:hidden",
           "transition-[opacity,translate,visibility] motion-reduce:transition-none",
           open
             ? "visible translate-y-0 opacity-100 duration-base ease-out"
