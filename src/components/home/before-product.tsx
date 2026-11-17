@@ -2,6 +2,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
+import { CaseImage } from "../case/case-image";
 import { Placeholder } from "../placeholder";
 import { Eyebrow, HomeSection, textLinkClass } from "./section";
 
@@ -41,9 +42,19 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
         </ul>
       </div>
       <ul aria-hidden className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        {t.thumbnails.map((label) => (
-          <li key={label}>
-            <Placeholder label={label} className="aspect-4/3" />
+        {t.thumbnails.map((thumb) => (
+          <li key={thumb.image?.src ?? thumb.label}>
+            {thumb.image ? (
+              <CaseImage
+                image={thumb.image}
+                label={thumb.label}
+                reserved={thumb.label}
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="aspect-4/3 object-cover object-top"
+              />
+            ) : (
+              <Placeholder label={thumb.label} className="aspect-4/3" />
+            )}
           </li>
         ))}
       </ul>

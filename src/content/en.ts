@@ -157,7 +157,18 @@ export const en: Dictionary = {
           link: "See brands",
         },
       ],
-      thumbnails: ["Landing page", "E-commerce", "Logo / brand", "Brand page"],
+      thumbnails: [
+        {
+          label: "Landing page",
+          image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Landing page",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
+        },
+        { label: "Logo / brand" },
+        { label: "Brand page" },
+      ],
     },
   },
   work: {
@@ -168,7 +179,35 @@ export const en: Dictionary = {
     web: {
       title: "Web and brand",
       thumbnail: "Thumbnail",
+      reserved: "Placeholder",
       items: [
+        // REVISAR
+        {
+          name: "Ailex",
+          description: "UI design · responsive website for a legal tech company",
+          meta: "2023",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/160898291/UI-Design-Ailex-Tech",
+          image: {
+            src: "/casos/web/ailex",
+            width: 1200,
+            height: 869,
+            alt: "Ailex website on a laptop and a phone, with an orange header, a laptop and the Nosotros, Características and Productos sections",
+          },
+        },
+        {
+          name: "Novamineralis",
+          description: "UI design · responsive website for a mining technology company",
+          meta: "2025",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/197578587/UI-Design-(Novamineralis)",
+          image: {
+            src: "/casos/web/novamineralis",
+            width: 1200,
+            height: 869,
+            alt: "Novamineralis website on a laptop and a phone, with a mine photo at the top, the headline about mineral extraction and a scientist in a lab",
+          },
+        },
         {
           name: "[Site name]",
           description: "Landing page · Figma, HTML, CSS, WordPress",

@@ -107,6 +107,17 @@ type ExperienceItem = {
   link?: string;
 };
 
+/** Um trabalho de Web e marca. Com `href`, o link vira botão; sem ele, fica como texto provisório. */
+type WebItem = {
+  name: string;
+  description: string;
+  meta: string;
+  link: string;
+  href?: string;
+  /** Miniatura em public/, sem extensão. Sem ela, aparece a área reservada. */
+  image?: CaseImage;
+};
+
 type StackGroup = {
   title: string;
   items: { name: string; description: string; icon: StackIcon }[];
@@ -271,7 +282,16 @@ export const pt = {
           link: "Ver marcas",
         },
       ],
-      thumbnails: ["Landing", "E-commerce", "Logo / marca", "Página de marca"],
+      thumbnails: [
+        // Decorativas (o texto ao lado já diz do que se trata), por isso sem texto alternativo.
+        { label: "Landing", image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" } },
+        {
+          label: "Landing",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
+        },
+        { label: "Logo / marca" },
+        { label: "Página de marca" },
+      ] as { label: string; image?: CaseImage }[],
     },
   },
   work: {
@@ -282,7 +302,34 @@ export const pt = {
     web: {
       title: "Web e marca",
       thumbnail: "Miniatura",
+      reserved: "Espaço reservado",
       items: [
+        {
+          name: "Ailex",
+          description: "UI design · site responsivo de uma legal tech",
+          meta: "2023",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/160898291/UI-Design-Ailex-Tech",
+          image: {
+            src: "/casos/web/ailex",
+            width: 1200,
+            height: 869,
+            alt: "Site da Ailex no computador e no celular, com o topo laranja, um notebook e as seções Nosotros, Características e Productos",
+          },
+        },
+        {
+          name: "Novamineralis",
+          description: "UI design · site responsivo de uma empresa de tecnologia para mineração",
+          meta: "2025",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/197578587/UI-Design-(Novamineralis)",
+          image: {
+            src: "/casos/web/novamineralis",
+            width: 1200,
+            height: 869,
+            alt: "Site da Novamineralis no computador e no celular, com a foto de uma mina no topo, o título sobre extração de minerais e uma cientista no laboratório",
+          },
+        },
         {
           name: "[Nome do site]",
           description: "Landing page · Figma, HTML, CSS, WordPress",
@@ -301,7 +348,7 @@ export const pt = {
           meta: "2021–2022",
           link: "[Ver marca]",
         },
-      ],
+      ] as WebItem[],
     },
     /** Os casos de produto. A ordem e os endereços estão em src/i18n/config.ts (cases). */
     cases: {
