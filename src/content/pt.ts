@@ -127,6 +127,8 @@ type StackGroup = {
 export const pt = {
   site: {
     name: "Adrián Silva Fuentes",
+    /** O nome curto, em texto, no lugar do logo no cabeçalho. */
+    shortName: "Adrián",
     title: "Adrián Silva Fuentes · Product Design Engineer",
     description:
       "Designer de produto sênior que leva o problema até o produto entregue, com design e código.",
@@ -158,7 +160,7 @@ export const pt = {
     },
     lead: "Sou Product Designer Sênior, apaixonado por criar produtos com propósito por meio de UX e design de interação.",
     seeWork: "Ver casos",
-    talk: "Falar comigo",
+    talk: { label: "Falar comigo", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
     portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
     /** Os adesivos sobre o retrato (imagens com texto em inglês): o que cada um diz, para o leitor de tela. */
     tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },

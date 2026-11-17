@@ -43,7 +43,7 @@ export function LanguageSwitcher({ current, label }: { current: Locale; label: s
 
   return (
     <Select
-      size="sm"
+      size="md"
       aria-label={label}
       value={current}
       onValueChange={(value) => {

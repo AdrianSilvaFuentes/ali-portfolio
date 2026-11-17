@@ -173,7 +173,7 @@ export function CaseFull({
             {study.delivery.links.map((link, index) => (
               <Button
                 key={link.href}
-                size="sm"
+                size="md"
                 variant={index === 0 ? "primary" : "secondary"}
                 asChild
               >

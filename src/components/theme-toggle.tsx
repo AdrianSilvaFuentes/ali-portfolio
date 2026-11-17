@@ -55,7 +55,7 @@ export function ThemeToggle({ labels }: { labels: Dictionary["theme"] }) {
   }
 
   return (
-    <SegmentedControl size="sm" aria-label={labels.label} value={theme} onValueChange={choose}>
+    <SegmentedControl size="md" aria-label={labels.label} value={theme} onValueChange={choose}>
       <SegmentedControlItem value="light" aria-label={labels.light} icon={<IconSun />} />
       <SegmentedControlItem value="dark" aria-label={labels.dark} icon={<IconMoon />} />
     </SegmentedControl>

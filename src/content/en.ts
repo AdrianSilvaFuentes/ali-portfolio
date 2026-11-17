@@ -7,6 +7,8 @@ import type { Dictionary } from "./pt";
 export const en: Dictionary = {
   site: {
     name: "Adrián Silva Fuentes",
+    /** O nome curto, em texto, no lugar do logo no cabeçalho. */
+    shortName: "Adrián",
     title: "Adrián Silva Fuentes · Product Design Engineer",
     description:
       "Senior product designer who takes the problem all the way to the shipped product, with design and code.",
@@ -38,7 +40,7 @@ export const en: Dictionary = {
     },
     lead: "I’m a Senior Product Designer with a strong passion for crafting purposeful products through UX and interaction design.",
     seeWork: "See cases",
-    talk: "Get in touch",
+    talk: { label: "Get in touch", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
     portraitAlt: "Adrián smiling, wearing a cap and a scarf, in front of a windmill.",
     tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },
     reserved: "Reserved space",

@@ -244,7 +244,7 @@ export function NextCase({ lang, caseKey, t }: { lang: Locale; caseKey: CaseKey;
         </Eyebrow>
         <p className="text-title-lg">{next.title}</p>
       </div>
-      <Button size="sm" asChild className="self-start md:self-auto">
+      <Button size="md" asChild className="self-start md:self-auto">
         <Link href={casePath(lang, nextKey)}>
           {t.work.product.readCase}
           <IconArrowRight aria-hidden className="size-4" />

@@ -51,7 +51,7 @@ export function CaseCard({
       <p className="text-body-md text-subtle">{t.study?.result.lead ?? t.summary}</p>
       <Button
         asChild
-        size="sm"
+        size="md"
         variant="secondary"
         iconRight={<IconArrowRight />}
         className="mt-auto self-start"

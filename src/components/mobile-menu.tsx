@@ -8,10 +8,10 @@ import { Container } from "./container";
 import { NavLink } from "./nav-link";
 
 /**
- * Menu do celular (abaixo do md). O botão é o Button do ali-ui, só com ícone (sm, w-8 px-0,
+ * Menu do celular (abaixo do md). O botão é o Button do ali-ui, só com ícone (md, w-10 px-0,
  * como na história "Só ícone"). Ao tocar, abre a lista de páginas por cima do conteúdo, logo
- * abaixo do cabeçalho. Fecha com o mesmo botão, com Esc (o foco volta ao botão) ou ao escolher
- * um item. Dentro dele também fica o tema, que não cabe na linha do celular. O painel é feito
+ * abaixo do cabeçalho. Fecha com o mesmo botão, com Esc (o foco volta ao botão), com um toque ou
+ * clique fora do painel, ou ao escolher um item. Dentro dele também fica o tema, que não cabe na linha do celular. O painel é feito
  * aqui porque o ali-ui ainda não tem componente de menu que abre: está na lista de lacunas da
  * skill ali-ui-a-risca.
  */
@@ -33,6 +33,7 @@ export function MobileMenu({
   const pathname = usePathname();
   const panelId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
 
   // Mudou de página: fecha.
   useEffect(() => {
@@ -52,17 +53,29 @@ export function MobileMenu({
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // Toque ou clique fora do painel (e fora do botão, que já alterna sozinho) fecha.
+  useEffect(() => {
+    if (!open) return;
+    function onPointerDown(event: PointerEvent) {
+      const target = event.target as Node;
+      if (panelRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
+      setOpen(false);
+    }
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
   return (
     <>
       <Button
         ref={buttonRef}
-        size="sm"
+        size="md"
         variant="secondary"
         aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
-        className="w-8 px-0 md:hidden"
+        className="w-10 px-0 md:hidden"
         iconLeft={open ? <IconX /> : <IconMenu2 />}
       />
       {/*
@@ -72,10 +85,11 @@ export function MobileMenu({
         ease-in. Fechado, fica invisível: sai da ordem do teclado e do leitor de tela.
       */}
       <nav
+        ref={panelRef}
         id={panelId}
         aria-label={label}
         className={cn(
-          "absolute inset-x-0 top-full border-b border-subtle bg-surface shadow-overlay md:hidden",
+          "absolute inset-x-0 top-full mt-2 overflow-hidden rounded-2xl border border-subtle bg-surface shadow-overlay md:hidden",
           "transition-[opacity,translate,visibility] motion-reduce:transition-none",
           open
             ? "visible translate-y-0 opacity-100 duration-base ease-out"
