@@ -44,7 +44,8 @@ export type CaseStudyContent = {
   };
   delivery: {
     lead: string;
-    items: { image: CaseImage; caption: string }[];
+    /** Com `demo` (título do iframe para o leitor de tela), mostra o Storybook ao vivo no lugar da imagem. */
+    items: { image: CaseImage; caption: string; demo?: string }[];
     /** Links para o que foi entregue (ex.: Storybook e GitHub), como botões. */
     links?: { label: string; href: string }[];
   };
@@ -107,6 +108,17 @@ type ExperienceItem = {
   link?: string;
 };
 
+/** Um trabalho de Web e marca. Com `href`, o link vira botão; sem ele, fica como texto provisório. */
+type WebItem = {
+  name: string;
+  description: string;
+  meta: string;
+  link: string;
+  href?: string;
+  /** Miniatura em public/, sem extensão. Sem ela, aparece a área reservada. */
+  image?: CaseImage;
+};
+
 type StackGroup = {
   title: string;
   items: { name: string; description: string; icon: StackIcon }[];
@@ -138,7 +150,7 @@ export const pt = {
   },
   home: {
     role: "Product Design Engineer",
-    /** O título da abertura, em duas linhas; "Ali" leva o destaque amarelo. */
+    /** O título da abertura, em duas linhas; "Ali" leva o destaque na cor da marca. */
     title: {
       first: "Oi! Sou o Adrián,",
       before: "mas todo mundo me chama de ",
@@ -177,18 +189,25 @@ export const pt = {
       eyebrow: "Como trabalho",
       title: "Do problema ao resultado, com as mãos no produto.",
       steps: [
-        { title: "Descobrir", description: "[Pesquisa com usuários e dados: onde dói e quanto.]" },
+        {
+          title: "Descobrir",
+          description:
+            "Pesquisa de campo, entrevistas e dados de uso para entender onde a experiência trava e quanto isso custa.",
+        },
         {
           title: "Decidir",
-          description: "[Priorizar e definir a métrica de sucesso antes de construir.]",
+          description:
+            "Transformo o que aprendi em prioridades e defino a métrica de sucesso antes da primeira tela.",
         },
         {
           title: "Construir",
-          description: "[Design e código, com IA como ferramenta e julgamento próprio.]",
+          description:
+            "Design e código no mesmo fluxo, com IA para acelerar e um design system para manter a consistência.",
         },
         {
           title: "Medir",
-          description: "[O que mudou depois do lançamento, e o que isso ensinou.]",
+          description:
+            "Testo com usuários e acompanho os números depois do lançamento. O que aprendo volta para o próximo ciclo.",
         },
       ],
     },
@@ -200,9 +219,11 @@ export const pt = {
       image: "Imagem do caso",
     },
     built: {
-      eyebrow: "Construído",
-      title: "ali-ui, um sistema feito do zero.",
-      lead: "Tokens, componentes e documentação, com testes de acessibilidade. Abre no Storybook, com o código no GitHub.",
+      eyebrow: "Projeto mais recente",
+      status: "Em andamento",
+      title: "Ali Design System, feito do zero.",
+      lead: "Tokens, componentes e documentação, com contraste testado a cada build. Este painel é o Storybook de verdade: dá para clicar e digitar.",
+      demo: "Demonstração interativa do Ali Design System, carregada do Storybook",
       storybook: { label: "Abrir o Storybook", href: "https://ali-ui-delta.vercel.app" },
       github: { label: "Ver no GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
       palette: "Escala de cinzas e o amarelo da marca, tirados dos tokens do ali-ui",
@@ -271,7 +292,22 @@ export const pt = {
           link: "Ver marcas",
         },
       ],
-      thumbnails: ["Landing", "E-commerce", "Logo / marca", "Página de marca"],
+      thumbnails: [
+        // Decorativas (o texto ao lado já diz do que se trata), por isso sem texto alternativo.
+        { label: "Landing", image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" } },
+        {
+          label: "Logo / marca",
+          image: { src: "/casos/web/the-rio-system", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Landing",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Página de marca",
+          image: { src: "/casos/web/identa", width: 1080, height: 820, alt: "" },
+        },
+      ] as { label: string; image?: CaseImage }[],
     },
   },
   work: {
@@ -282,7 +318,34 @@ export const pt = {
     web: {
       title: "Web e marca",
       thumbnail: "Miniatura",
+      reserved: "Espaço reservado",
       items: [
+        {
+          name: "Ailex",
+          description: "UI design · site responsivo de uma legal tech",
+          meta: "2023",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/160898291/UI-Design-Ailex-Tech",
+          image: {
+            src: "/casos/web/ailex",
+            width: 1200,
+            height: 869,
+            alt: "Site da Ailex no computador e no celular, com o topo laranja, um notebook e as seções Nosotros, Características e Productos",
+          },
+        },
+        {
+          name: "Novamineralis",
+          description: "UI design · site responsivo de uma empresa de tecnologia para mineração",
+          meta: "2025",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/197578587/UI-Design-(Novamineralis)",
+          image: {
+            src: "/casos/web/novamineralis",
+            width: 1200,
+            height: 869,
+            alt: "Site da Novamineralis no computador e no celular, com a foto de uma mina no topo, o título sobre extração de minerais e uma cientista no laboratório",
+          },
+        },
         {
           name: "[Nome do site]",
           description: "Landing page · Figma, HTML, CSS, WordPress",
@@ -298,10 +361,30 @@ export const pt = {
         {
           name: "The Rio System",
           description: "Marca, identidade visual e presença web",
-          meta: "2021–2022",
-          link: "[Ver marca]",
+          meta: "2022",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/151215671/Branding-Identity-The-Rio-System",
+          image: {
+            src: "/casos/web/the-rio-system",
+            width: 1200,
+            height: 869,
+            alt: "Logotipo da The Rio System em branco sobre o céu azul do Rio de Janeiro, com o Pão de Açúcar e o Cristo Redentor ao fundo",
+          },
         },
-      ],
+        {
+          name: "Clínica iDenta",
+          description: "Branding e social media de uma clínica odontológica",
+          meta: "2024",
+          link: "Ver no Behance",
+          href: "https://www.behance.net/gallery/211890569/Social-Media-iDenta",
+          image: {
+            src: "/casos/web/identa",
+            width: 1080,
+            height: 820,
+            alt: "Logotipo da Clínica iDenta em branco sobre a foto de mãos com luvas pretas segurando um modelo de arcada dentária",
+          },
+        },
+      ] as WebItem[],
     },
     /** Os casos de produto. A ordem e os endereços estão em src/i18n/config.ts (cases). */
     cases: {
@@ -561,7 +644,7 @@ export const pt = {
         years: "2026",
         role: "Design e código",
         tags: ["Design system", "Tokens", "Acessibilidade"],
-        title: "ali-ui: um design system enxuto, do token ao teste",
+        title: "Ali Design System: enxuto, acessível e testado a cada build",
         summary: "[Problema → resultado, em uma linha.]",
         result:
           "21 componentes em tema claro e escuro, com contraste WCAG AA verificado a cada build",
@@ -738,6 +821,7 @@ export const pt = {
                   height: 470,
                   alt: "Storybook publicado do ali-ui, com fundamentos e componentes",
                 },
+                demo: "Demonstração interativa do Ali Design System, carregada do Storybook",
                 caption:
                   "Storybook publicado - código no GitHub - plugin do Figma para sincronizar os tokens",
               },
@@ -1152,7 +1236,7 @@ export const pt = {
     nickname: { before: "Todo mundo me chama de ", name: "Ali" },
     photoAlt:
       "Visita a cliente para pesquisa de campo: um grupo ao redor de uma mesa com notebooks e coletores de dados, conversando sobre o trabalho.",
-    cv: "[Currículo (PDF)]",
+    cv: { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     experience: {
       title: "Experiência",
       items: [
@@ -1276,9 +1360,13 @@ export const pt = {
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "[Currículo (PDF)]", href: null },
+      { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ] as { label: string; href: string | null }[],
-    madeWith: "Feito com ali-ui",
+    madeWith: {
+      before: "Feito com ",
+      label: "Ali Design System",
+      href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+    },
   },
 };
 

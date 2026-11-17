@@ -1,56 +1,49 @@
-import { Button } from "@adriansilvafuentes/ui";
+import { Badge, Button } from "@adriansilvafuentes/ui";
+import { IconProgress } from "@tabler/icons-react";
 import type { Dictionary } from "@/content";
-import { ComponentSamples } from "./component-samples";
+import { StorybookDemo } from "../storybook-demo";
 import { Eyebrow, HomeSection } from "./section";
+import { Stack } from "./stack";
 
 /**
- * A escala da faixa, do mais claro ao mais escuro no tema claro, mais o amarelo da marca.
- * Só tokens semânticos: no tema escuro, cada um vira o seu par escuro sozinho.
+ * 5. Projeto mais recente: o Ali Design System, ainda em andamento (Badge). Texto à esquerda, o Storybook ao vivo à direita
+ * e, embaixo, a stack com as ferramentas.
  */
-const swatches = [
-  "bg-surface",
-  "bg-surface-sunken",
-  "bg-neutral-subtle",
-  "bg-[var(--ali-color-border-subtle)]",
-  "bg-[var(--ali-color-border-default)]",
-  "bg-[var(--ali-color-icon-subtle)]",
-  "bg-[var(--ali-color-text-subtle)]",
-  "bg-[var(--ali-color-icon-default)]",
-  "bg-surface-inverse",
-  "bg-primary-subtle",
-];
-
-/** 5. Construído: o ali-ui como prova, com a faixa de cores e componentes de verdade. */
-export function Built({ t }: { t: Dictionary["home"]["built"] }) {
+export function Built({
+  t,
+  stack,
+}: {
+  t: Dictionary["home"]["built"];
+  stack: Dictionary["home"]["stack"];
+}) {
   return (
-    <HomeSection id="construido-titulo" className="grid gap-10 lg:grid-cols-2 lg:gap-14">
-      <div className="flex flex-col gap-5">
-        <Eyebrow>{t.eyebrow}</Eyebrow>
-        <h2 id="construido-titulo" className="text-title-md">
-          {t.title}
-        </h2>
-        <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
-        <div className="flex flex-wrap gap-3">
-          <Button size="sm" asChild>
-            <a href={t.storybook.href}>{t.storybook.label}</a>
-          </Button>
-          <Button size="sm" asChild variant="secondary">
-            <a href={t.github.href}>{t.github.label}</a>
-          </Button>
+    <HomeSection id="construido-titulo" className="flex flex-col gap-14">
+      <div className="grid gap-10 lg:grid-cols-5 lg:items-center lg:gap-14">
+        <div className="flex flex-col gap-5 lg:col-span-2">
+          <div className="flex flex-wrap items-center gap-3">
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <Badge tone="caution" icon={<IconProgress />}>
+              {t.status}
+            </Badge>
+          </div>
+          <h2 id="construido-titulo" className="text-title-md">
+            {t.title}
+          </h2>
+          <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
+          <div className="flex flex-wrap gap-3">
+            <Button size="sm" asChild>
+              <a href={t.storybook.href}>{t.storybook.label}</a>
+            </Button>
+            <Button size="sm" asChild variant="secondary">
+              <a href={t.github.href}>{t.github.label}</a>
+            </Button>
+          </div>
+        </div>
+        <div className="lg:col-span-3">
+          <StorybookDemo title={t.demo} />
         </div>
       </div>
-      <div className="flex flex-col gap-4">
-        <div
-          role="img"
-          aria-label={t.palette}
-          className="flex h-10 overflow-hidden rounded-md border border-subtle"
-        >
-          {swatches.map((swatch) => (
-            <span key={swatch} className={`flex-1 ${swatch}`} />
-          ))}
-        </div>
-        <ComponentSamples t={t.samples} />
-      </div>
+      <Stack t={stack} />
     </HomeSection>
   );
 }

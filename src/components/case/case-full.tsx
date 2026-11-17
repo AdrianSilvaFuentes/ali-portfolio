@@ -7,6 +7,7 @@ import type { CaseStudyContent } from "@/content/pt";
 import { type CaseKey, type Locale, pagePath } from "@/i18n/config";
 import { Container } from "../container";
 import { Eyebrow, HomeSection, textLinkClass } from "../home/section";
+import { StorybookDemo } from "../storybook-demo";
 import { CaseImage } from "./case-image";
 import { NextCase, SectionTitle } from "./case-study";
 
@@ -103,6 +104,7 @@ export function CaseFull({
                 image={card.image}
                 {...img}
                 sizes="(min-width: 1024px) 394px, 100vw"
+                hideIfMissing
                 className="rounded-none"
               />
               <CardText card={card} className="p-5" />
@@ -148,15 +150,19 @@ export function CaseFull({
           {study.delivery.items.map((item) => (
             <li key={item.image.src}>
               <figure className="flex flex-col gap-2">
-                <CaseImage
-                  image={item.image}
-                  {...img}
-                  sizes={
-                    study.delivery.items.length > 1
-                      ? "(min-width: 640px) 256px, 100vw"
-                      : "(min-width: 1024px) 804px, 100vw"
-                  }
-                />
+                {item.demo ? (
+                  <StorybookDemo title={item.demo} />
+                ) : (
+                  <CaseImage
+                    image={item.image}
+                    {...img}
+                    sizes={
+                      study.delivery.items.length > 1
+                        ? "(min-width: 640px) 256px, 100vw"
+                        : "(min-width: 1024px) 804px, 100vw"
+                    }
+                  />
+                )}
                 <figcaption className="text-body-sm text-subtle">{item.caption}</figcaption>
               </figure>
             </li>
@@ -291,7 +297,7 @@ function Flow({ flow }: { flow: CaseStudyContent["analysis"]["flow"] }) {
       <IconArrowRight className="hidden size-6 md:block" />
     </span>
   );
-  // O amarelo é só fundo; o texto continua na cor padrão.
+  // A cor da marca é só fundo; o texto continua na cor padrão.
   const highlight = "rounded-sm border border-default bg-primary-subtle px-5 py-4";
 
   if (flow.kind === "chips") {

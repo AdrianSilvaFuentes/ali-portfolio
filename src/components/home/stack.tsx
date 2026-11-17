@@ -12,7 +12,7 @@ import {
   IconTestPipe,
 } from "@tabler/icons-react";
 import type { Dictionary, StackIcon } from "@/content";
-import { Eyebrow, HomeSection } from "./section";
+import { Eyebrow } from "./section";
 
 /** Os mesmos ícones da Introdução do Storybook do ali-ui. */
 const icons: Record<StackIcon, typeof IconBrandReact> = {
@@ -29,18 +29,18 @@ const icons: Record<StackIcon, typeof IconBrandReact> = {
   vercel: IconBrandVercel,
 };
 
-/** 6. Stack: as ferramentas agrupadas por função. */
+/** Stack: as ferramentas agrupadas por função. Fica dentro da seção Construído, abaixo do painel. */
 export function Stack({ t }: { t: Dictionary["home"]["stack"] }) {
   return (
-    <HomeSection id="stack-titulo" sunken className="flex flex-col gap-8">
-      <Eyebrow as="h2" id="stack-titulo">
+    <div className="flex flex-col gap-8 border-t border-subtle pt-10">
+      <Eyebrow as="h3" id="stack-titulo">
         {t.title}
       </Eyebrow>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {t.groups.map((group) => {
           return (
             <div key={group.title} className="flex flex-col gap-4">
-              <h3 className="text-label-md text-subtle">{group.title}</h3>
+              <h4 className="text-label-md text-subtle">{group.title}</h4>
               <ul className="flex flex-col gap-2">
                 {group.items.map((item) => {
                   const Icon = icons[item.icon];
@@ -59,6 +59,6 @@ export function Stack({ t }: { t: Dictionary["home"]["stack"] }) {
           );
         })}
       </div>
-    </HomeSection>
+    </div>
   );
 }

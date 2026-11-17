@@ -70,17 +70,24 @@ export const en: Dictionary = {
       steps: [
         {
           title: "Discover",
-          description: "[User research and data: where it hurts and how much.]",
+          description:
+            "Field research, interviews and usage data to find where the experience breaks and what it costs.",
         },
         {
           title: "Decide",
-          description: "[Prioritize and define the success metric before building.]",
+          description:
+            "I turn what I learned into priorities and set the success metric before the first screen.",
         },
         {
           title: "Build",
-          description: "[Design and code, with AI as a tool and my own judgment.]",
+          description:
+            "Design and code in one flow, with AI to move faster and a design system to stay consistent.",
         },
-        { title: "Measure", description: "[What changed after launch, and what it taught us.]" },
+        {
+          title: "Measure",
+          description:
+            "I test with users and track the numbers after launch. What I learn feeds the next cycle.",
+        },
       ],
     },
     cases: {
@@ -91,9 +98,11 @@ export const en: Dictionary = {
       image: "Case image",
     },
     built: {
-      eyebrow: "Built",
-      title: "ali-ui, a system built from scratch.",
-      lead: "Tokens, components and documentation, with accessibility tests. Opens in Storybook, with the code on GitHub.",
+      eyebrow: "Latest project",
+      status: "In progress",
+      title: "Ali Design System, built from scratch.",
+      lead: "Tokens, components and documentation, with contrast tested on every build. This panel is the real Storybook: you can click and type.",
+      demo: "Interactive demo of the Ali Design System, loaded from Storybook",
       storybook: { label: "Open Storybook", href: "https://ali-ui-delta.vercel.app" },
       github: { label: "View on GitHub", href: "https://github.com/AdrianSilvaFuentes/ali-ui" },
       palette: "Gray scale and the brand yellow, taken from the ali-ui tokens",
@@ -157,7 +166,24 @@ export const en: Dictionary = {
           link: "See brands",
         },
       ],
-      thumbnails: ["Landing page", "E-commerce", "Logo / brand", "Brand page"],
+      thumbnails: [
+        {
+          label: "Landing page",
+          image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Logo / brand",
+          image: { src: "/casos/web/the-rio-system", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Landing page",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Brand page",
+          image: { src: "/casos/web/identa", width: 1080, height: 820, alt: "" },
+        },
+      ],
     },
   },
   work: {
@@ -168,7 +194,35 @@ export const en: Dictionary = {
     web: {
       title: "Web and brand",
       thumbnail: "Thumbnail",
+      reserved: "Placeholder",
       items: [
+        // REVISAR
+        {
+          name: "Ailex",
+          description: "UI design · responsive website for a legal tech company",
+          meta: "2023",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/160898291/UI-Design-Ailex-Tech",
+          image: {
+            src: "/casos/web/ailex",
+            width: 1200,
+            height: 869,
+            alt: "Ailex website on a laptop and a phone, with an orange header, a laptop and the Nosotros, Características and Productos sections",
+          },
+        },
+        {
+          name: "Novamineralis",
+          description: "UI design · responsive website for a mining technology company",
+          meta: "2025",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/197578587/UI-Design-(Novamineralis)",
+          image: {
+            src: "/casos/web/novamineralis",
+            width: 1200,
+            height: 869,
+            alt: "Novamineralis website on a laptop and a phone, with a mine photo at the top, the headline about mineral extraction and a scientist in a lab",
+          },
+        },
         {
           name: "[Site name]",
           description: "Landing page · Figma, HTML, CSS, WordPress",
@@ -184,8 +238,28 @@ export const en: Dictionary = {
         {
           name: "The Rio System",
           description: "Brand, visual identity and web presence",
-          meta: "2021–2022",
-          link: "[See brand]",
+          meta: "2022",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/151215671/Branding-Identity-The-Rio-System",
+          image: {
+            src: "/casos/web/the-rio-system",
+            width: 1200,
+            height: 869,
+            alt: "The Rio System logo in white over the blue sky of Rio de Janeiro, with Sugarloaf Mountain and Christ the Redeemer in the background",
+          },
+        },
+        {
+          name: "Clínica iDenta",
+          description: "Branding and social media for a dental clinic",
+          meta: "2024",
+          link: "See on Behance",
+          href: "https://www.behance.net/gallery/211890569/Social-Media-iDenta",
+          image: {
+            src: "/casos/web/identa",
+            width: 1080,
+            height: 820,
+            alt: "Clínica iDenta logo in white over a photo of hands in black gloves holding a dental model",
+          },
         },
       ],
     },
@@ -444,7 +518,7 @@ export const en: Dictionary = {
         years: "2026",
         role: "Design and code",
         tags: ["Design system", "Tokens", "Accessibility"],
-        title: "ali-ui: a lean design system, from token to test",
+        title: "Ali Design System: lean, accessible and tested on every build",
         summary: "[Problem → outcome, in one line.]",
         result:
           "21 components in light and dark themes, with WCAG AA contrast checked on every build",
@@ -621,6 +695,7 @@ export const en: Dictionary = {
                   height: 470,
                   alt: "The published ali-ui Storybook, with foundations and components",
                 },
+                demo: "Interactive demo of the Ali Design System, loaded from Storybook",
                 caption: "Published Storybook - code on GitHub - Figma plugin to sync the tokens",
               },
             ],
@@ -1024,7 +1099,7 @@ export const en: Dictionary = {
     nickname: { before: "Everyone calls me ", name: "Ali" },
     photoAlt:
       "A client visit for field research: a group around a table with laptops and data collectors, talking about the work.",
-    cv: "[Resume (PDF)]",
+    cv: { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     experience: {
       title: "Experience",
       items: [
@@ -1147,8 +1222,12 @@ export const en: Dictionary = {
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "[Résumé (PDF)]", href: null },
+      { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ],
-    madeWith: "Made with ali-ui",
+    madeWith: {
+      before: "Made with ",
+      label: "Ali Design System",
+      href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+    },
   },
 };

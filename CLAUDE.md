@@ -20,7 +20,7 @@ A component change happens in ali-ui, gets a new version on npm, and only then i
 
 - **Nothing from Nuvia.** No screens, flows, docs, internal product names or metrics. Job title and period may appear on the timeline, only after I confirm.
 - **No phone number and no public e-mail** anywhere. Contact goes through the profiles in the footer (LinkedIn, Behance, GitHub).
-- **Semantic tokens only.** Never hardcode colors, font sizes, spacing, radii or shadows, and never import `@adriansilvafuentes/tokens/primitives` (Biome blocks both). The yellow accent is a fill, never text or border on a light background.
+- **Semantic tokens only.** Never hardcode colors, font sizes, spacing, radii or shadows, and never import `@adriansilvafuentes/tokens/primitives` (Biome blocks both). The brand accent (teal, `data-brand="teal"`) is a fill, never text or border on a light background.
 - **Follow ali-ui to the letter.** Any interface change follows the `ali-ui-a-risca` skill (`.claude/skills/ali-ui-a-risca/SKILL.md`): use the ali-ui component whenever one exists, exactly as its Storybook stories do, keep its animations and states, and never restyle it with `className` beyond layout. If ali-ui lacks something, stop and ask.
 - **Accessibility:** AA contrast in light and dark themes, touch targets at least the WCAG AA minimum (24px) with ali-ui sizes taking precedence, visible focus, semantic HTML, menu and language selector usable by keyboard.
 - **Responsive from the start** (mobile first), light and dark themes derived from the tokens.

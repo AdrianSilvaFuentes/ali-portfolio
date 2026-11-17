@@ -2,18 +2,19 @@ import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
+import { CaseImage } from "../case/case-image";
 import { Placeholder } from "../placeholder";
 import { Eyebrow, HomeSection, textLinkClass } from "./section";
 
 /**
  * 7. Antes do produto: web design e branding. Peso menor que os casos de propósito:
- * título menor, sem número grande e sem amarelo. Os links levam à lista "Web e marca" da página Trabalho.
+ * título menor, sem número grande e sem a cor da marca. Os links levam à lista "Web e marca" da página Trabalho.
  */
 export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]["before"] }) {
   const webPath = `${pagePath(lang, "work")}#web-e-marca`;
 
   return (
-    <HomeSection id="antes-titulo" className="flex flex-col gap-10">
+    <HomeSection id="antes-titulo" sunken className="flex flex-col gap-10">
       <div className="grid gap-8 lg:grid-cols-5 lg:gap-14">
         <div className="flex flex-col gap-4 lg:col-span-2">
           <Eyebrow>{t.eyebrow}</Eyebrow>
@@ -41,9 +42,19 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
         </ul>
       </div>
       <ul aria-hidden className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        {t.thumbnails.map((label) => (
-          <li key={label}>
-            <Placeholder label={label} className="aspect-4/3" />
+        {t.thumbnails.map((thumb) => (
+          <li key={thumb.image?.src ?? thumb.label}>
+            {thumb.image ? (
+              <CaseImage
+                image={thumb.image}
+                label={thumb.label}
+                reserved={thumb.label}
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="aspect-4/3 object-cover object-top"
+              />
+            ) : (
+              <Placeholder label={thumb.label} className="aspect-4/3" />
+            )}
           </li>
         ))}
       </ul>
