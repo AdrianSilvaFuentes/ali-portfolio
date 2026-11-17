@@ -7,6 +7,8 @@ import type { Dictionary } from "./pt";
 export const es: Dictionary = {
   site: {
     name: "Adrián Silva Fuentes",
+    /** O nome curto, em texto, no lugar do logo no cabeçalho. */
+    shortName: "Adrián",
     title: "Adrián Silva Fuentes · Product Design Engineer",
     description:
       "Diseñador de producto sénior que lleva el problema hasta el producto entregado, con diseño y código.",
