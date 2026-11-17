@@ -29,7 +29,7 @@ export function FeaturedCases({
           <IconArrowRight aria-hidden className="size-4" />
         </Link>
       </div>
-      <ul className="grid gap-10 md:grid-cols-3 md:gap-5">
+      <ul className="grid gap-4 md:grid-cols-3">
         {featured.map((key) => (
           <li key={key}>
             <CaseCard
