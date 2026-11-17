@@ -160,6 +160,8 @@ export const pt = {
     seeWork: "Ver casos",
     talk: "Falar comigo",
     portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
+    /** Os adesivos sobre o retrato (imagens com texto em inglês): o que cada um diz, para o leitor de tela. */
+    tags: { uxUi: "UX/UI Design", product: "Product Engineer", branding: "Branding & Identity" },
     /** Rótulo das áreas que ainda esperam imagem, lido pelo leitor de tela antes do nome. */
     reserved: "Espaço reservado",
     proofs: {

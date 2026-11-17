@@ -5,9 +5,22 @@ import Link from "next/link";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
 import portrait from "../../../public/images/retrato.webp";
+import tagBranding from "../../../public/images/tags/branding-identity.webp";
+import tagProduct from "../../../public/images/tags/product-engineer.webp";
+import tagUxUi from "../../../public/images/tags/ux-ui-design.webp";
 import { Container } from "../container";
 
 /** As quatro alças da seleção, centradas nos cantos da moldura. */
+/**
+ * Os adesivos sobre o selo, na posição da referência do Adrián: em % da imagem do retrato
+ * (esquerda, topo e largura), para acompanhar o selo em qualquer tamanho de tela.
+ */
+const tags = [
+  { key: "branding", src: tagBranding, left: "62%", top: "19%", width: "37%" },
+  { key: "product", src: tagProduct, left: "5%", top: "58%", width: "34%" },
+  { key: "uxUi", src: tagUxUi, left: "75%", top: "64%", width: "21%" },
+] as const;
+
 const selectionHandles = [
   "top-0 left-0 -translate-1/2",
   "top-0 right-0 translate-x-1/2 -translate-y-1/2",
@@ -62,13 +75,26 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           O selo já traz moldura e sombra, e o fundo em volta é transparente: a foto entra sem
           caixa. Original em media/retrato (fora do Git); a versão leve está em public/images.
         */}
-        <Image
-          src={portrait}
-          alt={t.portraitAlt}
-          preload
-          sizes="(min-width: 768px) 448px, 288px"
-          className="animate-portrait mx-auto h-auto w-full max-w-2xs md:max-w-md"
-        />
+        {/* Os adesivos ficam dentro do mesmo bloco do retrato: entram e balançam junto com ele. */}
+        <div className="animate-portrait relative mx-auto w-full max-w-2xs md:max-w-md">
+          <Image
+            src={portrait}
+            alt={t.portraitAlt}
+            preload
+            sizes="(min-width: 768px) 448px, 288px"
+            className="h-auto w-full"
+          />
+          {tags.map((tag) => (
+            <Image
+              key={tag.key}
+              src={tag.src}
+              alt={t.tags[tag.key]}
+              sizes="(min-width: 768px) 170px, 110px"
+              className="absolute h-auto"
+              style={{ left: tag.left, top: tag.top, width: tag.width }}
+            />
+          ))}
+        </div>
       </Container>
     </section>
   );
