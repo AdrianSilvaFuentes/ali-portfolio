@@ -38,7 +38,7 @@ export const en: Dictionary = {
     },
     lead: "I’m a Senior Product Designer with a strong passion for crafting purposeful products through UX and interaction design.",
     seeWork: "See cases",
-    talk: "Get in touch",
+    experience: "Experience",
     portraitAlt: "Adrián smiling, wearing a cap and a scarf, in front of a windmill.",
     tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },
     reserved: "Reserved space",

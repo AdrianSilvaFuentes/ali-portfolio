@@ -38,7 +38,7 @@ export const es: Dictionary = {
     },
     lead: "Soy Product Designer Sénior, con una gran pasión por crear productos con propósito a través del UX y el diseño de interacción.",
     seeWork: "Ver casos",
-    talk: "Hablemos",
+    experience: "Experiencia",
     portraitAlt: "Adrián sonriendo, con gorra y pañuelo, frente a un molino.",
     tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },
     reserved: "Espacio reservado",

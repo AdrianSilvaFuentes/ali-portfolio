@@ -158,7 +158,7 @@ export const pt = {
     },
     lead: "Sou Product Designer Sênior, apaixonado por criar produtos com propósito por meio de UX e design de interação.",
     seeWork: "Ver casos",
-    talk: "Falar comigo",
+    experience: "Experiência",
     portraitAlt: "Adrián sorrindo, de boné e lenço, em frente a um moinho.",
     /** Os adesivos sobre o retrato (imagens com texto em inglês): o que cada um diz, para o leitor de tela. */
     tags: { uxUi: "UI/UX Design", product: "Product Engineer", branding: "Branding & Identity" },

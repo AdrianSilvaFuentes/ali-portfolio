@@ -69,7 +69,7 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
               <Link href={pagePath(lang, "work")}>{t.seeWork}</Link>
             </Button>
             <Button size="md" asChild variant="secondary">
-              <a href="#contato">{t.talk}</a>
+              <Link href={pagePath(lang, "resume")}>{t.experience}</Link>
             </Button>
           </div>
         </div>
