@@ -163,12 +163,12 @@ export const en: Dictionary = {
           image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" },
         },
         {
-          label: "Landing page",
-          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
-        },
-        {
           label: "Logo / brand",
           image: { src: "/casos/web/the-rio-system", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Landing page",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
         },
         {
           label: "Brand page",

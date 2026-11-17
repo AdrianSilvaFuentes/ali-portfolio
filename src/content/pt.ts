@@ -286,12 +286,12 @@ export const pt = {
         // Decorativas (o texto ao lado já diz do que se trata), por isso sem texto alternativo.
         { label: "Landing", image: { src: "/casos/web/ailex", width: 1200, height: 869, alt: "" } },
         {
-          label: "Landing",
-          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
-        },
-        {
           label: "Logo / marca",
           image: { src: "/casos/web/the-rio-system", width: 1200, height: 869, alt: "" },
+        },
+        {
+          label: "Landing",
+          image: { src: "/casos/web/novamineralis", width: 1200, height: 869, alt: "" },
         },
         {
           label: "Página de marca",
