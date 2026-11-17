@@ -41,7 +41,7 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
           ))}
         </ul>
       </div>
-      <ul aria-hidden className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <ul aria-hidden className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {t.thumbnails.map((thumb) => (
           <li key={thumb.image?.src ?? thumb.label}>
             {thumb.image ? (
