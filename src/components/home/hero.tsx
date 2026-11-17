@@ -1,5 +1,5 @@
 import { Button } from "@adriansilvafuentes/ui";
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconFolder } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
@@ -65,11 +65,11 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           </h1>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
           <div className="flex flex-wrap gap-3">
-            <Button size="md" asChild iconRight={<IconArrowRight />}>
+            <Button size="md" asChild iconLeft={<IconFolder />}>
               <Link href={pagePath(lang, "work")}>{t.seeWork}</Link>
             </Button>
-            <Button size="md" asChild variant="secondary">
-              <Link href={pagePath(lang, "resume")}>{t.experience}</Link>
+            <Button size="md" asChild variant="secondary" iconLeft={<IconBrandLinkedin />}>
+              <a href={t.talk.href}>{t.talk.label}</a>
             </Button>
           </div>
         </div>
