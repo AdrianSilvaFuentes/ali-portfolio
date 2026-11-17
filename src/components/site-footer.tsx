@@ -24,7 +24,7 @@ const inlineLinkClass =
 
 /**
  * Rodapé com o contato, no tema oposto ao da página (InverseThemeFooter): escuro no tema claro,
- * claro no escuro. Logo ASF (currentColor), título e os perfis como Button ghost do ali-ui, com
+ * claro no escuro. Logo ASF (currentColor) e os perfis como Button ghost do ali-ui, com
  * o ícone à esquerda. É o destino do link "Contato" do menu (#contato). Sem telefone e sem e-mail
  * público: o contato é pelos perfis.
  */
@@ -33,7 +33,8 @@ export function SiteFooter({ t }: { t: Dictionary }) {
     <InverseThemeFooter id="contato" className="border-t border-subtle bg-surface text-default">
       <Container className="flex flex-col gap-10 pt-16 pb-10">
         <Logo aria-hidden className="h-9 w-auto self-start" />
-        <h2 className="text-title-md">{t.footer.title}</h2>
+        {/* Sem título visível: o h2 fica só para o leitor de tela, com o nome do link "Contato" do menu. */}
+        <h2 className="sr-only">{t.nav.contact}</h2>
         {/* -ml-4 compensa o px-4 do Button md: o ícone do primeiro alinha com o logo e o título. */}
         <ul aria-label={t.footer.linksLabel} className="-ml-4 flex flex-wrap items-center gap-2">
           {t.footer.links.map((link) => {

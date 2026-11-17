@@ -1219,7 +1219,6 @@ export const en: Dictionary = {
     },
   },
   footer: {
-    title: "Got a messy problem?",
     linksLabel: "Profiles",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes", icon: "github" },

@@ -1358,7 +1358,6 @@ export const pt = {
     },
   },
   footer: {
-    title: "Tem um problema confuso?",
     linksLabel: "Perfis",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes", icon: "github" },
@@ -1368,11 +1367,7 @@ export const pt = {
         icon: "linkedin",
       },
       { label: "Behance", href: "https://www.behance.net/adriansilva", icon: "behance" },
-      {
-        label: "Currículo (PDF, em inglês)",
-        href: "/cv/adrian-silva-fuentes-cv-en.pdf",
-        icon: "cv",
-      },
+      { label: "Currículo", href: "/cv/adrian-silva-fuentes-cv-en.pdf", icon: "cv" },
     ] as { label: string; href: string; icon: "github" | "linkedin" | "behance" | "cv" }[],
     madeWith: {
       before: "Feito com ",

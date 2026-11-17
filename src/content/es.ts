@@ -1237,7 +1237,6 @@ export const es: Dictionary = {
     },
   },
   footer: {
-    title: "¿Tienes un problema enredado?",
     linksLabel: "Perfiles",
     links: [
       { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes", icon: "github" },
@@ -1247,11 +1246,7 @@ export const es: Dictionary = {
         icon: "linkedin",
       },
       { label: "Behance", href: "https://www.behance.net/adriansilva", icon: "behance" },
-      {
-        label: "Currículum (PDF, en inglés)",
-        href: "/cv/adrian-silva-fuentes-cv-en.pdf",
-        icon: "cv",
-      },
+      { label: "Currículum", href: "/cv/adrian-silva-fuentes-cv-en.pdf", icon: "cv" },
     ],
     madeWith: {
       before: "Hecho con ",
