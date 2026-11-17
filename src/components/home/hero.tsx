@@ -65,10 +65,10 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
           </h1>
           <p className="max-w-xl text-body-lg text-subtle">{t.lead}</p>
           <div className="flex flex-wrap gap-3">
-            <Button size="sm" asChild iconRight={<IconArrowRight />}>
+            <Button size="md" asChild iconRight={<IconArrowRight />}>
               <Link href={pagePath(lang, "work")}>{t.seeWork}</Link>
             </Button>
-            <Button size="sm" asChild variant="secondary">
+            <Button size="md" asChild variant="secondary">
               <a href="#contato">{t.talk}</a>
             </Button>
           </div>

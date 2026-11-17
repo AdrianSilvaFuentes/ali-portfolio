@@ -40,7 +40,7 @@ export function ResumeIntro({ t }: { t: Dictionary["resume"] }) {
             </li>
           </ul>
           <div>
-            <Button size="sm" asChild>
+            <Button size="md" asChild>
               <a href={t.cv.href}>{t.cv.label}</a>
             </Button>
           </div>

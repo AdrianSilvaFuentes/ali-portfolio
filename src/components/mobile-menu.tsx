@@ -8,7 +8,7 @@ import { Container } from "./container";
 import { NavLink } from "./nav-link";
 
 /**
- * Menu do celular (abaixo do md). O botão é o Button do ali-ui, só com ícone (sm, w-8 px-0,
+ * Menu do celular (abaixo do md). O botão é o Button do ali-ui, só com ícone (md, w-10 px-0,
  * como na história "Só ícone"). Ao tocar, abre a lista de páginas por cima do conteúdo, logo
  * abaixo do cabeçalho. Fecha com o mesmo botão, com Esc (o foco volta ao botão) ou ao escolher
  * um item. Dentro dele também fica o tema, que não cabe na linha do celular. O painel é feito
@@ -56,13 +56,13 @@ export function MobileMenu({
     <>
       <Button
         ref={buttonRef}
-        size="sm"
+        size="md"
         variant="secondary"
         aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
-        className="w-8 px-0 md:hidden"
+        className="w-10 px-0 md:hidden"
         iconLeft={open ? <IconX /> : <IconMenu2 />}
       />
       {/*

@@ -44,7 +44,7 @@ export function WebBrand({ t }: { t: Dictionary["work"]["web"] }) {
               </p>
               {item.href ? (
                 <Button
-                  size="sm"
+                  size="md"
                   variant="secondary"
                   asChild
                   className="col-start-2 justify-self-start md:col-start-auto"
