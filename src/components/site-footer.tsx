@@ -48,7 +48,7 @@ export function SiteFooter({ t }: { t: Dictionary }) {
             );
           })}
         </ul>
-        <p className="font-mono text-body-sm text-subtle">
+        <p className="text-body-sm text-subtle">
           © 2026 {t.site.name} · {t.footer.madeWith.before}
           <a href={t.footer.madeWith.href} className={inlineLinkClass}>
             {t.footer.madeWith.label}
