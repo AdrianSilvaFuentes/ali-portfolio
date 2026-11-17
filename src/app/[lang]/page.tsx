@@ -9,7 +9,7 @@ import { isLocale } from "@/i18n/config";
 
 /**
  * Início: abertura, casos selecionados (logo depois da abertura, a pedido do Adrián),
- * como trabalho, construído (com a stack) e antes do produto. O contato é o rodapé do site.
+ * como trabalho, antes do produto e projeto mais recente (o design system, com a stack). O contato é o rodapé do site.
  * As seções alternam fundo branco e cinza (sunken).
  * As provas (components/home/proofs.tsx) estão ocultas até haver números reais.
  */
@@ -24,8 +24,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Hero lang={lang} t={t} />
       <FeaturedCases lang={lang} t={t.cases} cases={dictionary.work.cases} />
       <Process t={t.process} />
-      <Built t={t.built} stack={t.stack} />
       <BeforeProduct lang={lang} t={t.before} />
+      <Built t={t.built} stack={t.stack} />
     </>
   );
 }
