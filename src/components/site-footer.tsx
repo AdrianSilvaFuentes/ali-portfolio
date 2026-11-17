@@ -4,6 +4,10 @@ import { Container } from "./container";
 const linkClass =
   "inline-flex min-h-11 items-center rounded-sm text-body-lg text-inverse underline underline-offset-4 outline-focus focus-visible:outline-2 focus-visible:outline-offset-2";
 
+/** Link dentro da frase do rodapé: mesmo sublinhado e foco, no tamanho do texto ao redor. */
+const inlineLinkClass =
+  "rounded-sm underline underline-offset-4 outline-focus focus-visible:outline-2 focus-visible:outline-offset-2";
+
 /** Rodapé escuro com o contato. É o destino do link "Contato" do menu (#contato). Sem telefone e sem e-mail público: o contato é pelos perfis. */
 export function SiteFooter({ t }: { t: Dictionary }) {
   return (
@@ -28,7 +32,10 @@ export function SiteFooter({ t }: { t: Dictionary }) {
           </ul>
         </div>
         <p className="font-mono text-body-sm">
-          © 2026 {t.site.name} · {t.footer.madeWith}
+          © 2026 {t.site.name} · {t.footer.madeWith.before}
+          <a href={t.footer.madeWith.href} className={inlineLinkClass}>
+            {t.footer.madeWith.label}
+          </a>
         </p>
       </Container>
     </footer>

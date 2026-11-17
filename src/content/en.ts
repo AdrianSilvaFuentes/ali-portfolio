@@ -1216,6 +1216,10 @@ export const en: Dictionary = {
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
       { label: "Résumé (PDF)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ],
-    madeWith: "Made with ali-ui",
+    madeWith: {
+      before: "Made with ",
+      label: "Ali Design System",
+      href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+    },
   },
 };

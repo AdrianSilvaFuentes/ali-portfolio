@@ -1354,7 +1354,11 @@ export const pt = {
       { label: "Behance", href: "https://www.behance.net/adriansilva" },
       { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
     ] as { label: string; href: string | null }[],
-    madeWith: "Feito com ali-ui",
+    madeWith: {
+      before: "Feito com ",
+      label: "Ali Design System",
+      href: "https://github.com/AdrianSilvaFuentes/ali-ui",
+    },
   },
 };
 
