@@ -1358,14 +1358,22 @@ export const pt = {
     },
   },
   footer: {
-    title: "Vamos conversar.",
+    title: "Tem um problema confuso?",
     linksLabel: "Perfis",
     links: [
-      { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/adriansilvafuentes/" },
-      { label: "Behance", href: "https://www.behance.net/adriansilva" },
-      { label: "Currículo (PDF, em inglês)", href: "/cv/adrian-silva-fuentes-cv-en.pdf" },
-    ] as { label: string; href: string | null }[],
+      { label: "GitHub", href: "https://github.com/AdrianSilvaFuentes", icon: "github" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/adriansilvafuentes/",
+        icon: "linkedin",
+      },
+      { label: "Behance", href: "https://www.behance.net/adriansilva", icon: "behance" },
+      {
+        label: "Currículo (PDF, em inglês)",
+        href: "/cv/adrian-silva-fuentes-cv-en.pdf",
+        icon: "cv",
+      },
+    ] as { label: string; href: string; icon: "github" | "linkedin" | "behance" | "cv" }[],
     madeWith: {
       before: "Feito com ",
       label: "Ali Design System",
