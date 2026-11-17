@@ -2,6 +2,7 @@ import { Button } from "@adriansilvafuentes/ui";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import type { Dictionary } from "@/content";
 import { type Locale, pagePath } from "@/i18n/config";
 import portrait from "../../../public/images/retrato.webp";
@@ -85,14 +86,22 @@ export function Hero({ lang, t }: { lang: Locale; t: Dictionary["home"] }) {
             sizes="(min-width: 768px) 448px, 288px"
             className="h-auto w-full"
           />
-          {tags.map((tag) => (
+          {tags.map((tag, index) => (
             <Image
               key={tag.key}
               src={tag.src}
               alt={t.tags[tag.key]}
               unoptimized
-              className="absolute h-auto"
-              style={{ left: tag.left, top: tag.top, width: tag.width }}
+              className="animate-tag absolute h-auto"
+              style={
+                {
+                  left: tag.left,
+                  top: tag.top,
+                  width: tag.width,
+                  // Um depois do outro: cada adesivo espera 1× duration-slow a mais.
+                  "--tag-delay": `calc(var(--ali-duration-slow) * ${index})`,
+                } as CSSProperties
+              }
             />
           ))}
         </div>
