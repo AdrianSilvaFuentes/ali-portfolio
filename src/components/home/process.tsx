@@ -36,9 +36,19 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
           const timing = { transitionDuration: STEP, transitionDelay: `calc(${STEP} * ${index})` };
           return (
             <li key={step.title} className="flex flex-col gap-2">
-              <span aria-hidden className="relative mb-2 block h-0.5 overflow-hidden">
-                {/* A trilha pontilhada: o que ainda falta preencher. */}
-                <span className="absolute inset-x-0 top-0 border-t-2 border-dotted border-default" />
+              <span aria-hidden className="relative mb-2 block h-1 overflow-hidden">
+                {/*
+                  A trilha pontilhada: o que ainda falta preencher. Pontos redondos na cor border-default,
+                  um a cada spacing-3 (o pontilhado do navegador não deixa escolher o espaço).
+                */}
+                <span
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle closest-side, var(--ali-color-border-default) 100%, transparent)",
+                    backgroundSize: "var(--ali-spacing-3) 100%",
+                  }}
+                />
                 <span
                   className="absolute inset-0 origin-left scale-x-0 bg-gradient-brand transition-transform ease-out group-data-in-view:scale-x-100 motion-reduce:scale-x-100 motion-reduce:transition-none"
                   style={{
