@@ -36,10 +36,9 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
           const timing = { transitionDuration: STEP, transitionDelay: `calc(${STEP} * ${index})` };
           return (
             <li key={step.title} className="flex flex-col gap-2">
-              <span
-                aria-hidden
-                className="relative mb-2 block h-0.5 overflow-hidden bg-neutral-subtle"
-              >
+              <span aria-hidden className="relative mb-2 block h-0.5 overflow-hidden">
+                {/* A trilha pontilhada: o que ainda falta preencher. */}
+                <span className="absolute inset-x-0 top-0 border-t-2 border-dotted border-default" />
                 <span
                   className="absolute inset-0 origin-left scale-x-0 bg-gradient-brand transition-transform ease-out group-data-in-view:scale-x-100 motion-reduce:scale-x-100 motion-reduce:transition-none"
                   style={{
