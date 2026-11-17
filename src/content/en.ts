@@ -509,7 +509,7 @@ export const en: Dictionary = {
         years: "2026",
         role: "Design and code",
         tags: ["Design system", "Tokens", "Accessibility"],
-        title: "ali-ui: a lean design system, from token to test",
+        title: "Ali Design System: lean, accessible and tested on every build",
         summary: "[Problem → outcome, in one line.]",
         result:
           "21 components in light and dark themes, with WCAG AA contrast checked on every build",

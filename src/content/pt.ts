@@ -634,7 +634,7 @@ export const pt = {
         years: "2026",
         role: "Design e código",
         tags: ["Design system", "Tokens", "Acessibilidade"],
-        title: "ali-ui: um design system enxuto, do token ao teste",
+        title: "Ali Design System: enxuto, acessível e testado a cada build",
         summary: "[Problema → resultado, em uma linha.]",
         result:
           "21 componentes em tema claro e escuro, com contraste WCAG AA verificado a cada build",
