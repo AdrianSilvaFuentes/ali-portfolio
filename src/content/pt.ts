@@ -212,7 +212,8 @@ export const pt = {
       image: "Imagem do caso",
     },
     built: {
-      eyebrow: "Construído",
+      eyebrow: "Projeto mais recente",
+      status: "Em andamento",
       title: "Ali Design System, feito do zero.",
       lead: "Tokens, componentes e documentação, com contraste testado a cada build. Este painel é o Storybook de verdade: dá para clicar e digitar.",
       demo: "Demonstração interativa do Ali Design System, carregada do Storybook",

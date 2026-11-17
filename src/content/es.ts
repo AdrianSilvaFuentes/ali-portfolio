@@ -91,7 +91,8 @@ export const es: Dictionary = {
       image: "Imagen del caso",
     },
     built: {
-      eyebrow: "Construido",
+      eyebrow: "Proyecto más reciente",
+      status: "En curso",
       title: "Ali Design System, hecho desde cero.",
       lead: "Tokens, componentes y documentación, con contraste probado en cada build. Este panel es el Storybook real: se puede hacer clic y escribir.",
       demo: "Demostración interactiva del Ali Design System, cargada desde Storybook",

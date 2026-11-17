@@ -14,7 +14,7 @@ export function BeforeProduct({ lang, t }: { lang: Locale; t: Dictionary["home"]
   const webPath = `${pagePath(lang, "work")}#web-e-marca`;
 
   return (
-    <HomeSection id="antes-titulo" sunken className="flex flex-col gap-10">
+    <HomeSection id="antes-titulo" className="flex flex-col gap-10">
       <div className="grid gap-8 lg:grid-cols-5 lg:gap-14">
         <div className="flex flex-col gap-4 lg:col-span-2">
           <Eyebrow>{t.eyebrow}</Eyebrow>
