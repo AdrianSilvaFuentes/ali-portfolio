@@ -189,18 +189,25 @@ export const pt = {
       eyebrow: "Como trabalho",
       title: "Do problema ao resultado, com as mãos no produto.",
       steps: [
-        { title: "Descobrir", description: "[Pesquisa com usuários e dados: onde dói e quanto.]" },
+        {
+          title: "Descobrir",
+          description:
+            "Pesquisa de campo, entrevistas e dados de uso para entender onde a experiência trava e quanto isso custa.",
+        },
         {
           title: "Decidir",
-          description: "[Priorizar e definir a métrica de sucesso antes de construir.]",
+          description:
+            "Transformo o que aprendi em prioridades e defino a métrica de sucesso antes da primeira tela.",
         },
         {
           title: "Construir",
-          description: "[Design e código, com IA como ferramenta e julgamento próprio.]",
+          description:
+            "Design e código no mesmo fluxo, com IA para acelerar e um design system para manter a consistência.",
         },
         {
           title: "Medir",
-          description: "[O que mudou depois do lançamento, e o que isso ensinou.]",
+          description:
+            "Testo com usuários e acompanho os números depois do lançamento. O que aprendo volta para o próximo ciclo.",
         },
       ],
     },

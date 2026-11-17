@@ -70,17 +70,24 @@ export const en: Dictionary = {
       steps: [
         {
           title: "Discover",
-          description: "[User research and data: where it hurts and how much.]",
+          description:
+            "Field research, interviews and usage data to find where the experience breaks and what it costs.",
         },
         {
           title: "Decide",
-          description: "[Prioritize and define the success metric before building.]",
+          description:
+            "I turn what I learned into priorities and set the success metric before the first screen.",
         },
         {
           title: "Build",
-          description: "[Design and code, with AI as a tool and my own judgment.]",
+          description:
+            "Design and code in one flow, with AI to move faster and a design system to stay consistent.",
         },
-        { title: "Measure", description: "[What changed after launch, and what it taught us.]" },
+        {
+          title: "Measure",
+          description:
+            "I test with users and track the numbers after launch. What I learn feeds the next cycle.",
+        },
       ],
     },
     cases: {
