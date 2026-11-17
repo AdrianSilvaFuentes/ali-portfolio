@@ -15,7 +15,7 @@ const icons = [IconSearch, IconTarget, IconCode, IconChartLine];
 export function Process({ t }: { t: Dictionary["home"]["process"] }) {
   const count = t.steps.length;
   return (
-    <HomeSection id="processo-titulo" className="flex flex-col gap-10">
+    <HomeSection id="processo-titulo" dotted className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
         <Eyebrow>{t.eyebrow}</Eyebrow>
         <h2 id="processo-titulo" className="max-w-3xl text-title-md">

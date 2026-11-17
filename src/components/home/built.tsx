@@ -17,7 +17,7 @@ export function Built({
   stack: Dictionary["home"]["stack"];
 }) {
   return (
-    <HomeSection id="construido-titulo" className="flex flex-col gap-14">
+    <HomeSection id="construido-titulo" dotted className="flex flex-col gap-14">
       <div className="grid gap-10 lg:grid-cols-5 lg:items-center lg:gap-14">
         <div className="flex flex-col gap-5 lg:col-span-2">
           <div className="flex flex-wrap items-center gap-3">
