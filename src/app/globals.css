@@ -79,6 +79,29 @@ body {
 }
 
 /*
+ * Adesivos do retrato: aparecem depois que a foto entra (2× duration-slow), revelados por uma
+ * máscara horizontal da esquerda para a direita, um depois do outro (o atraso de cada um vem
+ * no style, em --tag-delay). Com menos movimento, já aparecem prontos.
+ */
+@keyframes tag-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@utility animate-tag {
+  animation: tag-reveal calc(var(--ali-duration-slow) * 2) cubic-bezier(0.65, 0, 0.35, 1)
+    calc(var(--ali-duration-slow) * 2 + var(--tag-delay, 0ms)) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/*
  * Abertura: um cursor entra, aperta no canto de baixo à esquerda do "Ali" e arrasta até a
  * direita, desenhando a seleção (moldura e alças com border-primary, como no Figma, nó 53:987).
  * Começa depois do fade do retrato (2× duration-slow) e dura 8× duration-slow. Com menos
