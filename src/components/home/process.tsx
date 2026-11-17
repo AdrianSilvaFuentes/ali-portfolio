@@ -36,17 +36,17 @@ export function Process({ t }: { t: Dictionary["home"]["process"] }) {
           const timing = { transitionDuration: STEP, transitionDelay: `calc(${STEP} * ${index})` };
           return (
             <li key={step.title} className="flex flex-col gap-2">
-              <span aria-hidden className="relative mb-2 block h-1 overflow-hidden">
+              <span aria-hidden className="relative mb-2 block h-0.5 overflow-hidden">
                 {/*
-                  A trilha pontilhada: o que ainda falta preencher. Pontos redondos na cor border-default,
-                  um a cada spacing-3 (o pontilhado do navegador não deixa escolher o espaço).
+                  A trilha tracejada: o que ainda falta preencher. Na cor border-default, com a medida do
+                  Figma: traço de 5px, espaço de 6px, ponta reta. Os tokens de espaçamento não têm 5 e 6px,
+                  por isso os valores estão aqui (o tracejado do navegador não deixa escolher as medidas).
                 */}
                 <span
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "radial-gradient(circle closest-side, var(--ali-color-border-default) 100%, transparent)",
-                    backgroundSize: "var(--ali-spacing-3) 100%",
+                      "repeating-linear-gradient(to right, var(--ali-color-border-default) 0 5px, transparent 5px 11px)",
                   }}
                 />
                 <span
